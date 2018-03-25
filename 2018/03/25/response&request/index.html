@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="NoteBook">
 <meta property="og:description" content="运行过程　　客户端发送http请求，tomcat服务器接收请求并解析，将请求信息封装成request对象，并创建一个response对象。创建servlet对象，调用service方法，tomcat去response缓冲区获取设置内容，组成http响应，客户端解析显示页面。 response解决中文乱码　　response.setContentType(“text/html;charset=UTF">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-25T09:32:37.597Z">
+<meta property="og:updated_time" content="2018-03-25T09:38:32.615Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Response&amp;Request">
 <meta name="twitter:description" content="运行过程　　客户端发送http请求，tomcat服务器接收请求并解析，将请求信息封装成request对象，并创建一个response对象。创建servlet对象，调用service方法，tomcat去response缓冲区获取设置内容，组成http响应，客户端解析显示页面。 response解决中文乱码　　response.setContentType(“text/html;charset=UTF">
@@ -426,7 +426,7 @@
       
         <h2 id="运行过程"><a href="#运行过程" class="headerlink" title="运行过程"></a>运行过程</h2><p>　　客户端发送http请求，tomcat服务器接收请求并解析，将请求信息封装成request对象，并创建一个response对象。创建servlet对象，调用service方法，tomcat去response缓冲区获取设置内容，组成http响应，客户端解析显示页面。</p>
 <h2 id="response解决中文乱码"><a href="#response解决中文乱码" class="headerlink" title="response解决中文乱码"></a>response解决中文乱码</h2><p>　　response.setContentType(“text/html;charset=UTF-8”);</p>
-<h2 id="request解决中文乱码"><a href="#request解决中文乱码" class="headerlink" title="request解决中文乱码"></a>request解决中文乱码</h2><p>　　解决post提交：request.setCharacterEncoding(“UTF-8”);<br>　　解决get提交：parameter=new String(parmater.getbytes(“iso-8859-1”),”UTF-8”);<br><a id="more"></a></p>
+<h2 id="request解决中文乱码"><a href="#request解决中文乱码" class="headerlink" title="request解决中文乱码"></a>request解决中文乱码</h2><p>　　解决post提交：request.setCharacterEncoding(“UTF-8”);<br>　　解决get提交：parameter=new String(parmater.getbytes(“iso-8859-1”),”UTF-8”);</p>
 <h2 id="request的一些功能"><a href="#request的一些功能" class="headerlink" title="request的一些功能"></a>request的一些功能</h2><p>　　是域对象，访问时创建，响应结束销毁，作用范围在一次请求中；String getParameter(String name)获得请求参数。
 　　</p>
 <h2 id="转发（forward）与重定向（redirect）"><a href="#转发（forward）与重定向（redirect）" class="headerlink" title="转发（forward）与重定向（redirect）"></a>转发（forward）与重定向（redirect）</h2><p>　　重定向两次请求，转发一次。重定向地址栏变化，转发不变。重定向可以访问外部网站（客户端行为）重新发出请求，无request传递；转发是在内部访问（服务器行为）中间传递的是自己容器内的request。转发性能优于重定向。<br>　　转发：request.getRequestDispatcher(转发地址).forward(req,resp);<br>　　重定向：response.sendRedirect(地址);

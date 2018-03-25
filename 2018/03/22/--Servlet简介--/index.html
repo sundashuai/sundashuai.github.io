@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="NoteBook">
 <meta property="og:description" content="Servlet简介什么是Servlet　　Servlet运行在服务器的Java小程序，是sun公司提供的一套规范（接口），用来处理客户端请求、响应给浏览器的动态资源。实质就java代码，通过java的API动态的向客户端输出内容。　　servlet规范包含三个技术点：　　(1) servlet技术　　(2) filter技术——过滤器　　(3) listener技术——监听器  Servlet实现">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-25T09:32:21.579Z">
+<meta property="og:updated_time" content="2018-03-25T09:38:36.701Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaWeb核心之Servlet">
 <meta name="twitter:description" content="Servlet简介什么是Servlet　　Servlet运行在服务器的Java小程序，是sun公司提供的一套规范（接口），用来处理客户端请求、响应给浏览器的动态资源。实质就java代码，通过java的API动态的向客户端输出内容。　　servlet规范包含三个技术点：　　(1) servlet技术　　(2) filter技术——过滤器　　(3) listener技术——监听器  Servlet实现">
@@ -428,7 +428,6 @@
 <hr>
 <h2 id="Servlet实现"><a href="#Servlet实现" class="headerlink" title="Servlet实现"></a>Servlet实现</h2><p> 　　实现步骤：<br>　　(1) 创建类继承HttpServlet<br>　　(2) 覆盖doGet和doPost方法<br>　　(3) 在web.xml中进行servlet配置</p>
 <hr>
-<a id="more"></a>
 <h2 id="Servlet的生命周期"><a href="#Servlet的生命周期" class="headerlink" title="Servlet的生命周期"></a>Servlet的生命周期</h2><p>　　(1) init(ServletConfig config)，servlet对象创建时执行<br>　　(2) service(ServletRequest request,ServletResponse response),<strong>每次请求都会执行</strong><br>　　(3) destory(),servlet销毁时执行</p>
 <hr>
 <h2 id="ServletContext对象"><a href="#ServletContext对象" class="headerlink" title="ServletContext对象"></a>ServletContext对象</h2><p> 　　ServletContext代表是一个web应用的环境（上下文）对象，内部封装的是该web应用信息，<strong>该对象一个web应用只有一个</strong>，一个web应用有多个servlet对象。<br>　　 ServletContext对象的生命周期：该web应用被加载（服务器启动或发布web应用）时创建；web应用被卸载（服务器关闭，移除该web应用）时销毁。</p>

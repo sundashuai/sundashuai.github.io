@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-25T09:30:52.581Z</updated>
+  <updated>2018-03-25T09:38:41.087Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,15 +21,16 @@
     <link href="http://yoursite.com/2018/03/25/Cookie&amp;Session/"/>
     <id>http://yoursite.com/2018/03/25/Cookie&amp;Session/</id>
     <published>2018-03-25T08:59:34.572Z</published>
-    <updated>2018-03-25T09:30:52.581Z</updated>
+    <updated>2018-03-25T09:38:41.087Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h2><p>　　cookie是将数据存储到客户端。<br>　　服务器端向客户端发送一个cookie：<br>　　1、创建cookie：<br>　　<code>Cookie cookie=new Cookie(name,value);</code><br>　　<code>cookie.setMaxAge(秒);</code><br>　　 <code>cookie.setPath();</code><br>　　2、发送cookie：<br>　　<code>response.addCookie(Cookie cookie);</code></p><hr><p>　　服务器端接受客户端携带的Cookie：<br>　  <code>Cookie[] cookies=request.getCookies();</code><br>　<code>for(Cookie cookie:cookies){</code><br>　　　　<code>if(cookie.getName().equal(cookieName)){</code><br>　　　　　<code>String　cookieValue=cookie.getValue();</code><br>　　　<code>}</code><br>　<code>}</code><br><a id="more"></a></p><h2 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h2><p>　　在服务端为每个客户端创建一块自己的内存空间，客户端携带一个标识ID去寻找自己的内存空间。<br>　　1、获得session对象：<br>　　<code>request.getSession();</code><br>　　2、向session中存取数据(域对象)：<br>　　<code>session.setAttribute(String name,Object obj);</code><br>　　<code>session.getAttribute(String name);</code><br>　　<code>session.removeAttribute(String name);</code><br>　　3、session生命周期<br>　　创建：第一次执行request.getSession();<br>　　销毁：服务器关闭、session失效、手动session.invalidate();<br>　　作用范围：默认一次会话中</p><p>　　</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h2><p>　　cookie是将数据存储到客户端。<br>　　服务器端向客户端发送一个cookie：<br>　　1、创建cookie：<br>　　<code>Cookie cookie=new Cookie(name,value);</code><br>　　<code>cookie.setMaxAge(秒);</code><br>　　 <code>cookie.setPath();</code><br>　　2、发送cookie：<br>　　<code>response.addCookie(Cookie cookie);</code></p><hr><p>　　服务器端接受客户端携带的Cookie：<br>　  <code>Cookie[] cookies=request.getCookies();</code><br>　<code>for(Cookie cookie:cookies){</code><br>　　　　<code>if(cookie.getName().equal(cookieName)){</code><br>　　　　　<code>String　cookieValue=cookie.getValue();</code><br>　　　<code>}</code><br>　<code>}</code></p><h2 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h2><p>　　在服务端为每个客户端创建一块自己的内存空间，客户端携带一个标识ID去寻找自己的内存空间。<br>　　1、获得session对象：<br>　　<code>request.getSession();</code><br>　　2、向session中存取数据(域对象)：<br>　　<code>session.setAttribute(String name,Object obj);</code><br>　　<code>session.getAttribute(String name);</code><br>　　<code>session.removeAttribute(String name);</code><br>　　3、session生命周期<br>　　创建：第一次执行request.getSession();<br>　　销毁：服务器关闭、session失效、手动session.invalidate();<br>　　作用范围：默认一次会话中</p><p>　　</p>]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;Cookie&quot;&gt;&lt;a href=&quot;#Cookie&quot; class=&quot;headerlink&quot; title=&quot;Cookie&quot;&gt;&lt;/a&gt;Cookie&lt;/h2&gt;&lt;p&gt;　　cookie是将数据存储到客户端。&lt;br&gt;　　服务器端向客户端发送一个cookie：&lt;br&gt;　　1、创建cookie：&lt;br&gt;　　&lt;code&gt;Cookie cookie=new Cookie(name,value);&lt;/code&gt;&lt;br&gt;　　&lt;code&gt;cookie.setMaxAge(秒);&lt;/code&gt;&lt;br&gt;　　 &lt;code&gt;cookie.setPath();&lt;/code&gt;&lt;br&gt;　　2、发送cookie：&lt;br&gt;　　&lt;code&gt;response.addCookie(Cookie cookie);&lt;/code&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;　　服务器端接受客户端携带的Cookie：&lt;br&gt;　  &lt;code&gt;Cookie[] cookies=request.getCookies();&lt;/code&gt;&lt;br&gt;　&lt;code&gt;for(Cookie cookie:cookies){&lt;/code&gt;&lt;br&gt;　　　　&lt;code&gt;if(cookie.getName().equal(cookieName)){&lt;/code&gt;&lt;br&gt;　　　　　&lt;code&gt;String　cookieValue=cookie.getValue();&lt;/code&gt;&lt;br&gt;　　　&lt;code&gt;}&lt;/code&gt;&lt;br&gt;　&lt;code&gt;}&lt;/code&gt;&lt;br&gt;
+      
+      
+        &lt;h2 id=&quot;Cookie&quot;&gt;&lt;a href=&quot;#Cookie&quot; class=&quot;headerlink&quot; title=&quot;Cookie&quot;&gt;&lt;/a&gt;Cookie&lt;/h2&gt;&lt;p&gt;　　cookie是将数据存储到客户端。&lt;br&gt;　　服务器端向客户端发送一个cookie：&lt;br&gt;　　1、创建
+      
     
     </summary>
     
@@ -45,15 +46,16 @@
     <link href="http://yoursite.com/2018/03/25/response&amp;request/"/>
     <id>http://yoursite.com/2018/03/25/response&amp;request/</id>
     <published>2018-03-25T08:19:34.513Z</published>
-    <updated>2018-03-25T09:32:37.597Z</updated>
+    <updated>2018-03-25T09:38:32.615Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="运行过程"><a href="#运行过程" class="headerlink" title="运行过程"></a>运行过程</h2><p>　　客户端发送http请求，tomcat服务器接收请求并解析，将请求信息封装成request对象，并创建一个response对象。创建servlet对象，调用service方法，tomcat去response缓冲区获取设置内容，组成http响应，客户端解析显示页面。</p><h2 id="response解决中文乱码"><a href="#response解决中文乱码" class="headerlink" title="response解决中文乱码"></a>response解决中文乱码</h2><p>　　response.setContentType(“text/html;charset=UTF-8”);</p><h2 id="request解决中文乱码"><a href="#request解决中文乱码" class="headerlink" title="request解决中文乱码"></a>request解决中文乱码</h2><p>　　解决post提交：request.setCharacterEncoding(“UTF-8”);<br>　　解决get提交：parameter=new String(parmater.getbytes(“iso-8859-1”),”UTF-8”);<br><a id="more"></a></p><h2 id="request的一些功能"><a href="#request的一些功能" class="headerlink" title="request的一些功能"></a>request的一些功能</h2><p>　　是域对象，访问时创建，响应结束销毁，作用范围在一次请求中；String getParameter(String name)获得请求参数。　　</p><h2 id="转发（forward）与重定向（redirect）"><a href="#转发（forward）与重定向（redirect）" class="headerlink" title="转发（forward）与重定向（redirect）"></a>转发（forward）与重定向（redirect）</h2><p>　　重定向两次请求，转发一次。重定向地址栏变化，转发不变。重定向可以访问外部网站（客户端行为）重新发出请求，无request传递；转发是在内部访问（服务器行为）中间传递的是自己容器内的request。转发性能优于重定向。<br>　　转发：request.getRequestDispatcher(转发地址).forward(req,resp);<br>　　重定向：response.sendRedirect(地址);　　</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="运行过程"><a href="#运行过程" class="headerlink" title="运行过程"></a>运行过程</h2><p>　　客户端发送http请求，tomcat服务器接收请求并解析，将请求信息封装成request对象，并创建一个response对象。创建servlet对象，调用service方法，tomcat去response缓冲区获取设置内容，组成http响应，客户端解析显示页面。</p><h2 id="response解决中文乱码"><a href="#response解决中文乱码" class="headerlink" title="response解决中文乱码"></a>response解决中文乱码</h2><p>　　response.setContentType(“text/html;charset=UTF-8”);</p><h2 id="request解决中文乱码"><a href="#request解决中文乱码" class="headerlink" title="request解决中文乱码"></a>request解决中文乱码</h2><p>　　解决post提交：request.setCharacterEncoding(“UTF-8”);<br>　　解决get提交：parameter=new String(parmater.getbytes(“iso-8859-1”),”UTF-8”);</p><h2 id="request的一些功能"><a href="#request的一些功能" class="headerlink" title="request的一些功能"></a>request的一些功能</h2><p>　　是域对象，访问时创建，响应结束销毁，作用范围在一次请求中；String getParameter(String name)获得请求参数。　　</p><h2 id="转发（forward）与重定向（redirect）"><a href="#转发（forward）与重定向（redirect）" class="headerlink" title="转发（forward）与重定向（redirect）"></a>转发（forward）与重定向（redirect）</h2><p>　　重定向两次请求，转发一次。重定向地址栏变化，转发不变。重定向可以访问外部网站（客户端行为）重新发出请求，无request传递；转发是在内部访问（服务器行为）中间传递的是自己容器内的request。转发性能优于重定向。<br>　　转发：request.getRequestDispatcher(转发地址).forward(req,resp);<br>　　重定向：response.sendRedirect(地址);　　</p>]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;运行过程&quot;&gt;&lt;a href=&quot;#运行过程&quot; class=&quot;headerlink&quot; title=&quot;运行过程&quot;&gt;&lt;/a&gt;运行过程&lt;/h2&gt;&lt;p&gt;　　客户端发送http请求，tomcat服务器接收请求并解析，将请求信息封装成request对象，并创建一个response对象。创建servlet对象，调用service方法，tomcat去response缓冲区获取设置内容，组成http响应，客户端解析显示页面。&lt;/p&gt;
-&lt;h2 id=&quot;response解决中文乱码&quot;&gt;&lt;a href=&quot;#response解决中文乱码&quot; class=&quot;headerlink&quot; title=&quot;response解决中文乱码&quot;&gt;&lt;/a&gt;response解决中文乱码&lt;/h2&gt;&lt;p&gt;　　response.setContentType(“text/html;charset=UTF-8”);&lt;/p&gt;
-&lt;h2 id=&quot;request解决中文乱码&quot;&gt;&lt;a href=&quot;#request解决中文乱码&quot; class=&quot;headerlink&quot; title=&quot;request解决中文乱码&quot;&gt;&lt;/a&gt;request解决中文乱码&lt;/h2&gt;&lt;p&gt;　　解决post提交：request.setCharacterEncoding(“UTF-8”);&lt;br&gt;　　解决get提交：parameter=new String(parmater.getbytes(“iso-8859-1”),”UTF-8”);&lt;br&gt;
+      
+      
+        &lt;h2 id=&quot;运行过程&quot;&gt;&lt;a href=&quot;#运行过程&quot; class=&quot;headerlink&quot; title=&quot;运行过程&quot;&gt;&lt;/a&gt;运行过程&lt;/h2&gt;&lt;p&gt;　　客户端发送http请求，tomcat服务器接收请求并解析，将请求信息封装成request对象，并创建一个response
+      
     
     </summary>
     
@@ -69,16 +71,16 @@
     <link href="http://yoursite.com/2018/03/22/--Servlet%E7%AE%80%E4%BB%8B--/"/>
     <id>http://yoursite.com/2018/03/22/--Servlet简介--/</id>
     <published>2018-03-22T15:16:50.628Z</published>
-    <updated>2018-03-25T09:32:21.579Z</updated>
+    <updated>2018-03-25T09:38:36.701Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="Servlet简介"><a href="#Servlet简介" class="headerlink" title="Servlet简介"></a>Servlet简介</h2><h2 id="什么是Servlet"><a href="#什么是Servlet" class="headerlink" title="什么是Servlet"></a>什么是Servlet</h2><p>　　Servlet运行在服务器的Java小程序，是sun公司提供的一套规范（接口），用来处理客户端请求、响应给浏览器的动态资源。实质就java代码，通过java的API动态的向客户端输出内容。<br>　　servlet规范包含三个技术点：<br>　　(1) <strong>servlet技术</strong><br>　　(2) filter技术——过滤器<br>　　(3) listener技术——监听器</p><hr><h2 id="Servlet实现"><a href="#Servlet实现" class="headerlink" title="Servlet实现"></a>Servlet实现</h2><p> 　　实现步骤：<br>　　(1) 创建类继承HttpServlet<br>　　(2) 覆盖doGet和doPost方法<br>　　(3) 在web.xml中进行servlet配置</p><hr><a id="more"></a><h2 id="Servlet的生命周期"><a href="#Servlet的生命周期" class="headerlink" title="Servlet的生命周期"></a>Servlet的生命周期</h2><p>　　(1) init(ServletConfig config)，servlet对象创建时执行<br>　　(2) service(ServletRequest request,ServletResponse response),<strong>每次请求都会执行</strong><br>　　(3) destory(),servlet销毁时执行</p><hr><h2 id="ServletContext对象"><a href="#ServletContext对象" class="headerlink" title="ServletContext对象"></a>ServletContext对象</h2><p> 　　ServletContext代表是一个web应用的环境（上下文）对象，内部封装的是该web应用信息，<strong>该对象一个web应用只有一个</strong>，一个web应用有多个servlet对象。<br>　　 ServletContext对象的生命周期：该web应用被加载（服务器启动或发布web应用）时创建；web应用被卸载（服务器关闭，移除该web应用）时销毁。</p><hr><h2 id="ServletContext是一个域对象"><a href="#ServletContext是一个域对象" class="headerlink" title="ServletContext是一个域对象"></a>ServletContext是一个域对象</h2><p>　　存储数据的区域就是域对象，域对象的通用方法：<br>　　　<em>setAttribute(String name,Object obj);　　　</em>getAttribute(String name);<br>　　　*removeAttribute(String name);<br>　　ServletContext域对象作用范围：整个web应用</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="Servlet简介"><a href="#Servlet简介" class="headerlink" title="Servlet简介"></a>Servlet简介</h2><h2 id="什么是Servlet"><a href="#什么是Servlet" class="headerlink" title="什么是Servlet"></a>什么是Servlet</h2><p>　　Servlet运行在服务器的Java小程序，是sun公司提供的一套规范（接口），用来处理客户端请求、响应给浏览器的动态资源。实质就java代码，通过java的API动态的向客户端输出内容。<br>　　servlet规范包含三个技术点：<br>　　(1) <strong>servlet技术</strong><br>　　(2) filter技术——过滤器<br>　　(3) listener技术——监听器</p><hr><h2 id="Servlet实现"><a href="#Servlet实现" class="headerlink" title="Servlet实现"></a>Servlet实现</h2><p> 　　实现步骤：<br>　　(1) 创建类继承HttpServlet<br>　　(2) 覆盖doGet和doPost方法<br>　　(3) 在web.xml中进行servlet配置</p><hr><h2 id="Servlet的生命周期"><a href="#Servlet的生命周期" class="headerlink" title="Servlet的生命周期"></a>Servlet的生命周期</h2><p>　　(1) init(ServletConfig config)，servlet对象创建时执行<br>　　(2) service(ServletRequest request,ServletResponse response),<strong>每次请求都会执行</strong><br>　　(3) destory(),servlet销毁时执行</p><hr><h2 id="ServletContext对象"><a href="#ServletContext对象" class="headerlink" title="ServletContext对象"></a>ServletContext对象</h2><p> 　　ServletContext代表是一个web应用的环境（上下文）对象，内部封装的是该web应用信息，<strong>该对象一个web应用只有一个</strong>，一个web应用有多个servlet对象。<br>　　 ServletContext对象的生命周期：该web应用被加载（服务器启动或发布web应用）时创建；web应用被卸载（服务器关闭，移除该web应用）时销毁。</p><hr><h2 id="ServletContext是一个域对象"><a href="#ServletContext是一个域对象" class="headerlink" title="ServletContext是一个域对象"></a>ServletContext是一个域对象</h2><p>　　存储数据的区域就是域对象，域对象的通用方法：<br>　　　<em>setAttribute(String name,Object obj);　　　</em>getAttribute(String name);<br>　　　*removeAttribute(String name);<br>　　ServletContext域对象作用范围：整个web应用</p>]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;Servlet简介&quot;&gt;&lt;a href=&quot;#Servlet简介&quot; class=&quot;headerlink&quot; title=&quot;Servlet简介&quot;&gt;&lt;/a&gt;Servlet简介&lt;/h2&gt;&lt;h2 id=&quot;什么是Servlet&quot;&gt;&lt;a href=&quot;#什么是Servlet&quot; class=&quot;headerlink&quot; title=&quot;什么是Servlet&quot;&gt;&lt;/a&gt;什么是Servlet&lt;/h2&gt;&lt;p&gt;　　Servlet运行在服务器的Java小程序，是sun公司提供的一套规范（接口），用来处理客户端请求、响应给浏览器的动态资源。实质就java代码，通过java的API动态的向客户端输出内容。&lt;br&gt;　　servlet规范包含三个技术点：&lt;br&gt;　　(1) &lt;strong&gt;servlet技术&lt;/strong&gt;&lt;br&gt;　　(2) filter技术——过滤器&lt;br&gt;　　(3) listener技术——监听器&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;Servlet实现&quot;&gt;&lt;a href=&quot;#Servlet实现&quot; class=&quot;headerlink&quot; title=&quot;Servlet实现&quot;&gt;&lt;/a&gt;Servlet实现&lt;/h2&gt;&lt;p&gt; 　　实现步骤：&lt;br&gt;　　(1) 创建类继承HttpServlet&lt;br&gt;　　(2) 覆盖doGet和doPost方法&lt;br&gt;　　(3) 在web.xml中进行servlet配置&lt;/p&gt;
-&lt;hr&gt;
+      
+      
+        &lt;h2 id=&quot;Servlet简介&quot;&gt;&lt;a href=&quot;#Servlet简介&quot; class=&quot;headerlink&quot; title=&quot;Servlet简介&quot;&gt;&lt;/a&gt;Servlet简介&lt;/h2&gt;&lt;h2 id=&quot;什么是Servlet&quot;&gt;&lt;a href=&quot;#什么是Servlet&quot; cla
+      
     
     </summary>
     
@@ -94,15 +96,18 @@
     <link href="http://yoursite.com/2018/03/21/HelloWorld/"/>
     <id>http://yoursite.com/2018/03/21/HelloWorld/</id>
     <published>2018-03-21T09:20:00.668Z</published>
-    <updated>2018-03-25T09:32:45.297Z</updated>
+    <updated>2018-03-25T09:38:24.444Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="HelloWorld"><a href="#HelloWorld" class="headerlink" title="HelloWorld"></a>HelloWorld</h2><p>代码示例：</p><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public class helloworld</span><br><span class="line">&#123;</span><br><span class="line">    public static void main(String []args)</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(&quot;Hello world!&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><a id="more"></a>]]></content>
+    <content type="html"><![CDATA[<h2 id="HelloWorld"><a href="#HelloWorld" class="headerlink" title="HelloWorld"></a>HelloWorld</h2><p>代码示例：</p><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public class helloworld</span><br><span class="line">&#123;</span><br><span class="line">    public static void main(String []args)</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(&quot;Hello world!&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;HelloWorld&quot;&gt;&lt;a href=&quot;#HelloWorld&quot; class=&quot;headerlink&quot; title=&quot;HelloWorld&quot;&gt;&lt;/a&gt;HelloWorld&lt;/h2&gt;&lt;p&gt;代码示例：&lt;/p&gt;
+      
+      
+        &lt;h2 id=&quot;HelloWorld&quot;&gt;&lt;a href=&quot;#HelloWorld&quot; class=&quot;headerlink&quot; title=&quot;HelloWorld&quot;&gt;&lt;/a&gt;HelloWorld&lt;/h2&gt;&lt;p&gt;代码示例：&lt;/p&gt;
 &lt;hr&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;public class helloworld&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    public static void main(String []args)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        System.out.println(&amp;quot;Hello world!&amp;quot;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highligh
+      
     
     </summary>
     
