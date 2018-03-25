@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-25T08:52:37.878Z</updated>
+  <updated>2018-03-25T09:00:07.230Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,10 +20,10 @@
     <title>Cookie&amp;Session</title>
     <link href="http://yoursite.com/2018/03/25/Cookie&amp;Session/"/>
     <id>http://yoursite.com/2018/03/25/Cookie&amp;Session/</id>
-    <published>2018-03-25T08:49:01.597Z</published>
-    <updated>2018-03-25T08:52:37.878Z</updated>
+    <published>2018-03-25T08:59:34.572Z</published>
+    <updated>2018-03-25T09:00:07.230Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h2><p>　　cookie是将数据存储到客户端。<br>　　服务器端向客户端发送一个cookie：<br>　　1、创建cookie：<br>　　<code>Cookie cookie=new Cookie(name,value); 　　 cookie.setMaxAge(秒);　　 cookie.setPath();</code><br>　　2、发送cookie：<br>　　<code>response.addCookie(Cookie cookie);</code></p><hr><p>　　服务器端接受客户端携带的Cookie：<br>　  <code>Cookie[] cookies=request.getCookies();　　for(Cookie cookie:cookies){　　　　if(cookie.getName().equal(cookieName)){　　　　　　String　cookieValue=cookie.getValue(); 　　　　}　　}</code></p><h2 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h2><p>　　在服务端为每个客户端创建一块自己的内存空间，客户端携带一个标识ID去寻找自己的内存空间。<br>　　1、获得session对象：<br>　　<code>request.getSession();</code><br>　　2、向session中存取数据(域对象)：<br>　　<code>session.setAttribute(String name,Object obj);</code><br>　　<code>session.getAttribute(String name);</code><br>　　<code>session.removeAttribute(String name);</code><br>　　3、session生命周期<br>　　创建：第一次执行request.getSession();<br>　　销毁：服务器关闭、session失效、手动session.invalidate();<br>　　作用范围：默认一次会话中</p><p>　　</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h2><p>　　cookie是将数据存储到客户端。<br>　　服务器端向客户端发送一个cookie：<br>　　1、创建cookie：<br>　　<code>Cookie cookie=new Cookie(name,value);</code><br>　　<code>cookie.setMaxAge(秒);</code><br>　　 <code>cookie.setPath();</code><br>　　2、发送cookie：<br>　　<code>response.addCookie(Cookie cookie);</code></p><hr><p>　　服务器端接受客户端携带的Cookie：<br>　  <code>Cookie[] cookies=request.getCookies();</code><br>　<code>for(Cookie cookie:cookies){</code><br>　　　　<code>if(cookie.getName().equal(cookieName)){</code><br>　　　　　<code>String　cookieValue=cookie.getValue();</code><br>　　　<code>}</code><br>　<code>}</code></p><h2 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h2><p>　　在服务端为每个客户端创建一块自己的内存空间，客户端携带一个标识ID去寻找自己的内存空间。<br>　　1、获得session对象：<br>　　<code>request.getSession();</code><br>　　2、向session中存取数据(域对象)：<br>　　<code>session.setAttribute(String name,Object obj);</code><br>　　<code>session.getAttribute(String name);</code><br>　　<code>session.removeAttribute(String name);</code><br>　　3、session生命周期<br>　　创建：第一次执行request.getSession();<br>　　销毁：服务器关闭、session失效、手动session.invalidate();<br>　　作用范围：默认一次会话中</p><p>　　</p>]]></content>
     
     <summary type="html">
     
