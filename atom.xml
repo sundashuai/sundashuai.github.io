@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-25T09:38:41.087Z</updated>
+  <updated>2018-04-08T11:44:16.128Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JSP简介</title>
+    <link href="http://yoursite.com/2018/04/08/jsp%E7%AE%80%E4%BB%8B/"/>
+    <id>http://yoursite.com/2018/04/08/jsp简介/</id>
+    <published>2018-04-08T11:36:11.556Z</published>
+    <updated>2018-04-08T11:44:16.128Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="jsp运行原理"><a href="#jsp运行原理" class="headerlink" title="jsp运行原理"></a>jsp运行原理</h2><p>　　jsp实质就是servlet（jsp文件转换servlet文件(.java)编译class文件(.class)执行servlet实例），第一次被访问时会被web容器翻译成servlet再执行。</p><h2 id="jsp三大指令"><a href="#jsp三大指令" class="headerlink" title="jsp三大指令"></a>jsp三大指令</h2><p>1、page指令属性最多，默认就行<br>2、include指令：将一个jsp页面包含到另一个jsp页面<br>　　格式：&lt;%@ include file=”被包含的文件地址”%&gt;<br>3、taglib指令：引入标签库（jstl）<br>　　格式：&lt;%@ taglib uri=”标签库地址” prefix=”前缀”%&gt;</p><h2 id="jsp内置9大隐式对象"><a href="#jsp内置9大隐式对象" class="headerlink" title="jsp内置9大隐式对象"></a><strong>jsp内置9大隐式对象</strong></h2><p><strong>out：用于页面输出，out.write()</strong><br>request：得到用户请求信息<br>response：服务器向客户端的回应信息<br>config：服务器配置<br>session：保存用户的信息<br>application：所有用户共享信息<br>page：当前页面转换后的servlet类的实例<br><strong>pageContext：jsp的页面容器（域对象）</strong><br>exception：异常，在错误页面起作用</p><h2 id="4大域总结"><a href="#4大域总结" class="headerlink" title="4大域总结"></a><strong>4大域总结</strong></h2><p><strong>page域：当前jsp页面范围<br>request域：一次请求<br>session域：一次会话<br>application域：整个web应用</strong></p><p>findAttribute(String name)——<strong>依次从pageContext域，request域，session域，application域中获取属性，获取完将不再向下获取</strong>。</p><p>通过pageContext可获得其他八大隐式对象</p><h2 id="EL表达式"><a href="#EL表达式" class="headerlink" title="EL表达式"></a>EL表达式</h2><p>　　嵌入jsp页面内部，代替jsp页面编写，最主要作用从域中取数据<br>　　jsp脚本：&lt;%=request.getAttribute(name)%&gt;<br>　　EL表达式：${requestScorp.name}</p><hr><p>EL获得pageContext域中的值：<code>${pageScope.key}</code><br>EL获得request域中的值：<code>${requestScope.key}</code><br>EL获得session域中的值：<code>${sessionScopre.key}</code><br>EL获得application域中的值：<code>${applicationScope.key}</code></p><h2 id="EL内置11个对象"><a href="#EL内置11个对象" class="headerlink" title="EL内置11个对象"></a><strong>EL内置11个对象</strong></h2><p>　　作用域：pageScope（page域）、requestScope（request作用域）、sessionScope（session域）、applicationScope（application域）<br>　　请求参数：param（获得一个参数）、paramValues（获得一组参数）<br>　　请求头：header（获得一个请求头）、headerValues（获得一组请求头）<br>　　JSP上下文象：pageContext<br>　　全局初始化参数：initParam<br>　　cookie：cookie</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;jsp运行原理&quot;&gt;&lt;a href=&quot;#jsp运行原理&quot; class=&quot;headerlink&quot; title=&quot;jsp运行原理&quot;&gt;&lt;/a&gt;jsp运行原理&lt;/h2&gt;&lt;p&gt;　　jsp实质就是servlet（jsp文件转换servlet文件(.java)编译class文件(
+      
+    
+    </summary>
+    
+      <category term="JavaWeb" scheme="http://yoursite.com/categories/JavaWeb/"/>
+    
+    
+      <category term="JavaWeb" scheme="http://yoursite.com/tags/JavaWeb/"/>
+    
+  </entry>
   
   <entry>
     <title>Cookie&amp;Session</title>

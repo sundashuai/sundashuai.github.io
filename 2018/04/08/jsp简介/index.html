@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="JavaWeb," />
 
 
 
@@ -81,16 +81,18 @@
 
 
 
-<meta name="description" content="千年一瞬，万事随缘">
-<meta property="og:type" content="website">
-<meta property="og:title" content="NoteBook">
-<meta property="og:url" content="http://yoursite.com/archives/2018/03/index.html">
+<meta name="description" content="jsp运行原理　　jsp实质就是servlet（jsp文件转换servlet文件(.java)编译class文件(.class)执行servlet实例），第一次被访问时会被web容器翻译成servlet再执行。 jsp三大指令1、page指令属性最多，默认就行2、include指令：将一个jsp页面包含到另一个jsp页面　　格式：&amp;lt;%@ include file=”被包含的文件地址”%&amp;gt">
+<meta name="keywords" content="JavaWeb">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JSP简介">
+<meta property="og:url" content="http://yoursite.com/2018/04/08/jsp简介/index.html">
 <meta property="og:site_name" content="NoteBook">
-<meta property="og:description" content="千年一瞬，万事随缘">
+<meta property="og:description" content="jsp运行原理　　jsp实质就是servlet（jsp文件转换servlet文件(.java)编译class文件(.class)执行servlet实例），第一次被访问时会被web容器翻译成servlet再执行。 jsp三大指令1、page指令属性最多，默认就行2、include指令：将一个jsp页面包含到另一个jsp页面　　格式：&amp;lt;%@ include file=”被包含的文件地址”%&amp;gt">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-04-08T11:44:16.128Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="NoteBook">
-<meta name="twitter:description" content="千年一瞬，万事随缘">
+<meta name="twitter:title" content="JSP简介">
+<meta name="twitter:description" content="jsp运行原理　　jsp实质就是servlet（jsp文件转换servlet文件(.java)编译class文件(.class)执行servlet实例），第一次被访问时会被web容器翻译成servlet再执行。 jsp三大指令1、page指令属性最多，默认就行2、include指令：将一个jsp页面包含到另一个jsp页面　　格式：&amp;lt;%@ include file=”被包含的文件地址”%&amp;gt">
 
 
 
@@ -120,7 +122,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2018/03/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/08/jsp简介/"/>
 
 
 
@@ -138,7 +140,7 @@
 
 
 
-  <title>归档 | NoteBook</title>
+  <title>JSP简介 | NoteBook</title>
   
 
 
@@ -167,7 +169,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 		<a href="https://github.com/sundashuai" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -271,185 +273,243 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/08/jsp简介/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="孙大帅">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="NoteBook">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">JSP简介</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-08T19:36:11+08:00">
+                2018-04-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 5 篇日志。 继续努力。
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaWeb/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaWeb</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
 
-        
+          
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
+             <span id="/2018/04/08/jsp简介/" class="leancloud_visitors" data-flag-title="JSP简介">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+				 <span>℃</span>
+             </span>
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/03/25/Cookie&Session/" itemprop="url">
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
               
-                <span itemprop="name">Cookie&Session</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  442字
+                </span>
               
-            </a>
-        
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-25T16:59:34+08:00"
-              content="2018-03-25" >
-          03-25
-        </time>
-      </div>
+              
 
-    </header>
-  </article>
+              
+            </div>
+          
 
+          
 
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/03/25/response&request/" itemprop="url">
-              
-                <span itemprop="name">Response&Request</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-25T16:19:34+08:00"
-              content="2018-03-25" >
-          03-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/03/22/--Servlet简介--/" itemprop="url">
-              
-                <span itemprop="name">JavaWeb核心之Servlet</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-22T23:16:50+08:00"
-              content="2018-03-22" >
-          03-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <h2 id="jsp运行原理"><a href="#jsp运行原理" class="headerlink" title="jsp运行原理"></a>jsp运行原理</h2><p>　　jsp实质就是servlet（jsp文件转换servlet文件(.java)编译class文件(.class)执行servlet实例），第一次被访问时会被web容器翻译成servlet再执行。</p>
+<h2 id="jsp三大指令"><a href="#jsp三大指令" class="headerlink" title="jsp三大指令"></a>jsp三大指令</h2><p>1、page指令属性最多，默认就行<br>2、include指令：将一个jsp页面包含到另一个jsp页面<br>　　格式：&lt;%@ include file=”被包含的文件地址”%&gt;<br>3、taglib指令：引入标签库（jstl）<br>　　格式：&lt;%@ taglib uri=”标签库地址” prefix=”前缀”%&gt;</p>
+<h2 id="jsp内置9大隐式对象"><a href="#jsp内置9大隐式对象" class="headerlink" title="jsp内置9大隐式对象"></a><strong>jsp内置9大隐式对象</strong></h2><p><strong>out：用于页面输出，out.write()</strong><br>request：得到用户请求信息<br>response：服务器向客户端的回应信息<br>config：服务器配置<br>session：保存用户的信息<br>application：所有用户共享信息<br>page：当前页面转换后的servlet类的实例<br><strong>pageContext：jsp的页面容器（域对象）</strong><br>exception：异常，在错误页面起作用</p>
+<h2 id="4大域总结"><a href="#4大域总结" class="headerlink" title="4大域总结"></a><strong>4大域总结</strong></h2><p><strong>page域：当前jsp页面范围<br>request域：一次请求<br>session域：一次会话<br>application域：整个web应用</strong></p>
+<p>findAttribute(String name)——<strong>依次从pageContext域，request域，session域，application域中获取属性，获取完将不再向下获取</strong>。</p>
+<p>通过pageContext可获得其他八大隐式对象</p>
+<h2 id="EL表达式"><a href="#EL表达式" class="headerlink" title="EL表达式"></a>EL表达式</h2><p>　　嵌入jsp页面内部，代替jsp页面编写，最主要作用从域中取数据<br>　　jsp脚本：&lt;%=request.getAttribute(name)%&gt;<br>　　EL表达式：${requestScorp.name}</p>
+<hr>
+<p>EL获得pageContext域中的值：<code>${pageScope.key}</code><br>EL获得request域中的值：<code>${requestScope.key}</code><br>EL获得session域中的值：<code>${sessionScopre.key}</code><br>EL获得application域中的值：<code>${applicationScope.key}</code></p>
+<h2 id="EL内置11个对象"><a href="#EL内置11个对象" class="headerlink" title="EL内置11个对象"></a><strong>EL内置11个对象</strong></h2><p>　　作用域：pageScope（page域）、requestScope（request作用域）、sessionScope（session域）、applicationScope（application域）<br>　　请求参数：param（获得一个参数）、paramValues（获得一组参数）<br>　　请求头：header（获得一个请求头）、headerValues（获得一组请求头）<br>　　JSP上下文象：pageContext<br>　　全局初始化参数：initParam<br>　　cookie：cookie</p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/03/21/HelloWorld/" itemprop="url">
-              
-                <span itemprop="name">代码实例</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-21T17:20:00+08:00"
-              content="2018-03-21" >
-          03-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+	
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="孙大帅 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="孙大帅 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaWeb/" rel="tag"><i class="fa fa-tag"></i> JavaWeb</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/25/Cookie&Session/" rel="next" title="Cookie&Session">
+                <i class="fa fa-chevron-left"></i> Cookie&Session
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -457,6 +517,15 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNTA3MC8xMTYwNQ=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -477,8 +546,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -571,6 +649,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#jsp运行原理"><span class="nav-number">1.</span> <span class="nav-text">jsp运行原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jsp三大指令"><span class="nav-number">2.</span> <span class="nav-text">jsp三大指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jsp内置9大隐式对象"><span class="nav-number">3.</span> <span class="nav-text">jsp内置9大隐式对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4大域总结"><span class="nav-number">4.</span> <span class="nav-text">4大域总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#EL表达式"><span class="nav-number">5.</span> <span class="nav-text">EL表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#EL内置11个对象"><span class="nav-number">6.</span> <span class="nav-text">EL内置11个对象</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -728,6 +822,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -756,6 +854,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
