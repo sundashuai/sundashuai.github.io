@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-04-08T11:44:16.128Z</updated>
+  <updated>2018-05-21T13:43:34.119Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>小笔记</title>
+    <link href="http://yoursite.com/2018/05/21/--%E5%B0%8F%E7%AC%94%E8%AE%B0/"/>
+    <id>http://yoursite.com/2018/05/21/--小笔记/</id>
+    <published>2018-05-21T13:43:33.986Z</published>
+    <updated>2018-05-21T13:43:34.119Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="java开发环境"><a href="#java开发环境" class="headerlink" title="java开发环境"></a>java开发环境</h2><ol><li>jvm：支持java程序运行的程序，实现java的跨平台，jvm不跨</li><li>jre：jvm+jvm运行核心类库</li><li>jdk：jre+java开发包</li></ol><h2 id="编译和运行"><a href="#编译和运行" class="headerlink" title="编译和运行"></a>编译和运行</h2><ul><li>编译：javac.exe启动编译器，将源文件（.java）编译为字节码文件（.class）</li><li>运行：java.exe启动解释器，将.class文件翻译为机器码文件，放入jvm运行</li></ul><h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><ol><li><p>基本数据类型：</p><ul><li><p>整数型：byte（1）-128——127</p><p>​          short（2）</p><p>​          int（4）<strong>默认</strong>   </p><p>​              long（8）</p></li></ul></li></ol><ul><li><p>浮点型：float：（4）</p><p>​          double（8）<strong>默认</strong></p></li><li><p>字符型：char（2）</p></li><li><p>布尔型：boolean（1）</p></li></ul><ol><li>引用数据类型：类，数组，接口</li></ol><h2 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h2><p>转换顺序由小转大：byte、short、char—-&gt;int—-&gt;float—-&gt;double</p><p>强转由大转小：将前面没有意义的字节数去掉，小数点的强转将小数点后面数去掉</p><p>字符的转换：ASCII码：0（48）、A（65）、a（97）</p><h2 id="三元运算符"><a href="#三元运算符" class="headerlink" title="三元运算符"></a>三元运算符</h2><p>数据类型 变量名=表达式1?表达式2:表达式3；</p><p>数据类型与表达式2:表达式3必须一致</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;java开发环境&quot;&gt;&lt;a href=&quot;#java开发环境&quot; class=&quot;headerlink&quot; title=&quot;java开发环境&quot;&gt;&lt;/a&gt;java开发环境&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;jvm：支持java程序运行的程序，实现java的跨平台，jvm不跨&lt;/li&gt;
+
+      
+    
+    </summary>
+    
+      <category term="JavsSE" scheme="http://yoursite.com/categories/JavsSE/"/>
+    
+    
+      <category term="JavaSE" scheme="http://yoursite.com/tags/JavaSE/"/>
+    
+  </entry>
   
   <entry>
     <title>JSP简介</title>
