@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-05-23T07:47:05.421Z</updated>
+  <updated>2018-05-24T07:22:34.840Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://yoursite.com/2018/05/23/--%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%E3%80%81%E6%96%B9%E6%B3%95/"/>
     <id>http://yoursite.com/2018/05/23/--流程控制、方法/</id>
     <published>2018-05-23T07:50:56.924Z</published>
-    <updated>2018-05-23T07:47:05.421Z</updated>
+    <updated>2018-05-24T07:22:34.840Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="switch语句case穿透"><a href="#switch语句case穿透" class="headerlink" title="switch语句case穿透"></a>switch语句case穿透</h2><ol><li>switch(表达式)：进行选择判断的数据类型只能是byte、short、int、char、menu、String</li><li>case穿透：匹配一个case后，执行语句体，没有break继续向下执行，直到遇到break跳出或switch语句结束</li></ol><h2 id="三种循环区别"><a href="#三种循环区别" class="headerlink" title="三种循环区别"></a>三种循环区别</h2><ol><li>循环条件都不满足时，只有do-while一定会执行一次</li><li>for循环的变量定义在for内部，for循环以外不能用</li><li>while和do-while的循环变量可以一直使用</li></ol><h2 id="break-amp-continue"><a href="#break-amp-continue" class="headerlink" title="break&amp;continue"></a>break&amp;continue</h2><ul><li>break：结束switch语句、结束循环（<strong>只能在循环与switch中使用</strong>）</li><li>continue：跳过本次循环，继续下一次循环</li></ul><h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ol><li>明确返回值类型</li><li>明确参数列表</li><li>方法在执行时必须压栈到栈内存中，在栈内存中jvm只执行内存栈顶的方法</li><li>定义在类中方法体外</li><li>return：结束方法，跟是否返回方法的调用处无关，只要方法结束一定返回方法调用处；一个方法可以有多个return，但只有一个return被调用。</li></ol><h2 id="方法调用三种方式"><a href="#方法调用三种方式" class="headerlink" title="方法调用三种方式"></a>方法调用三种方式</h2><ul><li>直接调用：方法名(参数列表)</li><li>赋值调用：数据类型 变量名=方法名(参数列表)</li><li>打印输出：System.out.println(方法名(参数列表))</li></ul><p><strong>直接调用可以调用任意方法，赋值调用和打印输出只能调用有返回值的方法</strong></p><h2 id="方法重载"><a href="#方法重载" class="headerlink" title="方法重载"></a>方法重载</h2><ol><li>同一个类中</li><li>同一个方法名</li><li>参数列表不同：参数列表的个数，数据类型，参数的顺序（<strong>与修饰符和返回值类型无关</strong>）</li></ol><p>作用：只要记忆一个方法，就可以实现对应的功能</p><p>## </p>]]></content>
+    <content type="html"><![CDATA[<h2 id="switch语句case穿透"><a href="#switch语句case穿透" class="headerlink" title="switch语句case穿透"></a>switch语句case穿透</h2><ol><li>switch(表达式)：进行选择判断的数据类型只能是byte、short、int、char、menu、String</li><li>case穿透：匹配一个case后，执行语句体，没有break继续向下执行，直到遇到break跳出或switch语句结束</li></ol><h2 id="三种循环区别"><a href="#三种循环区别" class="headerlink" title="三种循环区别"></a>三种循环区别</h2><ol><li>循环条件都不满足时，只有do-while一定会执行一次</li><li>for循环的变量定义在for内部，for循环以外不能用</li><li>while和do-while的循环变量可以一直使用</li></ol><h2 id="break-amp-continue"><a href="#break-amp-continue" class="headerlink" title="break&amp;continue"></a>break&amp;continue</h2><ul><li>break：结束switch语句、结束循环（<strong>只能在循环与switch中使用</strong>）</li><li>continue：跳过本次循环，继续下一次循环</li></ul><h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ol><li>明确返回值类型</li><li>明确参数列表</li><li>方法在执行时必须压栈到栈内存中，在栈内存中jvm只执行内存栈顶的方法</li><li>定义在类中方法体外</li><li>return：结束方法，跟是否返回方法的调用处无关，只要方法结束一定返回方法调用处；一个方法可以有多个return，但只有一个return被调用。</li></ol><h2 id="方法调用三种方式"><a href="#方法调用三种方式" class="headerlink" title="方法调用三种方式"></a>方法调用三种方式</h2><ul><li>直接调用：方法名(参数列表)</li><li>赋值调用：数据类型 变量名=方法名(参数列表)</li><li>打印输出：System.out.println(方法名(参数列表))</li></ul><p><strong>直接调用可以调用任意方法，赋值调用和打印输出只能调用有返回值的方法</strong></p><h2 id="方法重载"><a href="#方法重载" class="headerlink" title="方法重载"></a>方法重载</h2><ol><li>同一个类中</li><li>同一个方法名</li><li>参数列表不同：参数列表的个数，数据类型，参数的顺序（<strong>与修饰符和返回值类型无关</strong>）</li></ol><p>作用：只要记忆一个方法，就可以实现对应的功能</p>]]></content>
     
     <summary type="html">
     
