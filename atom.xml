@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-05-24T07:22:34.840Z</updated>
+  <updated>2018-05-27T12:04:48.426Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,57 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>类与对象、封装、构造方法</title>
+    <link href="http://yoursite.com/2018/05/27/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1%E3%80%81%E5%B0%81%E8%A3%85%E3%80%81%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95/"/>
+    <id>http://yoursite.com/2018/05/27/类与对象、封装、构造方法/</id>
+    <published>2018-05-27T11:58:46.493Z</published>
+    <updated>2018-05-27T12:04:48.426Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="类和对象"><a href="#类和对象" class="headerlink" title="类和对象"></a>类和对象</h2><p>类：一组相关<strong>属性</strong>和<strong>行为</strong>的集合，是一类事物的描述，是<strong>抽象</strong>的</p><p>对象：是类的一个实例，是<strong>具体</strong>的</p><h2 id="对象内存（栈内存、堆内存、方法区）"><a href="#对象内存（栈内存、堆内存、方法区）" class="headerlink" title="对象内存（栈内存、堆内存、方法区）"></a>对象内存（栈内存、堆内存、方法区）</h2><ol><li><p>在方法区中分配空间加载.class文件</p></li><li><p>main方法压栈，创建新对象（如：People p=new People();），在main方法中创建新的对象p来保存地址值；在堆内存中开辟空间，保存People类的属性和<strong>方法地址</strong>，将这块空间的地制值传递给main方法中的变量p</p></li><li><p>通过对象去修改属性，调用方法，只需要通过p中变量地址到堆内存找到那块空间修改属性，再通过<strong>方法地址</strong>到方法区查找方法，并调用</p></li><li><p>找到方法后压栈，执行结束后出栈</p><p><strong>方法地址：实现方法的共享</strong></p></li></ol><h2 id="成员变量-amp-局部变量"><a href="#成员变量-amp-局部变量" class="headerlink" title="成员变量&amp;局部变量"></a>成员变量&amp;局部变量</h2><p>在方法中，如果使用了成员变量与局部变量同名的变量，符合就近原则，直接使用的是局部变量</p><ol><li>定义的位置不同    <ul><li>成员变量：类中方法外    </li><li>局部变量：方法中</li></ul></li><li>作用范围不同 <ul><li>成员变量：整个类中都能用 </li><li>局部变量：只能在定义该变量的方法中</li></ul></li><li>处于内存的位置不同 <ul><li>成员变量：在堆内存中</li><li>局部变量：在栈内存</li></ul></li><li>默认值不同<ul><li>成员变量：有默认值的</li><li>局部变量：没有默认值</li></ul></li><li>生命周期不同<ul><li>成员变量：随着对象的出现而出现，随着对象的销毁而销毁</li><li>局部变量：随着方法的出现而出现，随着方法的销毁而销毁</li></ul></li></ol><h2 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h2><p>为了代码安全性</p><ol><li>使用private修饰符</li><li>提供对应属性的getXXX+setXXX方法</li></ol><h2 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a>this关键字</h2><p>方法中的形参就是局部变量</p><p>使用this：this.成员变量名，表示的是当前对象的成员变量，可以用来区分成员变量和局部变量</p><p>this：哪个对象调用该方法，那么这个this就表示该对象；可以用来表示调用当前非静态方法的对象的地址值</p><h2 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h2><p>通过new创建构造方法，创建对象并对属性赋值</p><p>有参构造方法：创建对象并赋值指定的值</p><p>无参构造方法：创建对象并赋值默认初始化值</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;类和对象&quot;&gt;&lt;a href=&quot;#类和对象&quot; class=&quot;headerlink&quot; title=&quot;类和对象&quot;&gt;&lt;/a&gt;类和对象&lt;/h2&gt;&lt;p&gt;类：一组相关&lt;strong&gt;属性&lt;/strong&gt;和&lt;strong&gt;行为&lt;/strong&gt;的集合，是一类事物的描述，是&lt;st
+      
+    
+    </summary>
+    
+      <category term="基础" scheme="http://yoursite.com/categories/%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="JavaSE" scheme="http://yoursite.com/tags/JavaSE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数组</title>
+    <link href="http://yoursite.com/2018/05/27/%E6%95%B0%E7%BB%84/"/>
+    <id>http://yoursite.com/2018/05/27/数组/</id>
+    <published>2018-05-27T11:58:44.931Z</published>
+    <updated>2018-05-27T11:59:44.623Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="java内存分配（简）"><a href="#java内存分配（简）" class="headerlink" title="java内存分配（简）"></a>java内存分配（简）</h2><ul><li><p>栈内存（方法栈）：所有方法在栈内存开辟空间，方法内变量在其空间中再开辟空间；方法中的变量随方法出现而出现，随方法销毁而销毁。</p></li><li><p>堆内存：通过new关键字创建的内容，在堆内存开辟空间都有默认值，</p><p>byte、short、int、long：0</p><p>char：字符空格</p><p>boolean：false</p><p>double：0.0</p><p>引用数据类型：null</p></li><li><p>方法区：字节码文件保存在方法区中</p></li><li><p>寄存器：给cpu使用</p></li><li><p>本地方法栈：jvm在使用操作系统功能时使用</p></li></ul><h2 id="数组异常"><a href="#数组异常" class="headerlink" title="数组异常"></a>数组异常</h2><ul><li><p>ArrayIndexOutOfBoundersException：数组索引越界异常</p><p>注意：数组长度固定，最大索引值是array.length-1</p></li><li><p>NullPointerException：空指针异常</p></li></ul><p><strong>数组作为方法参数传递的是数组地址</strong></p><p><strong>数组作为返回值类型返回的是数组地址</strong></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;java内存分配（简）&quot;&gt;&lt;a href=&quot;#java内存分配（简）&quot; class=&quot;headerlink&quot; title=&quot;java内存分配（简）&quot;&gt;&lt;/a&gt;java内存分配（简）&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;栈内存（方法栈）：所有方法在栈内存开辟空间，方法内
+      
+    
+    </summary>
+    
+      <category term="基础" scheme="http://yoursite.com/categories/%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="JavaSE" scheme="http://yoursite.com/tags/JavaSE/"/>
+    
+  </entry>
   
   <entry>
     <title>流程控制、方法</title>
