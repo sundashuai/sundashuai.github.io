@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="JavaWeb," />
+  <meta name="keywords" content="JavaSE," />
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="Servlet　　Servlet运行在服务器的Java小程序，是sun公司提供的一套规范（接口），用来处理客户端请求、响应给浏览器的动态资源。实质就java代码，通过java的API动态的向客户端输出内容。　　servlet规范包含三个技术点：　　(1) servlet技术　　(2) filter技术——过滤器　　(3) listener技术——监听器 Servlet实现 　　实现步骤：　　(1)">
-<meta name="keywords" content="JavaWeb">
+<meta name="description" content="List接口 list接口是Collection下面的一个子接口 特点：存取有序，有索引，可以存重复元素 常用实现类：ArrayList（底层是数组，查找快增删慢）、LinkedList（底层双向链表，增删快查找慢）  对索引操作 public void add(int index, E element) ： 将指定的元素，添加到该集合中的指定位置上。 public E get(int index">
+<meta name="keywords" content="JavaSE">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaWeb核心之Servlet">
-<meta property="og:url" content="http://yoursite.com/2018/03/22/--Servlet简介--/index.html">
+<meta property="og:title" content="List接口、Set接口、可变参数、Collections">
+<meta property="og:url" content="http://yoursite.com/2018/06/13/--List接口、Set接口/index.html">
 <meta property="og:site_name" content="SUN&#39;S BLOG">
-<meta property="og:description" content="Servlet　　Servlet运行在服务器的Java小程序，是sun公司提供的一套规范（接口），用来处理客户端请求、响应给浏览器的动态资源。实质就java代码，通过java的API动态的向客户端输出内容。　　servlet规范包含三个技术点：　　(1) servlet技术　　(2) filter技术——过滤器　　(3) listener技术——监听器 Servlet实现 　　实现步骤：　　(1)">
+<meta property="og:description" content="List接口 list接口是Collection下面的一个子接口 特点：存取有序，有索引，可以存重复元素 常用实现类：ArrayList（底层是数组，查找快增删慢）、LinkedList（底层双向链表，增删快查找慢）  对索引操作 public void add(int index, E element) ： 将指定的元素，添加到该集合中的指定位置上。 public E get(int index">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-22T09:00:30.822Z">
+<meta property="og:updated_time" content="2018-06-13T11:34:25.239Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaWeb核心之Servlet">
-<meta name="twitter:description" content="Servlet　　Servlet运行在服务器的Java小程序，是sun公司提供的一套规范（接口），用来处理客户端请求、响应给浏览器的动态资源。实质就java代码，通过java的API动态的向客户端输出内容。　　servlet规范包含三个技术点：　　(1) servlet技术　　(2) filter技术——过滤器　　(3) listener技术——监听器 Servlet实现 　　实现步骤：　　(1)">
+<meta name="twitter:title" content="List接口、Set接口、可变参数、Collections">
+<meta name="twitter:description" content="List接口 list接口是Collection下面的一个子接口 特点：存取有序，有索引，可以存重复元素 常用实现类：ArrayList（底层是数组，查找快增删慢）、LinkedList（底层双向链表，增删快查找慢）  对索引操作 public void add(int index, E element) ： 将指定的元素，添加到该集合中的指定位置上。 public E get(int index">
 
 
 
@@ -122,7 +122,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/22/--Servlet简介--/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/06/13/--List接口、Set接口/"/>
 
 
 
@@ -140,7 +140,7 @@
 
 
 
-  <title>JavaWeb核心之Servlet | SUN'S BLOG</title>
+  <title>List接口、Set接口、可变参数、Collections | SUN'S BLOG</title>
   
 
 
@@ -287,7 +287,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/22/--Servlet简介--/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/13/--List接口、Set接口/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="孙大帅">
@@ -304,7 +304,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JavaWeb核心之Servlet</h1>
+          <h1 class="post-title" itemprop="name headline">List接口、Set接口、可变参数、Collections</h1>
         
 
         <div class="post-meta">
@@ -316,8 +316,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-22T23:16:50+08:00">
-                2018-03-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-13T17:04:12+08:00">
+                2018-06-13
               </time>
             
 
@@ -339,8 +339,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaWeb/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaWeb</span>
+                  <a href="/categories/基础/" itemprop="url" rel="index">
+                    <span itemprop="name">基础</span>
                   </a>
                 </span>
 
@@ -356,7 +356,7 @@
 
           
           
-             <span id="/2018/03/22/--Servlet简介--/" class="leancloud_visitors" data-flag-title="JavaWeb核心之Servlet">
+             <span id="/2018/06/13/--List接口、Set接口/" class="leancloud_visitors" data-flag-title="List接口、Set接口、可变参数、Collections">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -387,7 +387,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  317字
+                  1,146字
                 </span>
               
 
@@ -412,12 +412,73 @@
       
 
       
-        <h2 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h2><p>　　Servlet运行在服务器的Java小程序，是sun公司提供的一套规范（接口），用来处理客户端请求、响应给浏览器的动态资源。实质就java代码，通过java的API动态的向客户端输出内容。<br>　　servlet规范包含三个技术点：<br>　　(1) <strong>servlet技术</strong><br>　　(2) filter技术——过滤器<br>　　(3) listener技术——监听器</p>
-<h2 id="Servlet实现"><a href="#Servlet实现" class="headerlink" title="Servlet实现"></a>Servlet实现</h2><p> 　　实现步骤：<br>　　(1) 创建类继承HttpServlet<br>　　(2) 覆盖doGet和doPost方法<br>　　(3) 在web.xml中进行servlet配置</p>
-<h2 id="Servlet的生命周期"><a href="#Servlet的生命周期" class="headerlink" title="Servlet的生命周期"></a>Servlet的生命周期</h2><p>　　(1) init(ServletConfig config)，servlet对象创建时执行<br>　　(2) service(ServletRequest request,ServletResponse response),<strong>每次请求都会执行</strong><br>　　(3) destory(),servlet销毁时执行</p>
-<h2 id="ServletContext对象"><a href="#ServletContext对象" class="headerlink" title="ServletContext对象"></a>ServletContext对象</h2><p> 　　ServletContext代表是一个web应用的环境（上下文）对象，内部封装的是该web应用信息，<strong>该对象一个web应用只有一个</strong>，一个web应用有多个servlet对象。<br>　　 ServletContext对象的生命周期：该web应用被加载（服务器启动或发布web应用）时创建；web应用被卸载（服务器关闭，移除该web应用）时销毁。</p>
-<h2 id="ServletContext是一个域对象"><a href="#ServletContext是一个域对象" class="headerlink" title="ServletContext是一个域对象"></a>ServletContext是一个域对象</h2><p>　　存储数据的区域就是域对象，域对象的通用方法：<br>　　　<em>setAttribute(String name,Object obj);
-　　　</em>getAttribute(String name);<br>　　　*removeAttribute(String name);<br>　　ServletContext域对象作用范围：整个web应用</p>
+        <h2 id="List接口"><a href="#List接口" class="headerlink" title="List接口"></a>List接口</h2><ul>
+<li>list接口是Collection下面的一个子接口</li>
+<li>特点：<strong>存取有序，有索引，可以存重复元素</strong></li>
+<li>常用实现类：<strong>ArrayList（底层是数组，查找快增删慢）</strong>、<strong>LinkedList（底层双向链表，增删快查找慢）</strong></li>
+</ul>
+<h3 id="对索引操作"><a href="#对索引操作" class="headerlink" title="对索引操作"></a>对索引操作</h3><ul>
+<li><code>public void add(int index, E element)</code> ： 将指定的元素，添加到该集合中的指定位置上。</li>
+<li><strong><code>public E get(int index)</code></strong> ：返回集合中指定位置的元素。</li>
+<li><code>public E remove(int index)</code> ：移除列表中指定位置的元素, 返回的是被移除的元素。</li>
+<li><code>public E set(int index, E element)</code> ：用指定元素替换集合中指定位置的元素,返回值的更新前的元素。</li>
+</ul>
+<h3 id="LinkedList独有方法"><a href="#LinkedList独有方法" class="headerlink" title="LinkedList独有方法"></a>LinkedList独有方法</h3><ul>
+<li><code>public void addFirst(E e)</code> ：将指定元素插入此列表的开头。</li>
+<li><code>public void addLast(E e)</code>：将指定元素添加到此列表的结尾。</li>
+<li><code>public E getFirst()</code> ：返回此列表的第一个元素。</li>
+<li><code>public E getLast()</code> ：返回此列表的最后一个元素。</li>
+<li><code>public E removeFirst()</code> ：移除并返回此列表的第一个元素。</li>
+<li><code>public E removeLast()</code> ：移除并返回此列表的最后一个元素。</li>
+<li><code>public E pop()</code>：从此列表所表示的堆栈处弹出一个元素。</li>
+<li><code>public void push(E e)</code>：将元素推入此列表所表示的堆栈。</li>
+<li><code>public boolean isEmpty()</code> ：如果列表不包含元素，则返回true</li>
+</ul>
+<h2 id="Set接口"><a href="#Set接口" class="headerlink" title="Set接口"></a>Set接口</h2><ul>
+<li>set接口是Collection下面的一个子接口</li>
+<li>特点：<strong>存取无序，无索引，不能存重复元素</strong></li>
+<li>常用实现类：HashSet（底层哈希表：数组+链表+红黑树）、LinkedHashSet<strong>有序</strong>（底层链表和哈希表组合）</li>
+<li><strong>Set集合取出元素</strong>的方式可以采用：<strong>迭代器、增强for</strong>（因无索引）</li>
+</ul>
+<h3 id="HashSet判断唯一性的原理"><a href="#HashSet判断唯一性的原理" class="headerlink" title="HashSet判断唯一性的原理"></a>HashSet判断唯一性的原理</h3><ol>
+<li>先调用hashCode比较哈希值， 如果哈希值不同，肯定不是相同的对象。如果哈希值相同，不一定是相同的对象。</li>
+<li>当对象哈希值相同的情况下，还需要调用equals。如果equals相同，就是同一个对象。如果equals不同，就不是同一个对象。</li>
+</ol>
+<h3 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h3><ul>
+<li>归并后的才是哈希表，JDK8之前的数组中的每个元素都是链表，JDK8之后，链表长度超过8，就会自动变成红黑树。</li>
+<li>哈希表就是一个数组，数组中每个元素都是链表，HashSet集合中，哈希表默认长度16。</li>
+<li>桶：数组中每个元素（都是链表）。</li>
+<li>哈希冲突：出现在同一个桶内的对象就是哈希冲突。</li>
+<li>加载因子：是一个百分比，默认0.75，当桶的比例超过加载因子，会再哈希（扩容16-&gt;32）。</li>
+</ul>
+<h3 id="哈希值"><a href="#哈希值" class="headerlink" title="哈希值"></a>哈希值</h3><ul>
+<li>其实就是一个int数字， 可以把这个数字（哈希值）看成对象的特征码（不是唯一的标识）。</li>
+<li>Object里面的hashCode方法的哈希值是通过地址值计算出来的。</li>
+<li>自定义哈希值，在子类中重写hashCode就行了；对自定义对象进行去重，<strong>需要重写hashCode和equals方法</strong>。</li>
+</ul>
+<h2 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">修饰符 返回值类型 方法名(数据类型... 变量名) &#123;</span><br><span class="line">    //方法体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>可变参数位置可以传递任意个参数（0个1个或者多个），这些参数的数据类型必须一致。</li>
+<li>可变参数本质其实是数组，如果在方法内使用可变参，就按照数组的方式去使用就可以了，调用方法的时候也可以传递数组。</li>
+</ul>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ol>
+<li>一个方法最多只能有一个可变参数</li>
+<li>方法的可变参数一定要放在最后一个位置</li>
+<li>可变参数本质是数组，所以不能和数组构成重载</li>
+</ol>
+<h2 id="Collections-集合工具类"><a href="#Collections-集合工具类" class="headerlink" title="Collections 集合工具类"></a>Collections 集合工具类</h2><ul>
+<li><p>public static <t> boolean addAll(Collection<t> c, T… elements) :往集合中添加一些元素。</t></t></p>
+<p>参数c：表示要往哪个集合中添加元素</p>
+<p>参数elements： 要往集合中添加哪些元素</p>
+</li>
+<li><p>public static void shuffle(List&lt;?&gt; list) 打乱顺序 ：打乱集合顺序。</p>
+</li>
+<li><p>public static <t> void sort(List<t> list) ：将集合中元素按照默认规则排序。使用sort排序的集合里面的泛型类，一定要实现一个Comparable接口。实现这个接口的对象具有自然排序的功能，自然排序指的是这个对象本身就具备了排序的功能。</t></t></p>
+</li>
+<li><p>public static <t> void sort(List<t> list，Comparator&lt;? super T&gt; ) ：将集合中元素按照指定规则排序。</t></t></p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Comparable：实现这个接口的类具备自然排序的功能。自己就具备了排序的功能。</span><br><span class="line">Comparator：是一个比较器，可以帮助别人排序</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -464,7 +525,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JavaWeb/" rel="tag"><i class="fa fa-tag"></i> JavaWeb</a>
+            <a href="/tags/JavaSE/" rel="tag"><i class="fa fa-tag"></i> JavaSE</a>
           
         </div>
       
@@ -477,8 +538,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/21/HelloWorld/" rel="next" title="代码实例">
-                <i class="fa fa-chevron-left"></i> 代码实例
+              <a href="/2018/06/12/--多态/" rel="next" title="多态">
+                <i class="fa fa-chevron-left"></i> 多态
               </a>
             
           </div>
@@ -486,10 +547,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/25/response&request/" rel="prev" title="Response&Request">
-                Response&Request <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -689,7 +746,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Servlet"><span class="nav-number">1.</span> <span class="nav-text">Servlet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Servlet实现"><span class="nav-number">2.</span> <span class="nav-text">Servlet实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Servlet的生命周期"><span class="nav-number">3.</span> <span class="nav-text">Servlet的生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ServletContext对象"><span class="nav-number">4.</span> <span class="nav-text">ServletContext对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ServletContext是一个域对象"><span class="nav-number">5.</span> <span class="nav-text">ServletContext是一个域对象</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#List接口"><span class="nav-number">1.</span> <span class="nav-text">List接口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#对索引操作"><span class="nav-number">1.1.</span> <span class="nav-text">对索引操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LinkedList独有方法"><span class="nav-number">1.2.</span> <span class="nav-text">LinkedList独有方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Set接口"><span class="nav-number">2.</span> <span class="nav-text">Set接口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HashSet判断唯一性的原理"><span class="nav-number">2.1.</span> <span class="nav-text">HashSet判断唯一性的原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#哈希表"><span class="nav-number">2.2.</span> <span class="nav-text">哈希表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#哈希值"><span class="nav-number">2.3.</span> <span class="nav-text">哈希值</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可变参数"><span class="nav-number">3.</span> <span class="nav-text">可变参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#注意事项"><span class="nav-number">3.1.</span> <span class="nav-text">注意事项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Collections-集合工具类"><span class="nav-number">4.</span> <span class="nav-text">Collections 集合工具类</span></a></li></ol></div>
             
 
           </div>

@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="JavaWeb," />
+  <meta name="keywords" content="JavaSE," />
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="Servlet　　Servlet运行在服务器的Java小程序，是sun公司提供的一套规范（接口），用来处理客户端请求、响应给浏览器的动态资源。实质就java代码，通过java的API动态的向客户端输出内容。　　servlet规范包含三个技术点：　　(1) servlet技术　　(2) filter技术——过滤器　　(3) listener技术——监听器 Servlet实现 　　实现步骤：　　(1)">
-<meta name="keywords" content="JavaWeb">
+<meta name="description" content="继承 特点：子类拥有父类的所有内容，除了被private和构造方法  好处：对相同的内容，进行共性抽取，实现多个类中相同内容的复用,子类可以实现各自的不同功能需求  继承中成员变量的访问特点  直接通过对象去访问，看对象创建语句=左边的内容，是谁就优先使用谁的成员变量，如果没有则向上找 间接通过对象调用成员方法去访问，调用时，方法属于谁就优先使用谁的成员变量，如果没有则向上找   继承中成员方法的">
+<meta name="keywords" content="JavaSE">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaWeb核心之Servlet">
-<meta property="og:url" content="http://yoursite.com/2018/03/22/--Servlet简介--/index.html">
+<meta property="og:title" content="继承、super、this、抽象类">
+<meta property="og:url" content="http://yoursite.com/2018/06/12/--继承、super、this、抽象类/index.html">
 <meta property="og:site_name" content="SUN&#39;S BLOG">
-<meta property="og:description" content="Servlet　　Servlet运行在服务器的Java小程序，是sun公司提供的一套规范（接口），用来处理客户端请求、响应给浏览器的动态资源。实质就java代码，通过java的API动态的向客户端输出内容。　　servlet规范包含三个技术点：　　(1) servlet技术　　(2) filter技术——过滤器　　(3) listener技术——监听器 Servlet实现 　　实现步骤：　　(1)">
+<meta property="og:description" content="继承 特点：子类拥有父类的所有内容，除了被private和构造方法  好处：对相同的内容，进行共性抽取，实现多个类中相同内容的复用,子类可以实现各自的不同功能需求  继承中成员变量的访问特点  直接通过对象去访问，看对象创建语句=左边的内容，是谁就优先使用谁的成员变量，如果没有则向上找 间接通过对象调用成员方法去访问，调用时，方法属于谁就优先使用谁的成员变量，如果没有则向上找   继承中成员方法的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-22T09:00:30.822Z">
+<meta property="og:updated_time" content="2018-06-12T10:47:27.422Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaWeb核心之Servlet">
-<meta name="twitter:description" content="Servlet　　Servlet运行在服务器的Java小程序，是sun公司提供的一套规范（接口），用来处理客户端请求、响应给浏览器的动态资源。实质就java代码，通过java的API动态的向客户端输出内容。　　servlet规范包含三个技术点：　　(1) servlet技术　　(2) filter技术——过滤器　　(3) listener技术——监听器 Servlet实现 　　实现步骤：　　(1)">
+<meta name="twitter:title" content="继承、super、this、抽象类">
+<meta name="twitter:description" content="继承 特点：子类拥有父类的所有内容，除了被private和构造方法  好处：对相同的内容，进行共性抽取，实现多个类中相同内容的复用,子类可以实现各自的不同功能需求  继承中成员变量的访问特点  直接通过对象去访问，看对象创建语句=左边的内容，是谁就优先使用谁的成员变量，如果没有则向上找 间接通过对象调用成员方法去访问，调用时，方法属于谁就优先使用谁的成员变量，如果没有则向上找   继承中成员方法的">
 
 
 
@@ -122,7 +122,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/22/--Servlet简介--/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/06/12/--继承、super、this、抽象类/"/>
 
 
 
@@ -140,7 +140,7 @@
 
 
 
-  <title>JavaWeb核心之Servlet | SUN'S BLOG</title>
+  <title>继承、super、this、抽象类 | SUN'S BLOG</title>
   
 
 
@@ -287,7 +287,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/22/--Servlet简介--/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/12/--继承、super、this、抽象类/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="孙大帅">
@@ -304,7 +304,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JavaWeb核心之Servlet</h1>
+          <h1 class="post-title" itemprop="name headline">继承、super、this、抽象类</h1>
         
 
         <div class="post-meta">
@@ -316,8 +316,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-22T23:16:50+08:00">
-                2018-03-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-12T18:46:56+08:00">
+                2018-06-12
               </time>
             
 
@@ -339,8 +339,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaWeb/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaWeb</span>
+                  <a href="/categories/基础/" itemprop="url" rel="index">
+                    <span itemprop="name">基础</span>
                   </a>
                 </span>
 
@@ -356,7 +356,7 @@
 
           
           
-             <span id="/2018/03/22/--Servlet简介--/" class="leancloud_visitors" data-flag-title="JavaWeb核心之Servlet">
+             <span id="/2018/06/12/--继承、super、this、抽象类/" class="leancloud_visitors" data-flag-title="继承、super、this、抽象类">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -387,7 +387,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  317字
+                  810字
                 </span>
               
 
@@ -412,12 +412,57 @@
       
 
       
-        <h2 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h2><p>　　Servlet运行在服务器的Java小程序，是sun公司提供的一套规范（接口），用来处理客户端请求、响应给浏览器的动态资源。实质就java代码，通过java的API动态的向客户端输出内容。<br>　　servlet规范包含三个技术点：<br>　　(1) <strong>servlet技术</strong><br>　　(2) filter技术——过滤器<br>　　(3) listener技术——监听器</p>
-<h2 id="Servlet实现"><a href="#Servlet实现" class="headerlink" title="Servlet实现"></a>Servlet实现</h2><p> 　　实现步骤：<br>　　(1) 创建类继承HttpServlet<br>　　(2) 覆盖doGet和doPost方法<br>　　(3) 在web.xml中进行servlet配置</p>
-<h2 id="Servlet的生命周期"><a href="#Servlet的生命周期" class="headerlink" title="Servlet的生命周期"></a>Servlet的生命周期</h2><p>　　(1) init(ServletConfig config)，servlet对象创建时执行<br>　　(2) service(ServletRequest request,ServletResponse response),<strong>每次请求都会执行</strong><br>　　(3) destory(),servlet销毁时执行</p>
-<h2 id="ServletContext对象"><a href="#ServletContext对象" class="headerlink" title="ServletContext对象"></a>ServletContext对象</h2><p> 　　ServletContext代表是一个web应用的环境（上下文）对象，内部封装的是该web应用信息，<strong>该对象一个web应用只有一个</strong>，一个web应用有多个servlet对象。<br>　　 ServletContext对象的生命周期：该web应用被加载（服务器启动或发布web应用）时创建；web应用被卸载（服务器关闭，移除该web应用）时销毁。</p>
-<h2 id="ServletContext是一个域对象"><a href="#ServletContext是一个域对象" class="headerlink" title="ServletContext是一个域对象"></a>ServletContext是一个域对象</h2><p>　　存储数据的区域就是域对象，域对象的通用方法：<br>　　　<em>setAttribute(String name,Object obj);
-　　　</em>getAttribute(String name);<br>　　　*removeAttribute(String name);<br>　　ServletContext域对象作用范围：整个web应用</p>
+        <h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><ul>
+<li><p>特点：子类拥有父类的所有内容，除了被private和构造方法</p>
+</li>
+<li><p>好处：对相同的内容，进行共性抽取，实现多个类中相同内容的复用,子类可以实现各自的不同功能需求</p>
+</li>
+<li><p>继承中成员变量的访问特点</p>
+<ol>
+<li>直接通过对象去访问，看对象创建语句=左边的内容，是谁就优先使用谁的成员变量，如果没有则向上找</li>
+<li>间接通过对象调用成员方法去访问，调用时，方法属于谁就优先使用谁的成员变量，如果没有则向上找</li>
+</ol>
+</li>
+<li><p>继承中成员方法的访问特点</p>
+<p>在继承中访问成员变量时，new的是谁，就优先使用谁的成员方法，如果没有则向上找</p>
+</li>
+</ul>
+<h3 id="继承中方法的覆盖重写注意事项"><a href="#继承中方法的覆盖重写注意事项" class="headerlink" title="继承中方法的覆盖重写注意事项"></a>继承中方法的覆盖重写注意事项</h3><ul>
+<li>权限：public&gt;protected&gt;(default)不写就是默认&gt;private</li>
+<li>子类方法覆盖父类方法，必须要保证权限大于等于父类权限。</li>
+<li>private的内容不能被继承，所以也就没有重写概念</li>
+<li>方法名和参数类型必须一致</li>
+<li>类型必须小于等于父类的返回值类型（扩展，设计模式6大原则之一：里式替换原则）</li>
+</ul>
+<h3 id="继承中构造方法的访问特点"><a href="#继承中构造方法的访问特点" class="headerlink" title="继承中构造方法的访问特点"></a>继承中构造方法的访问特点</h3><ol>
+<li>创建子类对象时，一定会调用父类的构造方法</li>
+<li>super调用父类的构造方法时，只能在第一个有效语句</li>
+<li>super可以调用父类的有参构造方法。</li>
+<li>super访问父类的构造方法必须在子类的构造方法中的第一句</li>
+</ol>
+<h2 id="super关键字"><a href="#super关键字" class="headerlink" title="super关键字"></a>super关键字</h2><ol>
+<li>可以在子类的成员方法中，访问父类的成员变量，格式：super.父类成员变量</li>
+<li>可以在子类的成员方法中，访问父类的成员方法，格式：super.父类成员方法名(参数列表)</li>
+<li>可以在子类的构造方法中，访问父类的构造方法，格式：super(参数列表)</li>
+</ol>
+<h2 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a>this关键字</h2><ol>
+<li>可以区分当前类中局部变量和成员变量</li>
+<li>可以在本类的成员方法中，调用该类的其他的成员方法(其实在一个类中所有的成员变量和成员方法的调用之前都有this.)</li>
+<li>可以在本类的构造方法中，调用其他的重载构造方法</li>
+</ol>
+<h2 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h2><ol>
+<li>抽象类不能创建对象，如果创建，编译无法通过而报错。只能创建其非抽象子类的对象</li>
+<li>抽象类中，可以有构造方法，是供子类创建对象时，初始化父类成员使用的</li>
+<li>抽象类中，不一定包含抽象方法，但是有抽象方法的类必定是抽象类</li>
+<li>抽象类的子类，必须重写抽象父类中所有的抽象方法，否则，编译无法通过而报错。除非该子类也是抽象类。</li>
+</ol>
+<p>抽象类的意义：</p>
+<ul>
+<li>抽象类的意义是对某一些功能添加约束</li>
+</ul>
+<ul>
+<li>重写，我已经实现了自己该有的功能，子类，可以在此基础选择性扩展功能</li>
+</ul>
 
       
     </div>
@@ -464,7 +509,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JavaWeb/" rel="tag"><i class="fa fa-tag"></i> JavaWeb</a>
+            <a href="/tags/JavaSE/" rel="tag"><i class="fa fa-tag"></i> JavaSE</a>
           
         </div>
       
@@ -477,8 +522,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/21/HelloWorld/" rel="next" title="代码实例">
-                <i class="fa fa-chevron-left"></i> 代码实例
+              <a href="/2018/06/11/--ArrayList、String、static、工具类/" rel="next" title="ArrayList、String、static、工具类">
+                <i class="fa fa-chevron-left"></i> ArrayList、String、static、工具类
               </a>
             
           </div>
@@ -487,8 +532,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/03/25/response&request/" rel="prev" title="Response&Request">
-                Response&Request <i class="fa fa-chevron-right"></i>
+              <a href="/2018/06/12/--接口/" rel="prev" title="接口">
+                接口 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -689,7 +734,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Servlet"><span class="nav-number">1.</span> <span class="nav-text">Servlet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Servlet实现"><span class="nav-number">2.</span> <span class="nav-text">Servlet实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Servlet的生命周期"><span class="nav-number">3.</span> <span class="nav-text">Servlet的生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ServletContext对象"><span class="nav-number">4.</span> <span class="nav-text">ServletContext对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ServletContext是一个域对象"><span class="nav-number">5.</span> <span class="nav-text">ServletContext是一个域对象</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#继承"><span class="nav-number">1.</span> <span class="nav-text">继承</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#继承中方法的覆盖重写注意事项"><span class="nav-number">1.1.</span> <span class="nav-text">继承中方法的覆盖重写注意事项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#继承中构造方法的访问特点"><span class="nav-number">1.2.</span> <span class="nav-text">继承中构造方法的访问特点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#super关键字"><span class="nav-number">2.</span> <span class="nav-text">super关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#this关键字"><span class="nav-number">3.</span> <span class="nav-text">this关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#抽象类"><span class="nav-number">4.</span> <span class="nav-text">抽象类</span></a></li></ol></div>
             
 
           </div>

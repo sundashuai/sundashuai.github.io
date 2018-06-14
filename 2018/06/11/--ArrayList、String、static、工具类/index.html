@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="ArrayList 好处： 1、长度可变  2、可以进行增删改查  3、arraylist可以存放任意引用数据类型  增： void add(int index, E element) 在此列表中的指定位置插入指定的元素。     boolean add(E e) 将指定的元素追加到此列表的末尾。  删： E remove(int index) 删除该列表中指定位置的元素。 boolean rem">
+<meta name="description" content="ArrayList 好处： 1、长度可变  2、可以进行增删改查  3、arraylist可以存放任意引用数据类型  增： void add(int index, E element) 在此列表中的指定位置插入指定的元素。     boolean add(E e)将指定的元素追加到此列表的末尾。  删： E remove(int index)删除该列表中指定位置的元素。    boolean re">
 <meta name="keywords" content="JavaSE">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ArrayList、String、static、工具类">
 <meta property="og:url" content="http://yoursite.com/2018/06/11/--ArrayList、String、static、工具类/index.html">
 <meta property="og:site_name" content="SUN&#39;S BLOG">
-<meta property="og:description" content="ArrayList 好处： 1、长度可变  2、可以进行增删改查  3、arraylist可以存放任意引用数据类型  增： void add(int index, E element) 在此列表中的指定位置插入指定的元素。     boolean add(E e) 将指定的元素追加到此列表的末尾。  删： E remove(int index) 删除该列表中指定位置的元素。 boolean rem">
+<meta property="og:description" content="ArrayList 好处： 1、长度可变  2、可以进行增删改查  3、arraylist可以存放任意引用数据类型  增： void add(int index, E element) 在此列表中的指定位置插入指定的元素。     boolean add(E e)将指定的元素追加到此列表的末尾。  删： E remove(int index)删除该列表中指定位置的元素。    boolean re">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-11T14:29:50.759Z">
+<meta property="og:updated_time" content="2018-06-12T00:38:09.806Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ArrayList、String、static、工具类">
-<meta name="twitter:description" content="ArrayList 好处： 1、长度可变  2、可以进行增删改查  3、arraylist可以存放任意引用数据类型  增： void add(int index, E element) 在此列表中的指定位置插入指定的元素。     boolean add(E e) 将指定的元素追加到此列表的末尾。  删： E remove(int index) 删除该列表中指定位置的元素。 boolean rem">
+<meta name="twitter:description" content="ArrayList 好处： 1、长度可变  2、可以进行增删改查  3、arraylist可以存放任意引用数据类型  增： void add(int index, E element) 在此列表中的指定位置插入指定的元素。     boolean add(E e)将指定的元素追加到此列表的末尾。  删： E remove(int index)删除该列表中指定位置的元素。    boolean re">
 
 
 
@@ -419,47 +419,47 @@
 <p>3、arraylist可以存放任意<strong>引用数据类型</strong></p>
 </li>
 <li><p>增：</p>
-<p><code>void add(int index, E element) 在此列表中的指定位置插入指定的元素。</code>    </p>
-<p><code>boolean add(E e) 将指定的元素追加到此列表的末尾。</code></p>
+<p><code>void add(int index, E element)</code> 在此列表中的指定位置插入指定的元素。    </p>
+<p><code>boolean add(E e)</code>将指定的元素追加到此列表的末尾。</p>
 </li>
 <li><p>删：</p>
-<p><code>E remove(int index) 删除该列表中指定位置的元素。</code></p>
-<p><code>boolean remove(Object o) 从列表中删除指定元素的第一个出现（如果存在）。</code></p>
+<p><code>E remove(int index)</code>删除该列表中指定位置的元素。   </p>
+<p><code>boolean remove(Object o)</code>从列表中删除指定元素的第一个出现（如果存在）。</p>
 </li>
 <li><p>改：</p>
-<p><code>E set(int index, E element) 用指定的元素替换此列表中指定位置的元素。</code></p>
+<p><code>E set(int index, E element)</code> 用指定的元素替换此列表中指定位置的元素。</p>
 </li>
 <li><p>查：</p>
-<p><code>E get(int index) 返回此列表中指定位置的元素。</code></p>
+<p><code>E get(int index)</code> 返回此列表中指定位置的元素。</p>
 </li>
 <li><p>集合长度：</p>
-<p><code>int size() 返回此列表中的元素数。</code></p>
+<p><code>int size()</code> 返回此列表中的元素数。</p>
 </li>
 </ul>
 <h2 id="String类"><a href="#String类" class="headerlink" title="String类"></a>String类</h2><ul>
 <li>String在java中比较特殊，它的对象是保存在方法区的字符串常量池，它的值在创建后不能改变，可以共享；字符串常量池里面的字符串对象，一经创建就不会销毁，只有程序结束时jvm才会释放内存</li>
 </ul>
 <h3 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h3><ol>
-<li>String(String original) 新创建的字符串是参数字符串的副本</li>
-<li>public String(char[] value) ：通过当前参数中的字符数组来构造新的String</li>
-<li>public String(byte[] bytes) ：通过使用平台的默认字符集解码当前参数中的字节数组来构造新的String</li>
+<li><code>String(String original)</code> ：新创建的字符串是参数字符串的副本</li>
+<li><code>public String(char[] value)</code>：通过当前参数中的字符数组来构造新的String</li>
+<li><code>public String(byte[] bytes)</code> ：通过使用平台的默认字符集解码当前参数中的字节数组来构造新的String</li>
 </ol>
 <h3 id="比较的方法"><a href="#比较的方法" class="headerlink" title="比较的方法"></a><strong>比较</strong>的方法</h3><ul>
-<li>public boolean equals (Object anObject) ：将此字符串与指定对象进行比较。</li>
+<li><code>public boolean equals (Object anObject)</code>：将此字符串与指定对象进行比较。</li>
 </ul>
 <ul>
-<li>public boolean equalsIgnoreCase (String anotherString) ：将此字符串与指定对象进行比较，忽略大小写。</li>
+<li><code>public boolean equalsIgnoreCase (String anotherString)</code> ：将此字符串与指定对象进行比较，忽略大小写。</li>
 </ul>
-<h3 id="String的获取方法"><a href="#String的获取方法" class="headerlink" title="String的获取方法"></a>String的<strong>获取</strong>方法</h3><p><code>public int length () ：返回此字符串的长度。</code></p>
-<p><code>public String concat (String str) ：将指定的字符串连接到该字符串的末尾。</code></p>
-<p><code>public char charAt (int index) ：返回指定索引处的 char值。</code></p>
-<p><code>public int indexOf (String str) ：返回指定子字符串第一次出现在该字符串内的索引。</code></p>
-<p><code>public String substring (int beginIndex) ：返回一个子字符串，从beginIndex开始截取字符串到字符串结尾。</code></p>
-<p><code>public String substring (int beginIndex, int endIndex) ：返回一个子字符串，从beginIndex到endIndex截取字符串。含beginIndex，不含endIndex。</code></p>
-<h3 id="String的转换方法"><a href="#String的转换方法" class="headerlink" title="String的转换方法"></a>String的<strong>转换</strong>方法</h3><p><code>public char[] toCharArray () ：将此字符串转换为新的字符数组。</code></p>
-<p><code>public byte[] getBytes () ：使用平台的默认字符集将该 String编码转换为新的字节数组。</code></p>
-<p><code>public String replace (CharSequence target, CharSequence replacement) ：将与target匹配的字符串使用replacement字符串替换。</code></p>
-<h3 id="String的分割方法"><a href="#String的分割方法" class="headerlink" title="String的分割方法"></a>String的<strong>分割</strong>方法</h3><p><code>public String[] split(String regex) ：将此字符串按照给定的regex（规则）拆分为字符串数组</code></p>
+<h3 id="String的获取方法"><a href="#String的获取方法" class="headerlink" title="String的获取方法"></a>String的<strong>获取</strong>方法</h3><p><code>public int length ()</code> ：返回此字符串的长度。</p>
+<p><code>public String concat (String str)</code> ：将指定的字符串连接到该字符串的末尾。</p>
+<p><code>public char charAt (int index)</code> ：返回指定索引处的 char值。</p>
+<p><code>public int indexOf (String str)</code> ：返回指定子字符串第一次出现在该字符串内的索引。</p>
+<p><code>public String substring (int beginIndex)</code>：返回一个子字符串，从beginIndex开始截取字符串到字符串结尾。</p>
+<p><code>public String substring (int beginIndex, int endIndex)</code> ：返回一个子字符串，从beginIndex到endIndex截取字符串。含beginIndex，不含endIndex。</p>
+<h3 id="String的转换方法"><a href="#String的转换方法" class="headerlink" title="String的转换方法"></a>String的<strong>转换</strong>方法</h3><p><code>public char[] toCharArray ()</code> ：将此字符串转换为新的字符数组。</p>
+<p><code>public byte[] getBytes ()</code>：使用平台的默认字符集将该 String编码转换为新的字节数组。</p>
+<p><code>public String replace (CharSequence target, CharSequence replacement)</code>：将与target匹配的字符串使用replacement字符串替换。</p>
+<h3 id="String的分割方法"><a href="#String的分割方法" class="headerlink" title="String的分割方法"></a>String的<strong>分割</strong>方法</h3><p><code>public String[] split(String regex)</code> ：将此字符串按照给定的regex（规则）拆分为字符串数组</p>
 <h2 id="static关键字"><a href="#static关键字" class="headerlink" title="static关键字"></a>static关键字</h2><ul>
 <li>被static修饰后，只跟类有关，与对象无关，每个对象都可以直接从类中获取该静态变量</li>
 <li>静态代码块：随着类的加载而执行且执行一次，优先于main方法和构造方法的执行。</li>
@@ -471,14 +471,14 @@
 <li>静态方法中，不能使用this关键字。</li>
 </ol>
 <h2 id="Arrays操作数组的工具类"><a href="#Arrays操作数组的工具类" class="headerlink" title="Arrays操作数组的工具类"></a>Arrays操作数组的工具类</h2><ol>
-<li>public static String toString(int[] a) ：返回指定数组内容的字符串表示形式。</li>
-<li>public static void sort(int[] a) ：对指定的int 型数组按数字升序进行排序。</li>
+<li><code>public static String toString(int[] a)</code>：返回指定数组内容的字符串表示形式。</li>
+<li><code>public static void sort(int[] a)</code> ：对指定的int 型数组按数字升序进行排序。</li>
 </ol>
 <h2 id="Math操作数学方法的工具类"><a href="#Math操作数学方法的工具类" class="headerlink" title="Math操作数学方法的工具类"></a>Math操作数学方法的工具类</h2><ol>
-<li>public static double abs(double a) ：返回 double 值的绝对值。</li>
-<li>public static double ceil(double a) ：向上取整。</li>
-<li>public static double floor(double a) ：向下取整。</li>
-<li>public static long round(double a) ：返回最接近参数的 long。(相当于四舍五入方法)</li>
+<li><code>public static double abs(double a)</code>：返回 double 值的绝对值。</li>
+<li><code>public static double ceil(double a)</code> ：向上取整。</li>
+<li><code>public static double floor(double a)</code>：向下取整。</li>
+<li><code>public static long round(double a)</code>：返回最接近参数的 long。(相当于四舍五入方法)</li>
 </ol>
 
       
@@ -548,6 +548,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/12/--继承、super、this、抽象类/" rel="prev" title="继承、super、this、抽象类">
+                继承、super、this、抽象类 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -633,7 +637,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
