@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="接口 接口中的内容特点： 抽象方法（jdk7之前）：制定规则，规范 默认方法（jdk8）：优化解决接口升级添加功能的问题 静态方法（jdk8）：定义一些可以直接通过接口名调用的方法 私有方法（jdk9）：给接口中的默认方法和静态方法调用，共有的代码进行抽取复用，并不让外界调用 常量（jdk7之前）：定义一些可以通过接口名直接方法的值    接口的抽象方法使用 接口不能够创建对象，没有构造方法。 定">
+<meta name="description" content="线程构造方法：  public Thread() ：分配一个新的线程对象。 public Thread(String name)：分配一个指定名字的新的线程对象。 public Thread(Runnable target)：分配一个带有指定目标新的线程对象。 public Thread(Runnable target,String name)：分配一个带有指定目标新的线程对象并指定名字。  常用">
 <meta name="keywords" content="JavaSE">
 <meta property="og:type" content="article">
-<meta property="og:title" content="接口">
-<meta property="og:url" content="http://yoursite.com/2018/06/12/--接口/index.html">
+<meta property="og:title" content="线程、同步">
+<meta property="og:url" content="http://yoursite.com/2018/06/24/--线程、同步/index.html">
 <meta property="og:site_name" content="SUN&#39;S BLOG">
-<meta property="og:description" content="接口 接口中的内容特点： 抽象方法（jdk7之前）：制定规则，规范 默认方法（jdk8）：优化解决接口升级添加功能的问题 静态方法（jdk8）：定义一些可以直接通过接口名调用的方法 私有方法（jdk9）：给接口中的默认方法和静态方法调用，共有的代码进行抽取复用，并不让外界调用 常量（jdk7之前）：定义一些可以通过接口名直接方法的值    接口的抽象方法使用 接口不能够创建对象，没有构造方法。 定">
+<meta property="og:description" content="线程构造方法：  public Thread() ：分配一个新的线程对象。 public Thread(String name)：分配一个指定名字的新的线程对象。 public Thread(Runnable target)：分配一个带有指定目标新的线程对象。 public Thread(Runnable target,String name)：分配一个带有指定目标新的线程对象并指定名字。  常用">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-12T11:45:46.259Z">
+<meta property="og:updated_time" content="2018-06-20T01:20:57.833Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="接口">
-<meta name="twitter:description" content="接口 接口中的内容特点： 抽象方法（jdk7之前）：制定规则，规范 默认方法（jdk8）：优化解决接口升级添加功能的问题 静态方法（jdk8）：定义一些可以直接通过接口名调用的方法 私有方法（jdk9）：给接口中的默认方法和静态方法调用，共有的代码进行抽取复用，并不让外界调用 常量（jdk7之前）：定义一些可以通过接口名直接方法的值    接口的抽象方法使用 接口不能够创建对象，没有构造方法。 定">
+<meta name="twitter:title" content="线程、同步">
+<meta name="twitter:description" content="线程构造方法：  public Thread() ：分配一个新的线程对象。 public Thread(String name)：分配一个指定名字的新的线程对象。 public Thread(Runnable target)：分配一个带有指定目标新的线程对象。 public Thread(Runnable target,String name)：分配一个带有指定目标新的线程对象并指定名字。  常用">
 
 
 
@@ -122,7 +122,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/06/12/--接口/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/06/24/--线程、同步/"/>
 
 
 
@@ -140,7 +140,7 @@
 
 
 
-  <title>接口 | SUN'S BLOG</title>
+  <title>线程、同步 | SUN'S BLOG</title>
   
 
 
@@ -287,7 +287,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/12/--接口/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/24/--线程、同步/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="孙大帅">
@@ -304,7 +304,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">接口</h1>
+          <h1 class="post-title" itemprop="name headline">线程、同步</h1>
         
 
         <div class="post-meta">
@@ -316,8 +316,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-12T19:45:46+08:00">
-                2018-06-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-24T19:02:38+08:00">
+                2018-06-24
               </time>
             
 
@@ -356,7 +356,7 @@
 
           
           
-             <span id="/2018/06/12/--接口/" class="leancloud_visitors" data-flag-title="接口">
+             <span id="/2018/06/24/--线程、同步/" class="leancloud_visitors" data-flag-title="线程、同步">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -387,7 +387,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  573字
+                  1,078字
                 </span>
               
 
@@ -412,41 +412,83 @@
       
 
       
-        <h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><ul>
-<li>接口中的内容特点：<ol>
-<li>抽象方法（jdk7之前）：制定规则，规范</li>
-<li>默认方法（jdk8）：优化解决<strong>接口升级添加功能</strong>的问题</li>
-<li>静态方法（jdk8）：定义一些可以直接通过接口名调用的方法</li>
-<li><strong>私有方法</strong>（jdk9）：给接口中的<strong>默认方法和静态方法</strong>调用，共有的代码进行抽取复用，并不让外界调用</li>
-<li>常量（jdk7之前）：定义一些可以通过接口名直接方法的值</li>
+        <h2 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h2><p>构造方法：</p>
+<ul>
+<li><code>public Thread()</code> ：分配一个新的线程对象。</li>
+<li><code>public Thread(String name)</code>：分配一个指定名字的新的线程对象。</li>
+<li><code>public Thread(Runnable target)</code>：分配一个带有指定目标新的线程对象。</li>
+<li><code>public Thread(Runnable target,String name)</code>：分配一个带有指定目标新的线程对象并指定名字。</li>
+</ul>
+<p>常用方法：</p>
+<ul>
+<li><code>public String getName()</code> ：获取当前线程名称。</li>
+<li><code>public void start()</code> ：导致此线程开始执行； Java虚拟机调用此线程的run方法。</li>
+<li><code>public void run()</code> ：此线程要执行的任务在此处定义代码。</li>
+<li><code>public static void sleep(long millis)</code>：使当前正在执行的线程以指定的毫秒数暂停（暂时停止执行）。</li>
+<li><code>public static Thread currentThread()</code>：返回对当前正在执行的线程对象的引用。</li>
+</ul>
+<h2 id="多线程的内存"><a href="#多线程的内存" class="headerlink" title="多线程的内存"></a>多线程的内存</h2><ul>
+<li>每个线程都有自己的栈区，每个栈区调用的方法都会进入到自己的栈区，<strong>栈内存是线程私有的</strong></li>
+<li><strong>多线程共享一个堆内存</strong></li>
+</ul>
+<h2 id="多线程实现方式"><a href="#多线程实现方式" class="headerlink" title="多线程实现方式"></a>多线程实现方式</h2><h3 id="继承Thread类"><a href="#继承Thread类" class="headerlink" title="继承Thread类"></a>继承Thread类</h3><ol>
+<li>定义类，继承Thread</li>
+<li>重写run方法。</li>
+<li>测试类中创建Thread子类对象</li>
+<li>调用start方法。</li>
 </ol>
+<h3 id="实现Runnable接口"><a href="#实现Runnable接口" class="headerlink" title="实现Runnable接口"></a>实现Runnable接口</h3><ol>
+<li>定义类，去实现Runnable接口。</li>
+<li>重写run方法，也是要在run方法中定义线程要执行的任务。</li>
+<li>在测试类中创建Runnable接口的实现类对象。</li>
+<li>创建一个线程Thread类的对象，并且把Runnable接口的实现类对象传递过去。</li>
+<li>调用Thread的start方法。</li>
+</ol>
+<h3 id="实现Runnable接口的优势"><a href="#实现Runnable接口的优势" class="headerlink" title="实现Runnable接口的优势"></a>实现Runnable接口的优势</h3><ol>
+<li>解决了java中类与类之间只能单继承的局限性。</li>
+<li>Runnable接口里面只有一个run方法，没有getName，sleep，currentThread…里面的功能更加的纯粹，只需要关注线程要执行的任务就可以了，这样更加符合单一职责原则。</li>
+<li>解耦。</li>
+<li>可以更加方便的实现多个线程间的数据共享。</li>
+<li>线程池可以传递Runnable接口的实现类对象，但是不能传递Thread的子类对象</li>
+</ol>
+<h2 id="线程安全"><a href="#线程安全" class="headerlink" title="线程安全"></a>线程安全</h2><h3 id="同步代码块"><a href="#同步代码块" class="headerlink" title="同步代码块"></a>同步代码块</h3><p>格式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">synchronized</span>(锁对象) &#123;</span><br><span class="line">    <span class="comment">//要同步的内容。</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>锁对象就是一个普通的对象，可以是任意对象，没有特殊的含义，只是做一个标记。</li>
+<li>synchronized代码块的作用： 只有持有锁的线程才能够进入到同步代码块中。</li>
+</ul>
+<h3 id="同步方法"><a href="#同步方法" class="headerlink" title="同步方法"></a>同步方法</h3><p>格式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">格式：</span><br><span class="line">    修饰符 <span class="keyword">synchronized</span> 返回值类型 方法名(参数列表) &#123;</span><br><span class="line">        方法体;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>synchronized修饰方法，相当于把整个方法体都加了同步代码块。</li>
+</ul>
+<h3 id="Lock接口"><a href="#Lock接口" class="headerlink" title="Lock接口"></a>Lock接口</h3><p>在jdk1.5之后，多了一个包，叫做java.util.concurrent，提供了很多对多线程操作的类和接口，其中有一个接口，叫做Lock，可以手动的释放锁以及获取锁。<br>void lock()： 手动的获取一个锁<br>void unlock()： 手动的释放锁<br>Lock 是一个接口，如果要用，需要使用实现类ReentrantLock。</p>
+<h3 id="安全效率比较"><a href="#安全效率比较" class="headerlink" title="安全效率比较"></a>安全效率比较</h3><p>StringBuilder：线程不安全，效率高</p>
+<p>StringBuffer：线程安全，效率低</p>
+<p>ArrayList，LinkedList：线程不安全的，效率高</p>
+<p>Vector集合（淘汰了）：线程安全的，效率低</p>
+<p>HashMap： 线程不安全，效率高</p>
+<p>Hashtable：线程安全，效率低</p>
+<p>ConcurrentHashMap：线程安全，效率高</p>
+<h2 id="线程的六种状态"><a href="#线程的六种状态" class="headerlink" title="线程的六种状态"></a>线程的六种状态</h2><ol>
+<li><p>NEW （新建）</p>
+<p>当一个线程仅仅被创建（new Thread() 或者new Thread子类()）那么这个线程就是出于NEW（新建）状态</p>
 </li>
-</ul>
-<h3 id="接口的抽象方法使用"><a href="#接口的抽象方法使用" class="headerlink" title="接口的抽象方法使用"></a>接口的抽象方法使用</h3><ol>
-<li>接口不能够创建对象，没有构造方法。</li>
-<li>定义一个类，实现该接口，并实现该接口中所有的抽象方法。</li>
-<li>创建该接口的实现类的对象，并调用方法来使用。</li>
-</ol>
-<h3 id="接口的默认方法使用"><a href="#接口的默认方法使用" class="headerlink" title="接口的默认方法使用"></a>接口的默认方法使用</h3><ol>
-<li>接口是不能创建对象的，必须使用一个类实现该接口。</li>
-<li>创建实现类的对象才能调用接口中的默认方法。</li>
-<li>在接口的实现类中，可以根据对应的需求，可以选择重写或不重写接口中的默认方法。</li>
-</ol>
-<h3 id="接口的静态方法使用"><a href="#接口的静态方法使用" class="headerlink" title="接口的静态方法使用"></a>接口的静态方法使用</h3><ul>
-<li>只能通过接口名.静态方法(参数列表)直接调用；由于接口的多继承，不能通过实现类对象来调用。</li>
-</ul>
-<h3 id="接口的常量定义和使用"><a href="#接口的常量定义和使用" class="headerlink" title="接口的常量定义和使用"></a>接口的常量定义和使用</h3><ul>
-<li>在接口中的“成员变量”其实就是常量，编译器会自动<code>public static final</code>。</li>
-</ul>
-<h2 id="继承父类并实现多个接口"><a href="#继承父类并实现多个接口" class="headerlink" title="继承父类并实现多个接口"></a>继承父类并实现多个接口</h2><ul>
-<li>注意事项：</li>
-</ul>
-<ol>
-<li>非抽象的子类实现类必须重写所有的抽象方法。</li>
-<li><strong>如果有抽象方法没有实现，那么子类实现类必须是抽象类</strong>。</li>
-<li>如果多个接口中有相同的抽象方法，那么子类实现类只要实现一次即可。</li>
-<li>如果多个接口和抽象父类中有相同的抽象方法，那么子类实现类也只要实现一次即可。</li>
-<li>如果多个接口有相同的抽象方法，并且在父类中有一个同名的普通方法，那么子类实现类可以不重写接口中的抽象方法，也可以根据需求来重写，类的方法优先于接口。</li>
+<li><p>RUNNABLE （执行）</p>
+<p>一个线程处于执行状态，当调用start方法后，这个线程会变成这个状态</p>
+</li>
+<li><p>BLOCKED（受阻塞）</p>
+<p>当一个线程等待其他线程释放锁时，那么这个线程就属于受阻塞的状态。</p>
+</li>
+<li><p>WAITING（无限等待）</p>
+<p>当一个线程一直去等着某个东西，那么这个线程所处于的状态就是无限等待。wait() 无限等待的方法，除非有另一个线程唤醒自己。</p>
+</li>
+<li><p>TIMED_WAITING（计时等待）</p>
+<p>当一个线程去有一定时间的等着，那么线程就处于计时等待。比如sleep(mills) 这个方法，会等着这个时间结束然后去运行。</p>
+</li>
+<li><p>TERMINATED（退出）</p>
+<p>当该线程的run方法结束或者调用stop方法强制结束，这这个线程就会变成退出</p>
+</li>
 </ol>
 
       
@@ -507,8 +549,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/12/--继承、super、this、抽象类/" rel="next" title="继承、super、this、抽象类">
-                <i class="fa fa-chevron-left"></i> 继承、super、this、抽象类
+              <a href="/2018/06/24/--异常/" rel="next" title="异常">
+                <i class="fa fa-chevron-left"></i> 异常
               </a>
             
           </div>
@@ -516,10 +558,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/12/--多态/" rel="prev" title="多态">
-                多态 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -719,7 +757,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#接口"><span class="nav-number">1.</span> <span class="nav-text">接口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#接口的抽象方法使用"><span class="nav-number">1.1.</span> <span class="nav-text">接口的抽象方法使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接口的默认方法使用"><span class="nav-number">1.2.</span> <span class="nav-text">接口的默认方法使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接口的静态方法使用"><span class="nav-number">1.3.</span> <span class="nav-text">接口的静态方法使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接口的常量定义和使用"><span class="nav-number">1.4.</span> <span class="nav-text">接口的常量定义和使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承父类并实现多个接口"><span class="nav-number">2.</span> <span class="nav-text">继承父类并实现多个接口</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#线程"><span class="nav-number">1.</span> <span class="nav-text">线程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多线程的内存"><span class="nav-number">2.</span> <span class="nav-text">多线程的内存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多线程实现方式"><span class="nav-number">3.</span> <span class="nav-text">多线程实现方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#继承Thread类"><span class="nav-number">3.1.</span> <span class="nav-text">继承Thread类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现Runnable接口"><span class="nav-number">3.2.</span> <span class="nav-text">实现Runnable接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现Runnable接口的优势"><span class="nav-number">3.3.</span> <span class="nav-text">实现Runnable接口的优势</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程安全"><span class="nav-number">4.</span> <span class="nav-text">线程安全</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#同步代码块"><span class="nav-number">4.1.</span> <span class="nav-text">同步代码块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#同步方法"><span class="nav-number">4.2.</span> <span class="nav-text">同步方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lock接口"><span class="nav-number">4.3.</span> <span class="nav-text">Lock接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安全效率比较"><span class="nav-number">4.4.</span> <span class="nav-text">安全效率比较</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程的六种状态"><span class="nav-number">5.</span> <span class="nav-text">线程的六种状态</span></a></li></ol></div>
             
 
           </div>

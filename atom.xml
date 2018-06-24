@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-06-13T11:34:25.239Z</updated>
+  <updated>2018-06-20T01:20:57.833Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,21 +17,155 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>List接口、Set接口、可变参数、Collections</title>
-    <link href="http://yoursite.com/2018/06/13/--List%E6%8E%A5%E5%8F%A3%E3%80%81Set%E6%8E%A5%E5%8F%A3/"/>
-    <id>http://yoursite.com/2018/06/13/--List接口、Set接口/</id>
-    <published>2018-06-13T09:04:12.926Z</published>
-    <updated>2018-06-13T11:34:25.239Z</updated>
+    <title>线程、同步</title>
+    <link href="http://yoursite.com/2018/06/24/--%E7%BA%BF%E7%A8%8B%E3%80%81%E5%90%8C%E6%AD%A5/"/>
+    <id>http://yoursite.com/2018/06/24/--线程、同步/</id>
+    <published>2018-06-24T11:02:38.620Z</published>
+    <updated>2018-06-20T01:20:57.833Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="List接口"><a href="#List接口" class="headerlink" title="List接口"></a>List接口</h2><ul><li>list接口是Collection下面的一个子接口</li><li>特点：<strong>存取有序，有索引，可以存重复元素</strong></li><li>常用实现类：<strong>ArrayList（底层是数组，查找快增删慢）</strong>、<strong>LinkedList（底层双向链表，增删快查找慢）</strong></li></ul><h3 id="对索引操作"><a href="#对索引操作" class="headerlink" title="对索引操作"></a>对索引操作</h3><ul><li><code>public void add(int index, E element)</code> ： 将指定的元素，添加到该集合中的指定位置上。</li><li><strong><code>public E get(int index)</code></strong> ：返回集合中指定位置的元素。</li><li><code>public E remove(int index)</code> ：移除列表中指定位置的元素, 返回的是被移除的元素。</li><li><code>public E set(int index, E element)</code> ：用指定元素替换集合中指定位置的元素,返回值的更新前的元素。</li></ul><h3 id="LinkedList独有方法"><a href="#LinkedList独有方法" class="headerlink" title="LinkedList独有方法"></a>LinkedList独有方法</h3><ul><li><code>public void addFirst(E e)</code> ：将指定元素插入此列表的开头。</li><li><code>public void addLast(E e)</code>：将指定元素添加到此列表的结尾。</li><li><code>public E getFirst()</code> ：返回此列表的第一个元素。</li><li><code>public E getLast()</code> ：返回此列表的最后一个元素。</li><li><code>public E removeFirst()</code> ：移除并返回此列表的第一个元素。</li><li><code>public E removeLast()</code> ：移除并返回此列表的最后一个元素。</li><li><code>public E pop()</code>：从此列表所表示的堆栈处弹出一个元素。</li><li><code>public void push(E e)</code>：将元素推入此列表所表示的堆栈。</li><li><code>public boolean isEmpty()</code> ：如果列表不包含元素，则返回true</li></ul><h2 id="Set接口"><a href="#Set接口" class="headerlink" title="Set接口"></a>Set接口</h2><ul><li>set接口是Collection下面的一个子接口</li><li>特点：<strong>存取无序，无索引，不能存重复元素</strong></li><li>常用实现类：HashSet（底层哈希表：数组+链表+红黑树）、LinkedHashSet<strong>有序</strong>（底层链表和哈希表组合）</li><li><strong>Set集合取出元素</strong>的方式可以采用：<strong>迭代器、增强for</strong>（因无索引）</li></ul><h3 id="HashSet判断唯一性的原理"><a href="#HashSet判断唯一性的原理" class="headerlink" title="HashSet判断唯一性的原理"></a>HashSet判断唯一性的原理</h3><ol><li>先调用hashCode比较哈希值， 如果哈希值不同，肯定不是相同的对象。如果哈希值相同，不一定是相同的对象。</li><li>当对象哈希值相同的情况下，还需要调用equals。如果equals相同，就是同一个对象。如果equals不同，就不是同一个对象。</li></ol><h3 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h3><ul><li>归并后的才是哈希表，JDK8之前的数组中的每个元素都是链表，JDK8之后，链表长度超过8，就会自动变成红黑树。</li><li>哈希表就是一个数组，数组中每个元素都是链表，HashSet集合中，哈希表默认长度16。</li><li>桶：数组中每个元素（都是链表）。</li><li>哈希冲突：出现在同一个桶内的对象就是哈希冲突。</li><li>加载因子：是一个百分比，默认0.75，当桶的比例超过加载因子，会再哈希（扩容16-&gt;32）。</li></ul><h3 id="哈希值"><a href="#哈希值" class="headerlink" title="哈希值"></a>哈希值</h3><ul><li>其实就是一个int数字， 可以把这个数字（哈希值）看成对象的特征码（不是唯一的标识）。</li><li>Object里面的hashCode方法的哈希值是通过地址值计算出来的。</li><li>自定义哈希值，在子类中重写hashCode就行了；对自定义对象进行去重，<strong>需要重写hashCode和equals方法</strong>。</li></ul><h2 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">修饰符 返回值类型 方法名(数据类型... 变量名) &#123;</span><br><span class="line">    //方法体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ul><li>可变参数位置可以传递任意个参数（0个1个或者多个），这些参数的数据类型必须一致。</li><li>可变参数本质其实是数组，如果在方法内使用可变参，就按照数组的方式去使用就可以了，调用方法的时候也可以传递数组。</li></ul><h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ol><li>一个方法最多只能有一个可变参数</li><li>方法的可变参数一定要放在最后一个位置</li><li>可变参数本质是数组，所以不能和数组构成重载</li></ol><h2 id="Collections-集合工具类"><a href="#Collections-集合工具类" class="headerlink" title="Collections 集合工具类"></a>Collections 集合工具类</h2><ul><li><p>public static <t> boolean addAll(Collection<t> c, T… elements) :往集合中添加一些元素。</t></t></p><p>参数c：表示要往哪个集合中添加元素</p><p>参数elements： 要往集合中添加哪些元素</p></li><li><p>public static void shuffle(List&lt;?&gt; list) 打乱顺序 ：打乱集合顺序。</p></li><li><p>public static <t> void sort(List<t> list) ：将集合中元素按照默认规则排序。使用sort排序的集合里面的泛型类，一定要实现一个Comparable接口。实现这个接口的对象具有自然排序的功能，自然排序指的是这个对象本身就具备了排序的功能。</t></t></p></li><li><p>public static <t> void sort(List<t> list，Comparator&lt;? super T&gt; ) ：将集合中元素按照指定规则排序。</t></t></p></li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Comparable：实现这个接口的类具备自然排序的功能。自己就具备了排序的功能。</span><br><span class="line">Comparator：是一个比较器，可以帮助别人排序</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h2 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h2><p>构造方法：</p><ul><li><code>public Thread()</code> ：分配一个新的线程对象。</li><li><code>public Thread(String name)</code>：分配一个指定名字的新的线程对象。</li><li><code>public Thread(Runnable target)</code>：分配一个带有指定目标新的线程对象。</li><li><code>public Thread(Runnable target,String name)</code>：分配一个带有指定目标新的线程对象并指定名字。</li></ul><p>常用方法：</p><ul><li><code>public String getName()</code> ：获取当前线程名称。</li><li><code>public void start()</code> ：导致此线程开始执行； Java虚拟机调用此线程的run方法。</li><li><code>public void run()</code> ：此线程要执行的任务在此处定义代码。</li><li><code>public static void sleep(long millis)</code>：使当前正在执行的线程以指定的毫秒数暂停（暂时停止执行）。</li><li><code>public static Thread currentThread()</code>：返回对当前正在执行的线程对象的引用。</li></ul><h2 id="多线程的内存"><a href="#多线程的内存" class="headerlink" title="多线程的内存"></a>多线程的内存</h2><ul><li>每个线程都有自己的栈区，每个栈区调用的方法都会进入到自己的栈区，<strong>栈内存是线程私有的</strong></li><li><strong>多线程共享一个堆内存</strong></li></ul><h2 id="多线程实现方式"><a href="#多线程实现方式" class="headerlink" title="多线程实现方式"></a>多线程实现方式</h2><h3 id="继承Thread类"><a href="#继承Thread类" class="headerlink" title="继承Thread类"></a>继承Thread类</h3><ol><li>定义类，继承Thread</li><li>重写run方法。</li><li>测试类中创建Thread子类对象</li><li>调用start方法。</li></ol><h3 id="实现Runnable接口"><a href="#实现Runnable接口" class="headerlink" title="实现Runnable接口"></a>实现Runnable接口</h3><ol><li>定义类，去实现Runnable接口。</li><li>重写run方法，也是要在run方法中定义线程要执行的任务。</li><li>在测试类中创建Runnable接口的实现类对象。</li><li>创建一个线程Thread类的对象，并且把Runnable接口的实现类对象传递过去。</li><li>调用Thread的start方法。</li></ol><h3 id="实现Runnable接口的优势"><a href="#实现Runnable接口的优势" class="headerlink" title="实现Runnable接口的优势"></a>实现Runnable接口的优势</h3><ol><li>解决了java中类与类之间只能单继承的局限性。</li><li>Runnable接口里面只有一个run方法，没有getName，sleep，currentThread…里面的功能更加的纯粹，只需要关注线程要执行的任务就可以了，这样更加符合单一职责原则。</li><li>解耦。</li><li>可以更加方便的实现多个线程间的数据共享。</li><li>线程池可以传递Runnable接口的实现类对象，但是不能传递Thread的子类对象</li></ol><h2 id="线程安全"><a href="#线程安全" class="headerlink" title="线程安全"></a>线程安全</h2><h3 id="同步代码块"><a href="#同步代码块" class="headerlink" title="同步代码块"></a>同步代码块</h3><p>格式：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">synchronized</span>(锁对象) &#123;</span><br><span class="line">    <span class="comment">//要同步的内容。</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ul><li>锁对象就是一个普通的对象，可以是任意对象，没有特殊的含义，只是做一个标记。</li><li>synchronized代码块的作用： 只有持有锁的线程才能够进入到同步代码块中。</li></ul><h3 id="同步方法"><a href="#同步方法" class="headerlink" title="同步方法"></a>同步方法</h3><p>格式：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">格式：</span><br><span class="line">    修饰符 <span class="keyword">synchronized</span> 返回值类型 方法名(参数列表) &#123;</span><br><span class="line">        方法体;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure><ul><li>synchronized修饰方法，相当于把整个方法体都加了同步代码块。</li></ul><h3 id="Lock接口"><a href="#Lock接口" class="headerlink" title="Lock接口"></a>Lock接口</h3><p>在jdk1.5之后，多了一个包，叫做java.util.concurrent，提供了很多对多线程操作的类和接口，其中有一个接口，叫做Lock，可以手动的释放锁以及获取锁。<br>void lock()： 手动的获取一个锁<br>void unlock()： 手动的释放锁<br>Lock 是一个接口，如果要用，需要使用实现类ReentrantLock。</p><h3 id="安全效率比较"><a href="#安全效率比较" class="headerlink" title="安全效率比较"></a>安全效率比较</h3><p>StringBuilder：线程不安全，效率高</p><p>StringBuffer：线程安全，效率低</p><p>ArrayList，LinkedList：线程不安全的，效率高</p><p>Vector集合（淘汰了）：线程安全的，效率低</p><p>HashMap： 线程不安全，效率高</p><p>Hashtable：线程安全，效率低</p><p>ConcurrentHashMap：线程安全，效率高</p><h2 id="线程的六种状态"><a href="#线程的六种状态" class="headerlink" title="线程的六种状态"></a>线程的六种状态</h2><ol><li><p>NEW （新建）</p><p>当一个线程仅仅被创建（new Thread() 或者new Thread子类()）那么这个线程就是出于NEW（新建）状态</p></li><li><p>RUNNABLE （执行）</p><p>一个线程处于执行状态，当调用start方法后，这个线程会变成这个状态</p></li><li><p>BLOCKED（受阻塞）</p><p>当一个线程等待其他线程释放锁时，那么这个线程就属于受阻塞的状态。</p></li><li><p>WAITING（无限等待）</p><p>当一个线程一直去等着某个东西，那么这个线程所处于的状态就是无限等待。wait() 无限等待的方法，除非有另一个线程唤醒自己。</p></li><li><p>TIMED_WAITING（计时等待）</p><p>当一个线程去有一定时间的等着，那么线程就处于计时等待。比如sleep(mills) 这个方法，会等着这个时间结束然后去运行。</p></li><li><p>TERMINATED（退出）</p><p>当该线程的run方法结束或者调用stop方法强制结束，这这个线程就会变成退出</p></li></ol>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;List接口&quot;&gt;&lt;a href=&quot;#List接口&quot; class=&quot;headerlink&quot; title=&quot;List接口&quot;&gt;&lt;/a&gt;List接口&lt;/h2&gt;&lt;ul&gt;
+        &lt;h2 id=&quot;线程&quot;&gt;&lt;a href=&quot;#线程&quot; class=&quot;headerlink&quot; title=&quot;线程&quot;&gt;&lt;/a&gt;线程&lt;/h2&gt;&lt;p&gt;构造方法：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;public Thread()&lt;/code&gt; ：分配一个新的线程对象。&lt;/li&gt;
+&lt;li&gt;
+      
+    
+    </summary>
+    
+      <category term="基础" scheme="http://yoursite.com/categories/%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="JavaSE" scheme="http://yoursite.com/tags/JavaSE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>异常</title>
+    <link href="http://yoursite.com/2018/06/24/--%E5%BC%82%E5%B8%B8/"/>
+    <id>http://yoursite.com/2018/06/24/--异常/</id>
+    <published>2018-06-24T11:02:31.323Z</published>
+    <updated>2018-06-19T02:21:58.312Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h2><h3 id="运行时和编译时异常"><a href="#运行时和编译时异常" class="headerlink" title="运行时和编译时异常"></a>运行时和编译时异常</h3><ul><li>运行时异常： 当一个方法内抛出运行时异常时，你可以处理（throws，try…catch），也可以不处理。</li><li>编译时异常： 当一个方法内抛出编译时异常，必须要处理（要么抛，要么try…catch).</li></ul><h3 id="throw关键字"><a href="#throw关键字" class="headerlink" title="throw关键字"></a>throw关键字</h3><ul><li>想要手动抛出一个异常，可以使用throw关键字。格式：throw new 异常类名();</li></ul><h3 id="throws"><a href="#throws" class="headerlink" title="throws"></a>throws</h3><ul><li>进行方法的异常声明。 当一个方法内抛出了编译时异常，则必须要进行异常声明。</li><li>注意：<ol><li>当一个方法内抛出了编译时异常，则必须要进行异常声明。</li><li>当调用了一个使用throws声明的异常方法，那么这个方法要么处理，要么throws声明可能会抛出异常</li><li>如果在一个方法内抛出了多个异常，那么在throws声明的时候需要声明多个或者也可以直接throws他们的父类异常。</li><li>当在一个方法内抛出了运行时异常，那么可以使用throws声明，也可以不使用。<h3 id="try…catch…finally"><a href="#try…catch…finally" class="headerlink" title="try…catch…finally"></a>try…catch…finally</h3></li></ol></li><li>如果希望解决掉异常，而不是把异常往外抛，可以使用try…catch语句。</li><li>如果try中的代码出现了问题，但是catch并没有捕获到，这个异常依然会往外抛。</li><li>如果catch中要捕获的是父类异常，那么可以捕获到他对应的子类异常。</li><li>finally代码一定会执行，用于释放资源</li></ul><h3 id="throwable中常见方法"><a href="#throwable中常见方法" class="headerlink" title="throwable中常见方法"></a>throwable中常见方法</h3><ul><li><code>tring toString()</code>： 返回详细描述</li><li><code>String getMessage()</code>： 返回简单的描述。</li><li><code>void printStackTrace()</code>： 将非常详细的信息打印到控制台。使用的另一个线程打印的。</li></ul><h3 id="自定义异常"><a href="#自定义异常" class="headerlink" title="自定义异常"></a>自定义异常</h3><ul><li>使用一个类继承体系中的任何一个类<ol><li>如果这个类继承的是RuntimeException或者他下面的子类，那么这个类就是运行时异常。</li><li>如果这个类继承的Exception或者除了RuntimeException之外的其他子类，那么这个类就是编译时异常。</li></ol></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;异常&quot;&gt;&lt;a href=&quot;#异常&quot; class=&quot;headerlink&quot; title=&quot;异常&quot;&gt;&lt;/a&gt;异常&lt;/h2&gt;&lt;h3 id=&quot;运行时和编译时异常&quot;&gt;&lt;a href=&quot;#运行时和编译时异常&quot; class=&quot;headerlink&quot; title=&quot;运行时和编译时
+      
+    
+    </summary>
+    
+      <category term="基础" scheme="http://yoursite.com/categories/%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="JavaSE" scheme="http://yoursite.com/tags/JavaSE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Map集合</title>
+    <link href="http://yoursite.com/2018/06/15/--Map%E9%9B%86%E5%90%88/"/>
+    <id>http://yoursite.com/2018/06/15/--Map集合/</id>
+    <published>2018-06-15T11:47:09.357Z</published>
+    <updated>2018-06-15T11:50:13.375Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Map集合"><a href="#Map集合" class="headerlink" title="Map集合"></a>Map集合</h2><ul><li>map属于双列集合，每个元素都是一个键值对</li><li>特点：<strong>键唯一，值可以重复，键和值可以为null</strong></li><li>常用实现类：HashMap（底层数组哈希表）、LinkedHasMap有序（哈希表加链表）</li></ul><h3 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h3><ul><li><code>V put(K key, V value)</code>： 向Map集合中添加键值对。</li><li><code>V get(Object key)</code>： 根据key获取value。</li><li><code>V remove(Object key)</code>： 根据key，直接删除整个的键值对。返回值为被删除掉的值。</li></ul><h3 id="遍历步骤"><a href="#遍历步骤" class="headerlink" title="遍历步骤"></a>遍历步骤</h3><p>第一种：</p><ol><li>调用Map集合keySet方法获取到所有的key，存放于Set集合中；</li><li>遍历Set集合，得到所有的key；</li><li>调用Map集合的get方法，根据key获取value。</li></ol><p>第二种：</p><ol><li>通过Map集合调用entrySet方法，获取到保存所有Entry对象的Set集合。</li><li>遍历Set集合，拿到里面的所有的Entry对象</li><li>调用Entry的getKey和getValue获取键和值。</li></ol><p>总结：如果要存储自定义对象作为key，如果要保证一致性，要重写hashCode和equals方法</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.9 之后，集合多了of方法，可以直接创建带有少量元素的集合。</span><br><span class="line">注意：</span><br><span class="line">    1. 这个of方法是List，Set，Map接口的静态方法。这些接口的子类并没有实现这个方法</span><br><span class="line">    2. 通过这种方式创建出来的集合是不能修改的，比如不能往这个集合中添加数据</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Map集合&quot;&gt;&lt;a href=&quot;#Map集合&quot; class=&quot;headerlink&quot; title=&quot;Map集合&quot;&gt;&lt;/a&gt;Map集合&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;map属于双列集合，每个元素都是一个键值对&lt;/li&gt;
+&lt;li&gt;特点：&lt;strong&gt;键唯一，值可以重复，
+      
+    
+    </summary>
+    
+      <category term="基础" scheme="http://yoursite.com/categories/%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="JavaSE" scheme="http://yoursite.com/tags/JavaSE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Object类、常用API</title>
+    <link href="http://yoursite.com/2018/06/15/--Object%E7%B1%BB%E3%80%81%E5%B8%B8%E7%94%A8API/"/>
+    <id>http://yoursite.com/2018/06/15/--Object类、常用API/</id>
+    <published>2018-06-15T11:47:09.357Z</published>
+    <updated>2018-06-15T11:46:52.052Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Object类"><a href="#Object类" class="headerlink" title="Object类"></a>Object类</h2><p>java.lang.Object 类是Java语言中的根类，即所有类的父类 </p><ul><li><p>public String toString() ：返回该对象的字符串表示。</p><p>由于toString方法返回的结果是内存地址，而在开发中，经常需要字符串表现形式，因此也需要<strong>重写</strong>它。</p></li></ul><ul><li><p>public boolean equals(Object obj) ：指示其他某个对象是否与此对象“相等”。</p><p>默认地址比较：没有覆盖重写equals方法，那么默认进行== 运算符的对象地址比较，只要不是同一个对象，结果必然为false.</p><p>对象内容比较：进行对象的内容比较，可以<strong>覆盖重写equals方法</strong></p></li></ul><h2 id="Objects类"><a href="#Objects类" class="headerlink" title="Objects类"></a>Objects类</h2><p>java.util.Objects在JDK7添加了一个Objects工具类</p><ul><li>它由一些静态的实用方法组成，用于计算对象的hashcode、返回对象的字符串表示形式、比较两个对象。</li><li>public static boolean equals(Object a, Object b) ：判断两个对象是否相等。</li></ul><h2 id="Date类"><a href="#Date类" class="headerlink" title="Date类"></a>Date类</h2><p>java.util.Date 类 表示特定的瞬间，精确到毫秒。</p><ul><li><p>public Date() ：无参构造，可以自动设置当前系统时间的毫秒时刻</p></li><li><p>public Date(long date) ：指定long类型的构造参数，可以自定义毫秒时刻，</p><p>以表示自从标准基准时间（称为“历元（epoch）”，即<strong>1970年1月1日00:00:00 GMT</strong>）以来的指定毫秒数。</p></li><li><p>tips: 由于我们处于东八区，所以我们的基准时间为1970年1月1日8时0分0秒。</p></li><li><p>常用方法：</p><p>public long getTime() 把日期对象转换成对应的时间毫秒值。</p></li></ul><h2 id="DateFormat类"><a href="#DateFormat类" class="headerlink" title="DateFormat类"></a>DateFormat类</h2><p>java.text.DateFormat 是日期/时间格式化子类的抽象类</p><ul><li><p>DateFormat为抽象类，需要常用的子类java.text.SimpleDateFormat</p></li><li><p>构造方法：</p><p>SimpleDateFormat sdf = new SimpleDateFormat(“yyyy‐MM‐dd”);//创建SimpleDateFormat对象,写日期模式</p></li><li><p>常用格式规则：</p><p>| 标识字母（区分大小写） | 含义   |<br>| :———- | —- |<br>| y           | 年    |<br>| M           | 月    |<br>| d           | 日    |<br>| H           | 时    |<br>| m           | 分    |<br>| s           | 秒    |</p></li><li><p>格式化：Date-&gt;String：public String <strong>format</strong>(Date date)</p><p>解析：String-&gt;Date：public Date <strong>parse</strong>(String source)</p></li></ul><h2 id="Calendar类-日历"><a href="#Calendar类-日历" class="headerlink" title="Calendar类(日历)"></a>Calendar类(日历)</h2><p>java.util.Calendar 是日历类</p><ul><li><p>Calendar类在创建对象时并非直接创建，而是<strong>通过静态方法创建</strong>，返回子类对象</p></li><li><p>Calendar c=Calendar.getInstance() ：创建Calendar对象</p></li><li><p>常用方法：</p><p>public int get(int field) ：返回给定日历字段的值。</p><p>public void set(int field, int value) ：将给定的日历字段设置为给定值。</p><p>public abstract void add(int field, int amount) ：根据日历的规则，为给定的日历字段添加或减去指定的时间量。</p><p>public Date getTime() ：并不是获取毫秒时刻，而是拿到对应的Date对象。</p></li><li><p>在Calendar类中，月份的表示是以0-11代表1-12月。</p></li></ul><h2 id="System类"><a href="#System类" class="headerlink" title="System类"></a>System类</h2><p>java.lang.System 类中提供了大量的<strong>静态</strong>方法</p><ul><li><p>public static long currentTimeMillis()：是获取当前系统时间与1970年01月01日00:00点之间的毫秒差值</p></li><li><p>public static void arraycopy(Object src, int srcPos, Object dest, int destPos, int length) ：将<br>数组中指定的数据拷贝到另一个数组中。</p><p>| 参数名称    | 参数类型   | 参数含义       |<br>| ——- | —— | ———- |<br>| src     | Object | 源数组        |<br>| srcPos  | int    | 源数组索引起始位置  |<br>| dest    | Object | 目标数组       |<br>| destPos | int    | 目标数组索引起始位置 |<br>| length  | int    | 复制元素个数     |</p></li></ul><h2 id="StringBuilder类"><a href="#StringBuilder类" class="headerlink" title="StringBuilder类"></a>StringBuilder类</h2><p>java.lang.StringBuilder可变字符序列</p><ul><li><p>StringBuilder是个字符串的缓冲区，底层是数组，StringBuilder会自动维护数组的扩容</p></li><li><p>构造方法：</p><p>public StringBuilder() ：构造一个空的StringBuilder容器。<br>public StringBuilder(String str) ：构造一个StringBuilder容器，并将字符串添加进去。</p></li><li><p>常用方法：</p><p>public StringBuilder append(…) ：添加任意类型数据的字符串形式，并返回当前对象自身。<br>public String toString() ：将当前StringBuilder对象转换为String对象。</p></li></ul><h2 id="基本类型与字符串之间的转换"><a href="#基本类型与字符串之间的转换" class="headerlink" title="基本类型与字符串之间的转换"></a>基本类型与字符串之间的转换</h2><ul><li><p>基本类型转换String总共有三种方式：</p><ol><li><strong>基本类型直接与””相连接</strong></li><li>使用String的valueOf方法。</li><li>使用包装类对应的toString方法。</li></ol></li><li><p>字符串转基本类型</p><p>直接调用包装类的静态方法就可以了。</p><p>仅以Integer类的静态方法parseXxx为例：Integer.parseInt(String)：转成int类型数字</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Object类&quot;&gt;&lt;a href=&quot;#Object类&quot; class=&quot;headerlink&quot; title=&quot;Object类&quot;&gt;&lt;/a&gt;Object类&lt;/h2&gt;&lt;p&gt;java.lang.Object 类是Java语言中的根类，即所有类的父类 &lt;/p&gt;
+&lt;ul&gt;
+&lt;l
+      
+    
+    </summary>
+    
+      <category term="基础" scheme="http://yoursite.com/categories/%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="JavaSE" scheme="http://yoursite.com/tags/JavaSE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>List集合、Set集合、可变参数、Collections</title>
+    <link href="http://yoursite.com/2018/06/15/--List%E9%9B%86%E5%90%88%E3%80%81Set%E9%9B%86%E5%90%88/"/>
+    <id>http://yoursite.com/2018/06/15/--List集合、Set集合/</id>
+    <published>2018-06-15T11:47:09.357Z</published>
+    <updated>2018-06-15T11:46:59.534Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="List集合"><a href="#List集合" class="headerlink" title="List集合"></a>List集合</h2><ul><li>list接口是Collection下面的一个子接口</li><li>特点：<strong>存取有序，有索引，可以存重复元素</strong></li><li>常用实现类：<strong>ArrayList（底层是数组，查找快增删慢）</strong>、<strong>LinkedList（底层双向链表，增删快查找慢）</strong></li></ul><h3 id="对索引操作"><a href="#对索引操作" class="headerlink" title="对索引操作"></a>对索引操作</h3><ul><li><code>public void add(int index, E element)</code> ： 将指定的元素，添加到该集合中的指定位置上。</li><li><strong><code>public E get(int index)</code></strong> ：返回集合中指定位置的元素。</li><li><code>public E remove(int index)</code> ：移除列表中指定位置的元素, 返回的是被移除的元素。</li><li><code>public E set(int index, E element)</code> ：用指定元素替换集合中指定位置的元素,返回值的更新前的元素。</li></ul><h3 id="LinkedList独有方法"><a href="#LinkedList独有方法" class="headerlink" title="LinkedList独有方法"></a>LinkedList独有方法</h3><ul><li><code>public void addFirst(E e)</code> ：将指定元素插入此列表的开头。</li><li><code>public void addLast(E e)</code>：将指定元素添加到此列表的结尾。</li><li><code>public E getFirst()</code> ：返回此列表的第一个元素。</li><li><code>public E getLast()</code> ：返回此列表的最后一个元素。</li><li><code>public E removeFirst()</code> ：移除并返回此列表的第一个元素。</li><li><code>public E removeLast()</code> ：移除并返回此列表的最后一个元素。</li><li><code>public E pop()</code>：从此列表所表示的堆栈处弹出一个元素。</li><li><code>public void push(E e)</code>：将元素推入此列表所表示的堆栈。</li><li><code>public boolean isEmpty()</code> ：如果列表不包含元素，则返回true</li></ul><h2 id="Set集合"><a href="#Set集合" class="headerlink" title="Set集合"></a>Set集合</h2><ul><li>set接口是Collection下面的一个子接口</li><li>特点：<strong>存取无序，无索引，不能存重复元素</strong></li><li>常用实现类：HashSet（底层哈希表：数组+链表+红黑树）、LinkedHashSet<strong>有序</strong>（底层链表和哈希表组合）</li><li><strong>Set集合取出元素</strong>的方式可以采用：<strong>迭代器、增强for</strong>（因无索引）</li></ul><h3 id="HashSet判断唯一性的原理"><a href="#HashSet判断唯一性的原理" class="headerlink" title="HashSet判断唯一性的原理"></a>HashSet判断唯一性的原理</h3><ol><li>先调用hashCode比较哈希值， 如果哈希值不同，肯定不是相同的对象。如果哈希值相同，不一定是相同的对象。</li><li>当对象哈希值相同的情况下，还需要调用equals。如果equals相同，就是同一个对象。如果equals不同，就不是同一个对象。</li></ol><h3 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h3><ul><li>归并后的才是哈希表，JDK8之前的数组中的每个元素都是链表，JDK8之后，链表长度超过8，就会自动变成红黑树。</li><li>哈希表就是一个数组，数组中每个元素都是链表，HashSet集合中，哈希表默认长度16。</li><li>桶：数组中每个元素（都是链表），放的是归并后的内容。</li><li>哈希冲突：出现在同一个桶内的对象就是哈希冲突。</li><li>加载因子：是一个百分比，默认0.75，当桶的比例超过加载因子，会再哈希（扩容16-&gt;32）。</li></ul><h3 id="哈希值"><a href="#哈希值" class="headerlink" title="哈希值"></a>哈希值</h3><ul><li>其实就是一个int数字， 可以把这个数字（哈希值）看成对象的特征码（不是唯一的标识）。</li><li>Object里面的hashCode方法的哈希值是通过地址值计算出来的。</li><li>自定义哈希值，在子类中重写hashCode就行了；对自定义对象进行去重，<strong>需要重写hashCode和equals方法</strong>。</li></ul><h2 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">修饰符 返回值类型 方法名(数据类型... 变量名) &#123;</span><br><span class="line">    //方法体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ul><li>可变参数位置可以传递任意个参数（0个1个或者多个），这些参数的数据类型必须一致。</li><li>可变参数本质其实是数组，如果在方法内使用可变参，就按照数组的方式去使用就可以了，调用方法的时候也可以传递数组。</li></ul><h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ol><li>一个方法最多只能有一个可变参数</li><li>方法的可变参数一定要放在最后一个位置</li><li>可变参数本质是数组，所以不能和数组构成重载</li></ol><h2 id="Collections-集合工具类"><a href="#Collections-集合工具类" class="headerlink" title="Collections 集合工具类"></a>Collections 集合工具类</h2><ul><li><p>public static <t> boolean addAll(Collection<t> c, T… elements) :往集合中添加一些元素。</t></t></p><p>参数c：表示要往哪个集合中添加元素</p><p>参数elements： 要往集合中添加哪些元素</p></li><li><p>public static void shuffle(List&lt;?&gt; list) 打乱顺序 ：打乱集合顺序。</p></li><li><p>public static <t> void sort(List<t> list) ：将集合中元素按照默认规则排序。使用sort排序的集合里面的泛型类，一定要实现一个Comparable接口。实现这个接口的对象具有自然排序的功能，自然排序指的是这个对象本身就具备了排序的功能。</t></t></p></li><li><p>public static <t> void sort(List<t> list，Comparator&lt;? super T&gt; ) ：将集合中元素按照指定规则排序。</t></t></p></li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Comparable：实现这个接口的类具备自然排序的功能。自己就具备了排序的功能。</span><br><span class="line">Comparator：是一个比较器，可以帮助别人排序</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;List集合&quot;&gt;&lt;a href=&quot;#List集合&quot; class=&quot;headerlink&quot; title=&quot;List集合&quot;&gt;&lt;/a&gt;List集合&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;list接口是Collection下面的一个子接口&lt;/li&gt;
 &lt;li&gt;特点：&lt;strong&gt;存取
+      
+    
+    </summary>
+    
+      <category term="基础" scheme="http://yoursite.com/categories/%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="JavaSE" scheme="http://yoursite.com/tags/JavaSE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Collection集合、泛型</title>
+    <link href="http://yoursite.com/2018/06/15/--Collection%E9%9B%86%E5%90%88%E3%80%81%E6%B3%9B%E5%9E%8B/"/>
+    <id>http://yoursite.com/2018/06/15/--Collection集合、泛型/</id>
+    <published>2018-06-15T11:46:31.166Z</published>
+    <updated>2018-06-15T11:46:00.814Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Collection集合"><a href="#Collection集合" class="headerlink" title="Collection集合"></a>Collection集合</h2><ul><li>单列集合类的根接口</li><li>两个重要子接口：java.util.List（元素有序可重复）和java.util.Set（元素无序不重复）</li></ul><h3 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h3><p><code>boolean add(E e)</code>： 添加元素<br><code>void clear()</code>： 清除所有元素<br><code>boolean contains(Object o)</code>： 判断集合中是否包含指定元素<br><code>boolean isEmpty()</code>： 判断集合中有没有元素，如果没有元素返回true<br><code>boolean remove(Object o)</code>：删除指定的元素<br><code>int size()</code>：集合的大小<br><code>Object[] toArray()</code>：把集合转成一个数组</p><h3 id="遍历集合"><a href="#遍历集合" class="headerlink" title="遍历集合"></a>遍历集合</h3><p>步骤：</p><ol><li>调用iterator方法获取到集合的迭代器。</li><li>判断还有没有元素可以获取hasNext。</li><li>调用next方法获取元素，并且把光标向后移动。</li></ol><h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h2><ul><li>泛型是一种未知的，不确定的数据类型，如果省略，泛型为Object类型</li><li>泛型的好处：省略的强转的代码。将异常从运行时期提前到了编译时期。</li><li>泛型只在编译时期有效，一旦到了运行时期，泛型就会消失（俗称为泛型擦除）</li></ul><p>泛型类、泛型方法：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">在类名后面加上&lt;T&gt;（T可以是任意的字母），这个类就变成了泛型类。</span><br><span class="line">如果想要所有泛型的范围， 可以使用泛型方法。</span><br><span class="line">格式：</span><br><span class="line">修饰符 &lt;泛型&gt; 返回值类型 方法名(参数列表) &#123;&#125;</span><br><span class="line">泛型方法上的泛型，需要等到调用方法的时候才确定。</span><br></pre></td></tr></table></figure><p>泛型接口：</p><pre><code>如果把泛型加在接口名字后面，那么这个接口就是泛型接口泛型接口两种使用方式1. 实现类在实现这个接口的时候，直接把这个泛型确定出来2. 实现类在实现这个接口的时候，可以不确定泛型的类型， 等到使用这个实现类的时候再确定。</code></pre><p>泛型通配符：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ArrayList&lt;?&gt;： ?表示泛型通配符，可以匹配任何类型的泛型。</span><br><span class="line">泛型通配符只能在参数位置被动匹配，不能主动使用。</span><br><span class="line">泛型限定，可以限制泛型通配符? 的类型</span><br><span class="line">    格式</span><br><span class="line">    &lt;? extends A&gt;： 泛型类型只能是A类或者A类的子类。 </span><br><span class="line">    &lt;? super A&gt;： 泛型只能是A类或者A类的父类。     </span><br><span class="line"> 泛型的作用：一般用来对代码结构进行优化，进行重构。</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Collection集合&quot;&gt;&lt;a href=&quot;#Collection集合&quot; class=&quot;headerlink&quot; title=&quot;Collection集合&quot;&gt;&lt;/a&gt;Collection集合&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;单列集合类的根接口&lt;/li&gt;
+&lt;li&gt;两个重要子
       
     
     </summary>
@@ -103,9 +237,9 @@
     <link href="http://yoursite.com/2018/06/12/--%E7%BB%A7%E6%89%BF%E3%80%81super%E3%80%81this%E3%80%81%E6%8A%BD%E8%B1%A1%E7%B1%BB/"/>
     <id>http://yoursite.com/2018/06/12/--继承、super、this、抽象类/</id>
     <published>2018-06-12T10:46:56.666Z</published>
-    <updated>2018-06-12T10:47:27.422Z</updated>
+    <updated>2018-06-20T03:38:47.336Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><ul><li><p>特点：子类拥有父类的所有内容，除了被private和构造方法</p></li><li><p>好处：对相同的内容，进行共性抽取，实现多个类中相同内容的复用,子类可以实现各自的不同功能需求</p></li><li><p>继承中成员变量的访问特点</p><ol><li>直接通过对象去访问，看对象创建语句=左边的内容，是谁就优先使用谁的成员变量，如果没有则向上找</li><li>间接通过对象调用成员方法去访问，调用时，方法属于谁就优先使用谁的成员变量，如果没有则向上找</li></ol></li><li><p>继承中成员方法的访问特点</p><p>在继承中访问成员变量时，new的是谁，就优先使用谁的成员方法，如果没有则向上找</p></li></ul><h3 id="继承中方法的覆盖重写注意事项"><a href="#继承中方法的覆盖重写注意事项" class="headerlink" title="继承中方法的覆盖重写注意事项"></a>继承中方法的覆盖重写注意事项</h3><ul><li>权限：public&gt;protected&gt;(default)不写就是默认&gt;private</li><li>子类方法覆盖父类方法，必须要保证权限大于等于父类权限。</li><li>private的内容不能被继承，所以也就没有重写概念</li><li>方法名和参数类型必须一致</li><li>类型必须小于等于父类的返回值类型（扩展，设计模式6大原则之一：里式替换原则）</li></ul><h3 id="继承中构造方法的访问特点"><a href="#继承中构造方法的访问特点" class="headerlink" title="继承中构造方法的访问特点"></a>继承中构造方法的访问特点</h3><ol><li>创建子类对象时，一定会调用父类的构造方法</li><li>super调用父类的构造方法时，只能在第一个有效语句</li><li>super可以调用父类的有参构造方法。</li><li>super访问父类的构造方法必须在子类的构造方法中的第一句</li></ol><h2 id="super关键字"><a href="#super关键字" class="headerlink" title="super关键字"></a>super关键字</h2><ol><li>可以在子类的成员方法中，访问父类的成员变量，格式：super.父类成员变量</li><li>可以在子类的成员方法中，访问父类的成员方法，格式：super.父类成员方法名(参数列表)</li><li>可以在子类的构造方法中，访问父类的构造方法，格式：super(参数列表)</li></ol><h2 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a>this关键字</h2><ol><li>可以区分当前类中局部变量和成员变量</li><li>可以在本类的成员方法中，调用该类的其他的成员方法(其实在一个类中所有的成员变量和成员方法的调用之前都有this.)</li><li>可以在本类的构造方法中，调用其他的重载构造方法</li></ol><h2 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h2><ol><li>抽象类不能创建对象，如果创建，编译无法通过而报错。只能创建其非抽象子类的对象</li><li>抽象类中，可以有构造方法，是供子类创建对象时，初始化父类成员使用的</li><li>抽象类中，不一定包含抽象方法，但是有抽象方法的类必定是抽象类</li><li>抽象类的子类，必须重写抽象父类中所有的抽象方法，否则，编译无法通过而报错。除非该子类也是抽象类。</li></ol><p>抽象类的意义：</p><ul><li>抽象类的意义是对某一些功能添加约束</li></ul><ul><li>重写，我已经实现了自己该有的功能，子类，可以在此基础选择性扩展功能</li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><ul><li><p>特点：子类拥有父类的所有内容，除了被private和构造方法</p></li><li><p>好处：对相同的内容，进行共性抽取，实现多个类中相同内容的复用,子类可以实现各自的不同功能需求</p></li><li><p>继承中成员变量的访问特点</p><ol><li>直接通过对象去访问，看对象创建语句=左边的内容，是谁就优先使用谁的成员变量，如果没有则向上找</li><li>间接通过对象调用成员方法去访问，调用时，方法属于谁就优先使用谁的成员变量，如果没有则向上找</li></ol></li><li><p>继承中成员方法的访问特点</p><p>在继承中访问成员变量时，new的是谁，就优先使用谁的成员方法，如果没有则向上找</p></li></ul><h3 id="继承中方法的覆盖重写注意事项"><a href="#继承中方法的覆盖重写注意事项" class="headerlink" title="继承中方法的覆盖重写注意事项"></a>继承中方法的覆盖重写注意事项</h3><ul><li>权限：public&gt;protected&gt;(default)不写就是默认&gt;private</li><li>子类方法覆盖父类方法，必须要保证权限大于等于父类权限。</li><li>private的内容不能被继承，所以也就没有重写概念</li><li>方法名和参数类型必须一致</li><li>类型必须小于等于父类的返回值类型（扩展，设计模式6大原则之一：里式替换原则）</li></ul><h3 id="继承中构造方法的访问特点"><a href="#继承中构造方法的访问特点" class="headerlink" title="继承中构造方法的访问特点"></a>继承中构造方法的访问特点</h3><ol><li>创建子类对象时，一定会调用父类的构造方法</li><li>super调用父类的构造方法时，只能在第一个有效语句</li><li>super可以调用父类的有参构造方法。</li><li>super访问父类的构造方法必须在子类的构造方法中的第一句</li></ol><h2 id="super关键字"><a href="#super关键字" class="headerlink" title="super关键字"></a>super关键字</h2><ol><li>可以在子类的成员方法中，访问父类的成员变量，格式：super.父类成员变量</li><li>可以在子类的成员方法中，访问父类的成员方法，格式：super.父类成员方法名(参数列表)</li><li>可以在子类的构造方法中，访问父类的构造方法，格式：super(参数列表)</li></ol><h2 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a>this关键字</h2><ol><li>可以区分当前类中局部变量和成员变量</li><li>可以在本类的成员方法中，调用该类的其他的成员方法(其实在一个类中所有的成员变量和成员方法的调用之前都有this.)</li><li>可以在本类的构造方法中，调用其他的重载构造方法</li></ol><h2 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h2><ol><li>抽象类不能创建对象，如果创建，编译无法通过而报错。只能创建其非抽象子类的对象</li><li>抽象类中，可以有构造方法，是供子类创建对象时，初始化父类成员使用的</li><li>抽象类中，不一定包含抽象方法，但是有抽象方法的类必定是抽象类</li><li>抽象类的子类，必须重写抽象父类中所有的抽象方法，否则，编译无法通过而报错。除非该子类也是抽象类。</li></ol><p>抽象类的意义：</p><ul><li>抽象类的意义是对某一些功能添加约束</li><li>重写，我已经实现了自己该有的功能，子类，可以在此基础选择性扩展功能</li></ul>]]></content>
     
     <summary type="html">
     
