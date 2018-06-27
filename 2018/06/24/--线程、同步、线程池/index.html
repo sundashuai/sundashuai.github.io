@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="Object类java.lang.Object 类是Java语言中的根类，即所有类的父类   public String toString() ：返回该对象的字符串表示。 由于toString方法返回的结果是内存地址，而在开发中，经常需要字符串表现形式，因此也需要重写它。    public boolean equals(Object obj) ：指示其他某个对象是否与此对象“相等”。 默认地址比">
+<meta name="description" content="线程构造方法：  public Thread() ：分配一个新的线程对象。 public Thread(String name)：分配一个指定名字的新的线程对象。 public Thread(Runnable target)：分配一个带有指定目标新的线程对象。 public Thread(Runnable target,String name)：分配一个带有指定目标新的线程对象并指定名字。  常用">
 <meta name="keywords" content="JavaSE">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Object类、常用API">
-<meta property="og:url" content="http://yoursite.com/2018/06/15/--Object类、常用API/index.html">
+<meta property="og:title" content="线程、同步、线程池">
+<meta property="og:url" content="http://yoursite.com/2018/06/24/--线程、同步、线程池/index.html">
 <meta property="og:site_name" content="SUN&#39;S BLOG">
-<meta property="og:description" content="Object类java.lang.Object 类是Java语言中的根类，即所有类的父类   public String toString() ：返回该对象的字符串表示。 由于toString方法返回的结果是内存地址，而在开发中，经常需要字符串表现形式，因此也需要重写它。    public boolean equals(Object obj) ：指示其他某个对象是否与此对象“相等”。 默认地址比">
+<meta property="og:description" content="线程构造方法：  public Thread() ：分配一个新的线程对象。 public Thread(String name)：分配一个指定名字的新的线程对象。 public Thread(Runnable target)：分配一个带有指定目标新的线程对象。 public Thread(Runnable target,String name)：分配一个带有指定目标新的线程对象并指定名字。  常用">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-15T11:46:52.052Z">
+<meta property="og:updated_time" content="2018-06-26T02:12:02.827Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Object类、常用API">
-<meta name="twitter:description" content="Object类java.lang.Object 类是Java语言中的根类，即所有类的父类   public String toString() ：返回该对象的字符串表示。 由于toString方法返回的结果是内存地址，而在开发中，经常需要字符串表现形式，因此也需要重写它。    public boolean equals(Object obj) ：指示其他某个对象是否与此对象“相等”。 默认地址比">
+<meta name="twitter:title" content="线程、同步、线程池">
+<meta name="twitter:description" content="线程构造方法：  public Thread() ：分配一个新的线程对象。 public Thread(String name)：分配一个指定名字的新的线程对象。 public Thread(Runnable target)：分配一个带有指定目标新的线程对象。 public Thread(Runnable target,String name)：分配一个带有指定目标新的线程对象并指定名字。  常用">
 
 
 
@@ -122,7 +122,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/06/15/--Object类、常用API/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/06/24/--线程、同步、线程池/"/>
 
 
 
@@ -140,7 +140,7 @@
 
 
 
-  <title>Object类、常用API | SUN'S BLOG</title>
+  <title>线程、同步、线程池 | SUN'S BLOG</title>
   
 
 
@@ -287,7 +287,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/15/--Object类、常用API/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/24/--线程、同步、线程池/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="孙大帅">
@@ -304,7 +304,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Object类、常用API</h1>
+          <h1 class="post-title" itemprop="name headline">线程、同步、线程池</h1>
         
 
         <div class="post-meta">
@@ -316,8 +316,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-15T19:47:09+08:00">
-                2018-06-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-24T19:02:38+08:00">
+                2018-06-24
               </time>
             
 
@@ -356,7 +356,7 @@
 
           
           
-             <span id="/2018/06/15/--Object类、常用API/" class="leancloud_visitors" data-flag-title="Object类、常用API">
+             <span id="/2018/06/24/--线程、同步、线程池/" class="leancloud_visitors" data-flag-title="线程、同步、线程池">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -387,7 +387,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  996字
+                  1,369字
                 </span>
               
 
@@ -412,97 +412,102 @@
       
 
       
-        <h2 id="Object类"><a href="#Object类" class="headerlink" title="Object类"></a>Object类</h2><p>java.lang.Object 类是Java语言中的根类，即所有类的父类 </p>
+        <h2 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h2><p>构造方法：</p>
 <ul>
-<li><p>public String toString() ：返回该对象的字符串表示。</p>
-<p>由于toString方法返回的结果是内存地址，而在开发中，经常需要字符串表现形式，因此也需要<strong>重写</strong>它。</p>
-</li>
+<li><code>public Thread()</code> ：分配一个新的线程对象。</li>
+<li><code>public Thread(String name)</code>：分配一个指定名字的新的线程对象。</li>
+<li><code>public Thread(Runnable target)</code>：分配一个带有指定目标新的线程对象。</li>
+<li><code>public Thread(Runnable target,String name)</code>：分配一个带有指定目标新的线程对象并指定名字。</li>
 </ul>
+<p>常用方法：</p>
 <ul>
-<li><p>public boolean equals(Object obj) ：指示其他某个对象是否与此对象“相等”。</p>
-<p>默认地址比较：没有覆盖重写equals方法，那么默认进行== 运算符的对象地址比较，只要不是同一个对象，结果必然为false.</p>
-<p>对象内容比较：进行对象的内容比较，可以<strong>覆盖重写equals方法</strong></p>
-</li>
+<li><code>public String getName()</code> ：获取当前线程名称。</li>
+<li><code>public void start()</code> ：导致此线程开始执行； Java虚拟机调用此线程的run方法。</li>
+<li><code>public void run()</code> ：此线程要执行的任务在此处定义代码。</li>
+<li><code>public static void sleep(long millis)</code>：使当前正在执行的线程以指定的毫秒数暂停（暂时停止执行）。</li>
+<li><code>public static Thread currentThread()</code>：返回对当前正在执行的线程对象的引用。</li>
 </ul>
-<h2 id="Objects类"><a href="#Objects类" class="headerlink" title="Objects类"></a>Objects类</h2><p>java.util.Objects在JDK7添加了一个Objects工具类</p>
-<ul>
-<li>它由一些静态的实用方法组成，用于计算对象的hashcode、返回对象的字符串表示形式、比较两个对象。</li>
-<li>public static boolean equals(Object a, Object b) ：判断两个对象是否相等。</li>
+<h2 id="多线程的内存"><a href="#多线程的内存" class="headerlink" title="多线程的内存"></a>多线程的内存</h2><ul>
+<li>每个线程都有自己的栈区，每个栈区调用的方法都会进入到自己的栈区，<strong>栈内存是线程私有的</strong></li>
+<li><strong>多线程共享一个堆内存</strong></li>
 </ul>
-<h2 id="Date类"><a href="#Date类" class="headerlink" title="Date类"></a>Date类</h2><p>java.util.Date 类 表示特定的瞬间，精确到毫秒。</p>
-<ul>
-<li><p>public Date() ：无参构造，可以自动设置当前系统时间的毫秒时刻</p>
-</li>
-<li><p>public Date(long date) ：指定long类型的构造参数，可以自定义毫秒时刻，</p>
-<p>以表示自从标准基准时间（称为“历元（epoch）”，即<strong>1970年1月1日00:00:00 GMT</strong>）以来的指定毫秒数。</p>
-</li>
-<li><p>tips: 由于我们处于东八区，所以我们的基准时间为1970年1月1日8时0分0秒。</p>
-</li>
-<li><p>常用方法：</p>
-<p>public long getTime() 把日期对象转换成对应的时间毫秒值。</p>
-</li>
-</ul>
-<h2 id="DateFormat类"><a href="#DateFormat类" class="headerlink" title="DateFormat类"></a>DateFormat类</h2><p>java.text.DateFormat 是日期/时间格式化子类的抽象类</p>
-<ul>
-<li><p>DateFormat为抽象类，需要常用的子类java.text.SimpleDateFormat</p>
-</li>
-<li><p>构造方法：</p>
-<p>SimpleDateFormat sdf = new SimpleDateFormat(“yyyy‐MM‐dd”);//创建SimpleDateFormat对象,写日期模式</p>
-</li>
-<li><p>常用格式规则：</p>
-<p>| 标识字母（区分大小写） | 含义   |<br>| :———- | —- |<br>| y           | 年    |<br>| M           | 月    |<br>| d           | 日    |<br>| H           | 时    |<br>| m           | 分    |<br>| s           | 秒    |</p>
-</li>
-<li><p>格式化：Date-&gt;String：public String <strong>format</strong>(Date date)</p>
-<p>解析：String-&gt;Date：public Date <strong>parse</strong>(String source)</p>
-</li>
-</ul>
-<h2 id="Calendar类-日历"><a href="#Calendar类-日历" class="headerlink" title="Calendar类(日历)"></a>Calendar类(日历)</h2><p>java.util.Calendar 是日历类</p>
-<ul>
-<li><p>Calendar类在创建对象时并非直接创建，而是<strong>通过静态方法创建</strong>，返回子类对象</p>
-</li>
-<li><p>Calendar c=Calendar.getInstance() ：创建Calendar对象</p>
-</li>
-<li><p>常用方法：</p>
-<p>public int get(int field) ：返回给定日历字段的值。</p>
-<p>public void set(int field, int value) ：将给定的日历字段设置为给定值。</p>
-<p>public abstract void add(int field, int amount) ：根据日历的规则，为给定的日历字段添加或减去指定的时间量。</p>
-<p>public Date getTime() ：并不是获取毫秒时刻，而是拿到对应的Date对象。</p>
-</li>
-<li><p>在Calendar类中，月份的表示是以0-11代表1-12月。</p>
-</li>
-</ul>
-<h2 id="System类"><a href="#System类" class="headerlink" title="System类"></a>System类</h2><p>java.lang.System 类中提供了大量的<strong>静态</strong>方法</p>
-<ul>
-<li><p>public static long currentTimeMillis()：是获取当前系统时间与1970年01月01日00:00点之间的毫秒差值</p>
-</li>
-<li><p>public static void arraycopy(Object src, int srcPos, Object dest, int destPos, int length) ：将<br>数组中指定的数据拷贝到另一个数组中。</p>
-<p>| 参数名称    | 参数类型   | 参数含义       |<br>| ——- | —— | ———- |<br>| src     | Object | 源数组        |<br>| srcPos  | int    | 源数组索引起始位置  |<br>| dest    | Object | 目标数组       |<br>| destPos | int    | 目标数组索引起始位置 |<br>| length  | int    | 复制元素个数     |</p>
-</li>
-</ul>
-<h2 id="StringBuilder类"><a href="#StringBuilder类" class="headerlink" title="StringBuilder类"></a>StringBuilder类</h2><p>java.lang.StringBuilder可变字符序列</p>
-<ul>
-<li><p>StringBuilder是个字符串的缓冲区，底层是数组，StringBuilder会自动维护数组的扩容</p>
-</li>
-<li><p>构造方法：</p>
-<p>public StringBuilder() ：构造一个空的StringBuilder容器。<br>public StringBuilder(String str) ：构造一个StringBuilder容器，并将字符串添加进去。</p>
-</li>
-<li><p>常用方法：</p>
-<p>public StringBuilder append(…) ：添加任意类型数据的字符串形式，并返回当前对象自身。<br>public String toString() ：将当前StringBuilder对象转换为String对象。</p>
-</li>
-</ul>
-<h2 id="基本类型与字符串之间的转换"><a href="#基本类型与字符串之间的转换" class="headerlink" title="基本类型与字符串之间的转换"></a>基本类型与字符串之间的转换</h2><ul>
-<li><p>基本类型转换String总共有三种方式：</p>
-<ol>
-<li><strong>基本类型直接与””相连接</strong></li>
-<li>使用String的valueOf方法。</li>
-<li>使用包装类对应的toString方法。</li>
+<h2 id="多线程实现方式"><a href="#多线程实现方式" class="headerlink" title="多线程实现方式"></a>多线程实现方式</h2><h3 id="继承Thread类"><a href="#继承Thread类" class="headerlink" title="继承Thread类"></a>继承Thread类</h3><ol>
+<li>定义类，继承Thread</li>
+<li>重写run方法。</li>
+<li>测试类中创建Thread子类对象</li>
+<li>调用start方法。</li>
 </ol>
-</li>
-<li><p>字符串转基本类型</p>
-<p>直接调用包装类的静态方法就可以了。</p>
-<p>仅以Integer类的静态方法parseXxx为例：Integer.parseInt(String)：转成int类型数字</p>
-</li>
+<h3 id="实现Runnable接口"><a href="#实现Runnable接口" class="headerlink" title="实现Runnable接口"></a>实现Runnable接口</h3><ol>
+<li>定义类，去实现Runnable接口。</li>
+<li>重写run方法，也是要在run方法中定义线程要执行的任务。</li>
+<li>在测试类中创建Runnable接口的实现类对象。</li>
+<li>创建一个线程Thread类的对象，并且把Runnable接口的实现类对象传递过去。</li>
+<li>调用Thread的start方法。</li>
+</ol>
+<h3 id="实现Runnable接口的优势"><a href="#实现Runnable接口的优势" class="headerlink" title="实现Runnable接口的优势"></a>实现Runnable接口的优势</h3><ol>
+<li>解决了java中类与类之间只能单继承的局限性。</li>
+<li>Runnable接口里面只有一个run方法，没有getName，sleep，currentThread…里面的功能更加的纯粹，只需要关注线程要执行的任务就可以了，这样更加符合单一职责原则。</li>
+<li>解耦。</li>
+<li>可以更加方便的实现多个线程间的数据共享。</li>
+<li>线程池可以传递Runnable接口的实现类对象，但是不能传递Thread的子类对象</li>
+</ol>
+<h2 id="线程安全"><a href="#线程安全" class="headerlink" title="线程安全"></a>线程安全</h2><h3 id="同步代码块"><a href="#同步代码块" class="headerlink" title="同步代码块"></a>同步代码块</h3><p>格式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">synchronized</span>(锁对象) &#123;</span><br><span class="line">    <span class="comment">//要同步的内容。</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>锁对象就是一个普通的对象，可以是任意对象，没有特殊的含义，只是做一个标记。</li>
+<li>synchronized代码块的作用： 只有持有锁的线程才能够进入到同步代码块中。</li>
 </ul>
+<h3 id="同步方法"><a href="#同步方法" class="headerlink" title="同步方法"></a>同步方法</h3><p>格式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">格式：</span><br><span class="line">    修饰符 <span class="keyword">synchronized</span> 返回值类型 方法名(参数列表) &#123;</span><br><span class="line">        方法体;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>synchronized修饰方法，相当于把整个方法体都加了同步代码块。</li>
+</ul>
+<h3 id="Lock接口"><a href="#Lock接口" class="headerlink" title="Lock接口"></a>Lock接口</h3><p>在jdk1.5之后，多了一个包，叫做java.util.concurrent，提供了很多对多线程操作的类和接口，其中有一个接口，叫做Lock，可以手动的释放锁以及获取锁。<br>void lock()： 手动的获取一个锁<br>void unlock()： 手动的释放锁<br>Lock 是一个接口，如果要用，需要使用实现类ReentrantLock。</p>
+<h3 id="安全效率比较"><a href="#安全效率比较" class="headerlink" title="安全效率比较"></a>安全效率比较</h3><p>StringBuilder：线程不安全，效率高</p>
+<p>StringBuffer：线程安全，效率低</p>
+<p>ArrayList，LinkedList：线程不安全的，效率高</p>
+<p>Vector集合（淘汰了）：线程安全的，效率低</p>
+<p>HashMap： 线程不安全，效率高</p>
+<p>Hashtable：线程安全，效率低</p>
+<p>ConcurrentHashMap：线程安全，效率高</p>
+<h2 id="线程的六种状态"><a href="#线程的六种状态" class="headerlink" title="线程的六种状态"></a>线程的六种状态</h2><ol>
+<li><p>NEW （新建）</p>
+<p>当一个线程仅仅被创建（new Thread() 或者new Thread子类()）那么这个线程就是出于NEW（新建）状态</p>
+</li>
+<li><p>RUNNABLE （执行）</p>
+<p>一个线程处于执行状态，当调用start方法后，这个线程会变成这个状态</p>
+</li>
+<li><p>BLOCKED（受阻塞）</p>
+<p>当一个线程等待其他线程释放锁时，那么这个线程就属于受阻塞的状态。</p>
+</li>
+<li><p>WAITING（无限等待）</p>
+<p>当一个线程一直去等着某个东西，那么这个线程所处于的状态就是无限等待。wait() 无限等待的方法，除非有另一个线程唤醒自己。</p>
+</li>
+<li><p>TIMED_WAITING（计时等待）</p>
+<p>当一个线程去有一定时间的等着，那么线程就处于计时等待。比如sleep(mills) 这个方法，会等着这个时间结束然后去运行。</p>
+</li>
+<li><p>TERMINATED（退出）</p>
+<p>当该线程的run方法结束或者调用stop方法强制结束，这这个线程就会变成退出</p>
+</li>
+</ol>
+<h2 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h2><ul>
+<li>线程池的顶层接口： Executor， 只负责运行线程。常用的子接口： ExecutorService</li>
+<li>线程池的工具类： <strong>Executors 这个工具类可以获取一个线程池对象</strong>。</li>
+</ul>
+<p>工具类里面的方法<br><code>static ExecutorService newFixedThreadPool​(int nThreads)</code>：直接获取到一个定长的线程池</p>
+<p>实现步骤：</p>
+<ol>
+<li>通过线程池工具类获取到一个线程池对象。</li>
+<li>创建Runnable并重写run方法。</li>
+<li>调用线程池对象的submit，并传递Runnable实现类对象，表示使用线程池中的某个线程去执行该任务。submit(Runnable task)：参数是一个Runnable接口类型</li>
+<li><p>销毁线程池（一般不做）shutdown()：销毁线程池</p>
+<p>扩展：</p>
+</li>
+</ol>
+<p>newCachedThreadPool()：获取一个长度可变的线程池。如果线程不够用了，该线程池会自己创建新的线程，如果闲置的线程比较多，这个线程池也会自动回收线程</p>
+<p>newFixedThreadPool(int nThreads)：定长的线程池，多余的任务会在队列中等待。</p>
+<p>newScheduledThreadPool(int corePoolSize)：可周期性执行任务的线程池</p>
+<p>newSingleThreadExecutor()：一个单线程的线程池，可以指定线程的执行顺序。</p>
 
       
     </div>
@@ -562,8 +567,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/15/--List集合、Set集合/" rel="next" title="List集合、Set集合、可变参数、Collections">
-                <i class="fa fa-chevron-left"></i> List集合、Set集合、可变参数、Collections
+              <a href="/2018/06/24/--异常/" rel="next" title="异常">
+                <i class="fa fa-chevron-left"></i> 异常
               </a>
             
           </div>
@@ -572,8 +577,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/06/24/--异常/" rel="prev" title="异常">
-                异常 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/06/26/--Lambda表达式/" rel="prev" title="Lambda表达式">
+                Lambda表达式 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -774,7 +779,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Object类"><span class="nav-number">1.</span> <span class="nav-text">Object类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Objects类"><span class="nav-number">2.</span> <span class="nav-text">Objects类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Date类"><span class="nav-number">3.</span> <span class="nav-text">Date类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DateFormat类"><span class="nav-number">4.</span> <span class="nav-text">DateFormat类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Calendar类-日历"><span class="nav-number">5.</span> <span class="nav-text">Calendar类(日历)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#System类"><span class="nav-number">6.</span> <span class="nav-text">System类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#StringBuilder类"><span class="nav-number">7.</span> <span class="nav-text">StringBuilder类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本类型与字符串之间的转换"><span class="nav-number">8.</span> <span class="nav-text">基本类型与字符串之间的转换</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#线程"><span class="nav-number">1.</span> <span class="nav-text">线程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多线程的内存"><span class="nav-number">2.</span> <span class="nav-text">多线程的内存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多线程实现方式"><span class="nav-number">3.</span> <span class="nav-text">多线程实现方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#继承Thread类"><span class="nav-number">3.1.</span> <span class="nav-text">继承Thread类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现Runnable接口"><span class="nav-number">3.2.</span> <span class="nav-text">实现Runnable接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现Runnable接口的优势"><span class="nav-number">3.3.</span> <span class="nav-text">实现Runnable接口的优势</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程安全"><span class="nav-number">4.</span> <span class="nav-text">线程安全</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#同步代码块"><span class="nav-number">4.1.</span> <span class="nav-text">同步代码块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#同步方法"><span class="nav-number">4.2.</span> <span class="nav-text">同步方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lock接口"><span class="nav-number">4.3.</span> <span class="nav-text">Lock接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安全效率比较"><span class="nav-number">4.4.</span> <span class="nav-text">安全效率比较</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程的六种状态"><span class="nav-number">5.</span> <span class="nav-text">线程的六种状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程池"><span class="nav-number">6.</span> <span class="nav-text">线程池</span></a></li></ol></div>
             
 
           </div>

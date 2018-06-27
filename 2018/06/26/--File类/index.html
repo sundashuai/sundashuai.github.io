@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="Object类java.lang.Object 类是Java语言中的根类，即所有类的父类   public String toString() ：返回该对象的字符串表示。 由于toString方法返回的结果是内存地址，而在开发中，经常需要字符串表现形式，因此也需要重写它。    public boolean equals(Object obj) ：指示其他某个对象是否与此对象“相等”。 默认地址比">
+<meta name="description" content="File类File类可以表示计算机中的文件或者文件夹。  绝对路径：是一个从盘符开始的路径，是一个非常详细的路径。 相对路径：不是从盘符开始的路径，相对路径相对的是某一个位置，在idea中，相对路径指的是当前项目下的东西。  File中的获取方法构造方法 File(String pathname)：根据一个文件或者文件夹的路径构造一个File对象。 File(String parent, Stri">
 <meta name="keywords" content="JavaSE">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Object类、常用API">
-<meta property="og:url" content="http://yoursite.com/2018/06/15/--Object类、常用API/index.html">
+<meta property="og:title" content="File类">
+<meta property="og:url" content="http://yoursite.com/2018/06/26/--File类/index.html">
 <meta property="og:site_name" content="SUN&#39;S BLOG">
-<meta property="og:description" content="Object类java.lang.Object 类是Java语言中的根类，即所有类的父类   public String toString() ：返回该对象的字符串表示。 由于toString方法返回的结果是内存地址，而在开发中，经常需要字符串表现形式，因此也需要重写它。    public boolean equals(Object obj) ：指示其他某个对象是否与此对象“相等”。 默认地址比">
+<meta property="og:description" content="File类File类可以表示计算机中的文件或者文件夹。  绝对路径：是一个从盘符开始的路径，是一个非常详细的路径。 相对路径：不是从盘符开始的路径，相对路径相对的是某一个位置，在idea中，相对路径指的是当前项目下的东西。  File中的获取方法构造方法 File(String pathname)：根据一个文件或者文件夹的路径构造一个File对象。 File(String parent, Stri">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-15T11:46:52.052Z">
+<meta property="og:updated_time" content="2018-06-26T02:51:31.455Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Object类、常用API">
-<meta name="twitter:description" content="Object类java.lang.Object 类是Java语言中的根类，即所有类的父类   public String toString() ：返回该对象的字符串表示。 由于toString方法返回的结果是内存地址，而在开发中，经常需要字符串表现形式，因此也需要重写它。    public boolean equals(Object obj) ：指示其他某个对象是否与此对象“相等”。 默认地址比">
+<meta name="twitter:title" content="File类">
+<meta name="twitter:description" content="File类File类可以表示计算机中的文件或者文件夹。  绝对路径：是一个从盘符开始的路径，是一个非常详细的路径。 相对路径：不是从盘符开始的路径，相对路径相对的是某一个位置，在idea中，相对路径指的是当前项目下的东西。  File中的获取方法构造方法 File(String pathname)：根据一个文件或者文件夹的路径构造一个File对象。 File(String parent, Stri">
 
 
 
@@ -122,7 +122,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/06/15/--Object类、常用API/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/06/26/--File类/"/>
 
 
 
@@ -140,7 +140,7 @@
 
 
 
-  <title>Object类、常用API | SUN'S BLOG</title>
+  <title>File类 | SUN'S BLOG</title>
   
 
 
@@ -287,7 +287,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/15/--Object类、常用API/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/26/--File类/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="孙大帅">
@@ -304,7 +304,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Object类、常用API</h1>
+          <h1 class="post-title" itemprop="name headline">File类</h1>
         
 
         <div class="post-meta">
@@ -316,8 +316,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-15T19:47:09+08:00">
-                2018-06-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-26T22:04:58+08:00">
+                2018-06-26
               </time>
             
 
@@ -356,7 +356,7 @@
 
           
           
-             <span id="/2018/06/15/--Object类、常用API/" class="leancloud_visitors" data-flag-title="Object类、常用API">
+             <span id="/2018/06/26/--File类/" class="leancloud_visitors" data-flag-title="File类">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -387,7 +387,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  996字
+                  633字
                 </span>
               
 
@@ -412,97 +412,47 @@
       
 
       
-        <h2 id="Object类"><a href="#Object类" class="headerlink" title="Object类"></a>Object类</h2><p>java.lang.Object 类是Java语言中的根类，即所有类的父类 </p>
+        <h2 id="File类"><a href="#File类" class="headerlink" title="File类"></a>File类</h2><p>File类可以表示计算机中的文件或者文件夹。</p>
 <ul>
-<li><p>public String toString() ：返回该对象的字符串表示。</p>
-<p>由于toString方法返回的结果是内存地址，而在开发中，经常需要字符串表现形式，因此也需要<strong>重写</strong>它。</p>
-</li>
+<li>绝对路径：是一个从盘符开始的路径，是一个非常详细的路径。</li>
+<li>相对路径：不是从盘符开始的路径，相对路径相对的是某一个位置，在idea中，相对路径指的是当前项目下的东西。</li>
 </ul>
-<ul>
-<li><p>public boolean equals(Object obj) ：指示其他某个对象是否与此对象“相等”。</p>
-<p>默认地址比较：没有覆盖重写equals方法，那么默认进行== 运算符的对象地址比较，只要不是同一个对象，结果必然为false.</p>
-<p>对象内容比较：进行对象的内容比较，可以<strong>覆盖重写equals方法</strong></p>
-</li>
+<h3 id="File中的获取方法"><a href="#File中的获取方法" class="headerlink" title="File中的获取方法"></a>File中的获取方法</h3><h4 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h4><ul>
+<li><code>File(String pathname)</code>：根据一个文件或者文件夹的路径构造一个File对象。</li>
+<li><code>File(String parent, String child)</code>：根据父路径和子路径组合构造一个File对象。</li>
 </ul>
-<h2 id="Objects类"><a href="#Objects类" class="headerlink" title="Objects类"></a>Objects类</h2><p>java.util.Objects在JDK7添加了一个Objects工具类</p>
-<ul>
-<li>它由一些静态的实用方法组成，用于计算对象的hashcode、返回对象的字符串表示形式、比较两个对象。</li>
-<li>public static boolean equals(Object a, Object b) ：判断两个对象是否相等。</li>
+<h4 id="获取方法"><a href="#获取方法" class="headerlink" title="获取方法"></a>获取方法</h4><ul>
+<li><code>String getAbsolutePath()</code>：获取当前File对象的绝对路径</li>
+<li><code>String getPath()</code>： 获取File对象表示的路径</li>
+<li><code>String getName()</code>：获取File对象表示的文件或者文件夹的名字</li>
+<li><code>long length()</code>：获取文件的字节数大小。如果通过文件夹调用这个方法，得到的是一个不确定的值。</li>
 </ul>
-<h2 id="Date类"><a href="#Date类" class="headerlink" title="Date类"></a>Date类</h2><p>java.util.Date 类 表示特定的瞬间，精确到毫秒。</p>
-<ul>
-<li><p>public Date() ：无参构造，可以自动设置当前系统时间的毫秒时刻</p>
-</li>
-<li><p>public Date(long date) ：指定long类型的构造参数，可以自定义毫秒时刻，</p>
-<p>以表示自从标准基准时间（称为“历元（epoch）”，即<strong>1970年1月1日00:00:00 GMT</strong>）以来的指定毫秒数。</p>
-</li>
-<li><p>tips: 由于我们处于东八区，所以我们的基准时间为1970年1月1日8时0分0秒。</p>
-</li>
-<li><p>常用方法：</p>
-<p>public long getTime() 把日期对象转换成对应的时间毫秒值。</p>
-</li>
+<h4 id="判断方法"><a href="#判断方法" class="headerlink" title="判断方法"></a>判断方法</h4><ul>
+<li><code>public boolean exists()</code>：判断File对象所表示的文件或者文件夹是否存在</li>
+<li><code>boolean isDirectory()</code>：判断当前File对象表示的是否是一个文件夹</li>
+<li><code>boolean isFile()</code>：判断当前File对象表示的是否是一个文件</li>
 </ul>
-<h2 id="DateFormat类"><a href="#DateFormat类" class="headerlink" title="DateFormat类"></a>DateFormat类</h2><p>java.text.DateFormat 是日期/时间格式化子类的抽象类</p>
-<ul>
-<li><p>DateFormat为抽象类，需要常用的子类java.text.SimpleDateFormat</p>
-</li>
-<li><p>构造方法：</p>
-<p>SimpleDateFormat sdf = new SimpleDateFormat(“yyyy‐MM‐dd”);//创建SimpleDateFormat对象,写日期模式</p>
-</li>
-<li><p>常用格式规则：</p>
-<p>| 标识字母（区分大小写） | 含义   |<br>| :———- | —- |<br>| y           | 年    |<br>| M           | 月    |<br>| d           | 日    |<br>| H           | 时    |<br>| m           | 分    |<br>| s           | 秒    |</p>
-</li>
-<li><p>格式化：Date-&gt;String：public String <strong>format</strong>(Date date)</p>
-<p>解析：String-&gt;Date：public Date <strong>parse</strong>(String source)</p>
-</li>
+<h4 id="创建方法"><a href="#创建方法" class="headerlink" title="创建方法"></a>创建方法</h4><ul>
+<li><code>boolean createNewFile()</code>：创建一个文件，如果文件已经存在，则创建失败。</li>
+<li><code>boolean mkdir()</code>：创建一个文件夹，如果文件夹已经存在则创建失败，不存在则创建。</li>
+<li><code>boolean mkdirs()</code>：创建多级目录（文件夹）如果上级目录不存在，会一起创建上级目录。</li>
 </ul>
-<h2 id="Calendar类-日历"><a href="#Calendar类-日历" class="headerlink" title="Calendar类(日历)"></a>Calendar类(日历)</h2><p>java.util.Calendar 是日历类</p>
-<ul>
-<li><p>Calendar类在创建对象时并非直接创建，而是<strong>通过静态方法创建</strong>，返回子类对象</p>
-</li>
-<li><p>Calendar c=Calendar.getInstance() ：创建Calendar对象</p>
-</li>
-<li><p>常用方法：</p>
-<p>public int get(int field) ：返回给定日历字段的值。</p>
-<p>public void set(int field, int value) ：将给定的日历字段设置为给定值。</p>
-<p>public abstract void add(int field, int amount) ：根据日历的规则，为给定的日历字段添加或减去指定的时间量。</p>
-<p>public Date getTime() ：并不是获取毫秒时刻，而是拿到对应的Date对象。</p>
-</li>
-<li><p>在Calendar类中，月份的表示是以0-11代表1-12月。</p>
-</li>
+<h4 id="删除方法"><a href="#删除方法" class="headerlink" title="删除方法"></a>删除方法</h4><ul>
+<li><code>boolean delete()</code>： 删除File对象所表示的文件或者文件夹，如果不存在删除失败。如果要删除的是一个文件夹，只能删除空文件夹，如果这个文件夹里面有内容，是不能删除的。delete方法不走回收站，需谨慎。</li>
 </ul>
-<h2 id="System类"><a href="#System类" class="headerlink" title="System类"></a>System类</h2><p>java.lang.System 类中提供了大量的<strong>静态</strong>方法</p>
-<ul>
-<li><p>public static long currentTimeMillis()：是获取当前系统时间与1970年01月01日00:00点之间的毫秒差值</p>
-</li>
-<li><p>public static void arraycopy(Object src, int srcPos, Object dest, int destPos, int length) ：将<br>数组中指定的数据拷贝到另一个数组中。</p>
-<p>| 参数名称    | 参数类型   | 参数含义       |<br>| ——- | —— | ———- |<br>| src     | Object | 源数组        |<br>| srcPos  | int    | 源数组索引起始位置  |<br>| dest    | Object | 目标数组       |<br>| destPos | int    | 目标数组索引起始位置 |<br>| length  | int    | 复制元素个数     |</p>
-</li>
+<h4 id="遍历方法"><a href="#遍历方法" class="headerlink" title="遍历方法"></a>遍历方法</h4><ul>
+<li><code>String[] list()</code>：可以获取到指定目录中的所有文件或文件夹，获取到的真正是文件或者文件夹的名字。</li>
+<li><code>File[] listFiles​()</code>：<strong>获取到指定目录下的所有文件或者文件夹，返回值是File数组</strong>。</li>
 </ul>
-<h2 id="StringBuilder类"><a href="#StringBuilder类" class="headerlink" title="StringBuilder类"></a>StringBuilder类</h2><p>java.lang.StringBuilder可变字符序列</p>
-<ul>
-<li><p>StringBuilder是个字符串的缓冲区，底层是数组，StringBuilder会自动维护数组的扩容</p>
-</li>
-<li><p>构造方法：</p>
-<p>public StringBuilder() ：构造一个空的StringBuilder容器。<br>public StringBuilder(String str) ：构造一个StringBuilder容器，并将字符串添加进去。</p>
-</li>
-<li><p>常用方法：</p>
-<p>public StringBuilder append(…) ：添加任意类型数据的字符串形式，并返回当前对象自身。<br>public String toString() ：将当前StringBuilder对象转换为String对象。</p>
-</li>
+<h4 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h4><ul>
+<li>File[] listFiles(FileFilter filter)：FileFilter表示过滤器，是一个接口。</li>
 </ul>
-<h2 id="基本类型与字符串之间的转换"><a href="#基本类型与字符串之间的转换" class="headerlink" title="基本类型与字符串之间的转换"></a>基本类型与字符串之间的转换</h2><ul>
-<li><p>基本类型转换String总共有三种方式：</p>
+<p>过滤器的使用步骤：</p>
 <ol>
-<li><strong>基本类型直接与””相连接</strong></li>
-<li>使用String的valueOf方法。</li>
-<li>使用包装类对应的toString方法。</li>
+<li>创建一个类，实现FileFilter接口。</li>
+<li>重写accept方法，定义过滤的规则。如果希望某个东西留下，就通过某种条件返回true，否则就返回false。</li>
+<li>在测试类中创建File对象，并且调用listFiles方法，传递一个过滤器。</li>
 </ol>
-</li>
-<li><p>字符串转基本类型</p>
-<p>直接调用包装类的静态方法就可以了。</p>
-<p>仅以Integer类的静态方法parseXxx为例：Integer.parseInt(String)：转成int类型数字</p>
-</li>
-</ul>
 
       
     </div>
@@ -562,8 +512,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/15/--List集合、Set集合/" rel="next" title="List集合、Set集合、可变参数、Collections">
-                <i class="fa fa-chevron-left"></i> List集合、Set集合、可变参数、Collections
+              <a href="/2018/06/26/--Lambda表达式/" rel="next" title="Lambda表达式">
+                <i class="fa fa-chevron-left"></i> Lambda表达式
               </a>
             
           </div>
@@ -572,8 +522,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/06/24/--异常/" rel="prev" title="异常">
-                异常 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/06/26/--字节流、字符流/" rel="prev" title="字节流、字符流">
+                字节流、字符流 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -774,7 +724,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Object类"><span class="nav-number">1.</span> <span class="nav-text">Object类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Objects类"><span class="nav-number">2.</span> <span class="nav-text">Objects类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Date类"><span class="nav-number">3.</span> <span class="nav-text">Date类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DateFormat类"><span class="nav-number">4.</span> <span class="nav-text">DateFormat类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Calendar类-日历"><span class="nav-number">5.</span> <span class="nav-text">Calendar类(日历)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#System类"><span class="nav-number">6.</span> <span class="nav-text">System类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#StringBuilder类"><span class="nav-number">7.</span> <span class="nav-text">StringBuilder类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本类型与字符串之间的转换"><span class="nav-number">8.</span> <span class="nav-text">基本类型与字符串之间的转换</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#File类"><span class="nav-number">1.</span> <span class="nav-text">File类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#File中的获取方法"><span class="nav-number">1.1.</span> <span class="nav-text">File中的获取方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#构造方法"><span class="nav-number">1.1.1.</span> <span class="nav-text">构造方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取方法"><span class="nav-number">1.1.2.</span> <span class="nav-text">获取方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#判断方法"><span class="nav-number">1.1.3.</span> <span class="nav-text">判断方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建方法"><span class="nav-number">1.1.4.</span> <span class="nav-text">创建方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除方法"><span class="nav-number">1.1.5.</span> <span class="nav-text">删除方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#遍历方法"><span class="nav-number">1.1.6.</span> <span class="nav-text">遍历方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#过滤器"><span class="nav-number">1.1.7.</span> <span class="nav-text">过滤器</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

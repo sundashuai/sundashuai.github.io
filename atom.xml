@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-06-20T01:20:57.833Z</updated>
+  <updated>2018-06-26T14:04:27.309Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,13 +17,116 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>线程、同步</title>
-    <link href="http://yoursite.com/2018/06/24/--%E7%BA%BF%E7%A8%8B%E3%80%81%E5%90%8C%E6%AD%A5/"/>
-    <id>http://yoursite.com/2018/06/24/--线程、同步/</id>
-    <published>2018-06-24T11:02:38.620Z</published>
-    <updated>2018-06-20T01:20:57.833Z</updated>
+    <title>转换流、序列化流</title>
+    <link href="http://yoursite.com/2018/06/26/--%E8%BD%AC%E6%8D%A2%E6%B5%81%E3%80%81%E5%BA%8F%E5%88%97%E5%8C%96%E6%B5%81/"/>
+    <id>http://yoursite.com/2018/06/26/--转换流、序列化流/</id>
+    <published>2018-06-26T14:05:03.005Z</published>
+    <updated>2018-06-26T14:04:27.309Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h2><p>构造方法：</p><ul><li><code>public Thread()</code> ：分配一个新的线程对象。</li><li><code>public Thread(String name)</code>：分配一个指定名字的新的线程对象。</li><li><code>public Thread(Runnable target)</code>：分配一个带有指定目标新的线程对象。</li><li><code>public Thread(Runnable target,String name)</code>：分配一个带有指定目标新的线程对象并指定名字。</li></ul><p>常用方法：</p><ul><li><code>public String getName()</code> ：获取当前线程名称。</li><li><code>public void start()</code> ：导致此线程开始执行； Java虚拟机调用此线程的run方法。</li><li><code>public void run()</code> ：此线程要执行的任务在此处定义代码。</li><li><code>public static void sleep(long millis)</code>：使当前正在执行的线程以指定的毫秒数暂停（暂时停止执行）。</li><li><code>public static Thread currentThread()</code>：返回对当前正在执行的线程对象的引用。</li></ul><h2 id="多线程的内存"><a href="#多线程的内存" class="headerlink" title="多线程的内存"></a>多线程的内存</h2><ul><li>每个线程都有自己的栈区，每个栈区调用的方法都会进入到自己的栈区，<strong>栈内存是线程私有的</strong></li><li><strong>多线程共享一个堆内存</strong></li></ul><h2 id="多线程实现方式"><a href="#多线程实现方式" class="headerlink" title="多线程实现方式"></a>多线程实现方式</h2><h3 id="继承Thread类"><a href="#继承Thread类" class="headerlink" title="继承Thread类"></a>继承Thread类</h3><ol><li>定义类，继承Thread</li><li>重写run方法。</li><li>测试类中创建Thread子类对象</li><li>调用start方法。</li></ol><h3 id="实现Runnable接口"><a href="#实现Runnable接口" class="headerlink" title="实现Runnable接口"></a>实现Runnable接口</h3><ol><li>定义类，去实现Runnable接口。</li><li>重写run方法，也是要在run方法中定义线程要执行的任务。</li><li>在测试类中创建Runnable接口的实现类对象。</li><li>创建一个线程Thread类的对象，并且把Runnable接口的实现类对象传递过去。</li><li>调用Thread的start方法。</li></ol><h3 id="实现Runnable接口的优势"><a href="#实现Runnable接口的优势" class="headerlink" title="实现Runnable接口的优势"></a>实现Runnable接口的优势</h3><ol><li>解决了java中类与类之间只能单继承的局限性。</li><li>Runnable接口里面只有一个run方法，没有getName，sleep，currentThread…里面的功能更加的纯粹，只需要关注线程要执行的任务就可以了，这样更加符合单一职责原则。</li><li>解耦。</li><li>可以更加方便的实现多个线程间的数据共享。</li><li>线程池可以传递Runnable接口的实现类对象，但是不能传递Thread的子类对象</li></ol><h2 id="线程安全"><a href="#线程安全" class="headerlink" title="线程安全"></a>线程安全</h2><h3 id="同步代码块"><a href="#同步代码块" class="headerlink" title="同步代码块"></a>同步代码块</h3><p>格式：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">synchronized</span>(锁对象) &#123;</span><br><span class="line">    <span class="comment">//要同步的内容。</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ul><li>锁对象就是一个普通的对象，可以是任意对象，没有特殊的含义，只是做一个标记。</li><li>synchronized代码块的作用： 只有持有锁的线程才能够进入到同步代码块中。</li></ul><h3 id="同步方法"><a href="#同步方法" class="headerlink" title="同步方法"></a>同步方法</h3><p>格式：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">格式：</span><br><span class="line">    修饰符 <span class="keyword">synchronized</span> 返回值类型 方法名(参数列表) &#123;</span><br><span class="line">        方法体;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure><ul><li>synchronized修饰方法，相当于把整个方法体都加了同步代码块。</li></ul><h3 id="Lock接口"><a href="#Lock接口" class="headerlink" title="Lock接口"></a>Lock接口</h3><p>在jdk1.5之后，多了一个包，叫做java.util.concurrent，提供了很多对多线程操作的类和接口，其中有一个接口，叫做Lock，可以手动的释放锁以及获取锁。<br>void lock()： 手动的获取一个锁<br>void unlock()： 手动的释放锁<br>Lock 是一个接口，如果要用，需要使用实现类ReentrantLock。</p><h3 id="安全效率比较"><a href="#安全效率比较" class="headerlink" title="安全效率比较"></a>安全效率比较</h3><p>StringBuilder：线程不安全，效率高</p><p>StringBuffer：线程安全，效率低</p><p>ArrayList，LinkedList：线程不安全的，效率高</p><p>Vector集合（淘汰了）：线程安全的，效率低</p><p>HashMap： 线程不安全，效率高</p><p>Hashtable：线程安全，效率低</p><p>ConcurrentHashMap：线程安全，效率高</p><h2 id="线程的六种状态"><a href="#线程的六种状态" class="headerlink" title="线程的六种状态"></a>线程的六种状态</h2><ol><li><p>NEW （新建）</p><p>当一个线程仅仅被创建（new Thread() 或者new Thread子类()）那么这个线程就是出于NEW（新建）状态</p></li><li><p>RUNNABLE （执行）</p><p>一个线程处于执行状态，当调用start方法后，这个线程会变成这个状态</p></li><li><p>BLOCKED（受阻塞）</p><p>当一个线程等待其他线程释放锁时，那么这个线程就属于受阻塞的状态。</p></li><li><p>WAITING（无限等待）</p><p>当一个线程一直去等着某个东西，那么这个线程所处于的状态就是无限等待。wait() 无限等待的方法，除非有另一个线程唤醒自己。</p></li><li><p>TIMED_WAITING（计时等待）</p><p>当一个线程去有一定时间的等着，那么线程就处于计时等待。比如sleep(mills) 这个方法，会等着这个时间结束然后去运行。</p></li><li><p>TERMINATED（退出）</p><p>当该线程的run方法结束或者调用stop方法强制结束，这这个线程就会变成退出</p></li></ol>]]></content>
+    <content type="html"><![CDATA[<h2 id="转换流"><a href="#转换流" class="headerlink" title="转换流"></a>转换流</h2><ul><li><p>InputStreamReader是转换流，可以指定编码进行读取，<strong>是字节通向字符的桥梁</strong>。</p></li><li><p>OutputStreamWriter是转换流，可以指定编码进行写入，<strong>是字符通向字节的桥梁</strong>。</p></li></ul><h3 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h3><ul><li><p><code>InputStreamReader(InputStream in)</code>：是使用平台默认的编码方式进行读取</p></li><li><p><code>InputStreamReader(InputStream in, String charsetName)</code>：使用指定的编码进行读取，charsetName是编码方式。</p></li><li><p><code>OutputStreamWriter(OutputStream out)</code>：是使用平台默认的编码方式进行写入</p></li><li><code>OutputStreamWriter(OutputStream out,String charsetName)</code>：使用指定的编码进行写入，charsetName是编码方式。</li></ul><h3 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h3><ol><li>创建转换流；</li><li>调用方法，进行读取或写入；</li><li>释放资源。</li></ol><h2 id="序列化流"><a href="#序列化流" class="headerlink" title="序列化流"></a>序列化流</h2><ul><li>ObjectOutputStream是序列化流，可以将java程序中的对象写入到文件中。</li></ul><h3 id="构造方法-1"><a href="#构造方法-1" class="headerlink" title="构造方法"></a>构造方法</h3><ul><li><code>ObjectOutputStream(OutputStream out)</code>：需要传递一个字节输出流。</li></ul><h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ol><li>创建序列化流对象；</li><li>调用方法，写对象；</li><li>关流。</li></ol><h3 id="写对象的方法"><a href="#写对象的方法" class="headerlink" title="写对象的方法"></a>写对象的方法</h3><ul><li><code>void writeObject(Object obj)</code>：向文件中写对象。</li></ul><h2 id="反序列化流"><a href="#反序列化流" class="headerlink" title="反序列化流"></a>反序列化流</h2><ul><li>ObjectInputStream是反序列化流，可以将文件中的对象读取到java程序中。</li></ul><h3 id="构造方法-2"><a href="#构造方法-2" class="headerlink" title="构造方法"></a>构造方法</h3><ul><li><code>ObjectInputStream(InputStream in)</code>：传递一个字节输入流。</li></ul><h3 id="使用步骤-1"><a href="#使用步骤-1" class="headerlink" title="使用步骤"></a>使用步骤</h3><ol><li>创建ObjectInputStream对象。</li><li>调用方法，读取对象</li><li>释放资源。</li></ol><h3 id="读取对象的方法"><a href="#读取对象的方法" class="headerlink" title="读取对象的方法"></a>读取对象的方法</h3><ul><li><code>Object readObject()</code>：从文件中读取对象。</li></ul><p>注意：假如读取的时候，要读取的对象的类已经不存在了，就会报错 ClassNotFoundException。<br>要写入到文件的对象，一定要实现序列化接口（Serializable接口）。<br>被static修饰的成员不能被序列化，被static修饰的成员属于类不属于对象。<br>如果希望某个成员变量不会写入到文件，并且也不希望使用static关键字，可以使用一个关键字transient ，意思是瞬态，被transient修饰的成员不能被序列化。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;转换流&quot;&gt;&lt;a href=&quot;#转换流&quot; class=&quot;headerlink&quot; title=&quot;转换流&quot;&gt;&lt;/a&gt;转换流&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;InputStreamReader是转换流，可以指定编码进行读取，&lt;strong&gt;是字节通向字符的桥梁&lt;/stro
+      
+    
+    </summary>
+    
+      <category term="基础" scheme="http://yoursite.com/categories/%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="JavaSE" scheme="http://yoursite.com/tags/JavaSE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>字节流、字符流</title>
+    <link href="http://yoursite.com/2018/06/26/--%E5%AD%97%E8%8A%82%E6%B5%81%E3%80%81%E5%AD%97%E7%AC%A6%E6%B5%81/"/>
+    <id>http://yoursite.com/2018/06/26/--字节流、字符流/</id>
+    <published>2018-06-26T14:05:00.458Z</published>
+    <updated>2018-06-26T13:39:10.054Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="字节流"><a href="#字节流" class="headerlink" title="字节流"></a>字节流</h2><h3 id="字节输出流OutputStream"><a href="#字节输出流OutputStream" class="headerlink" title="字节输出流OutputStream"></a>字节输出流OutputStream</h3><ul><li>OutputStream是所有字节输出流的顶层父类，是一个抽象类，如果用，使用子类<strong>FileOutputStream</strong>。</li></ul><h4 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h4><ul><li><p><code>FileOutputStream(File file)</code>：参数是一个File类型的文件。</p></li><li><p><code>FileOutputStream(String name)</code>：参数是一个字符串类型的文件路径。</p></li><li><p><code>FileOutputStream(File file, boolean append)</code><br><code>FileOutputStream(String name, boolean append)</code><br>可以传递第二个参数，如果第二个参数是true表示要在原来文件的基础上进行续写</p><h4 id="写入方法"><a href="#写入方法" class="headerlink" title="写入方法"></a>写入方法</h4></li><li><p><code>void write(int b)</code>：向文件中写入一个字节。</p></li><li><code>void write(byte[] b)</code>：向文件中写入一个字节数组。</li><li><code>void write(byte[] b, int off, int len)</code>：向文件中写入一个字节数组的一部分，off表示开始位置，len表示写几个。</li><li><code>void close()</code>：释放资源，关流。</li></ul><h4 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h4><ol><li>创建一个字节输出流对象，绑定一个目的地；</li><li>调用write方法，向文件中写入数据；</li><li>释放资源；</li></ol><h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><p>在java中字符是2个字节，但是如果这个字符在ASCII码范围内，那么他在操作系统中只占一个字节。中文在文件中的大小是多出1个字节，所以调用write方法一次写一个字节不能写中文。</p><h3 id="字节输入流InputStream"><a href="#字节输入流InputStream" class="headerlink" title="字节输入流InputStream"></a>字节输入流InputStream</h3><ul><li>InputStream是所有字节输入流的顶层父类，是一个抽象类。如果用，使用子类<strong>FileInputStream</strong>。</li></ul><h4 id="构造方法-1"><a href="#构造方法-1" class="headerlink" title="构造方法"></a>构造方法</h4><ul><li><code>FileInputStream(File file)</code>：需要传递一个File类型的文件。</li><li><code>FileInputStream(String name)</code>：传递一个字符串类型的文件路径。</li></ul><h4 id="读取方法"><a href="#读取方法" class="headerlink" title="读取方法"></a>读取方法</h4><ul><li><code>int read()</code>：读取一个字节并返回，如果读取结束返回-1。</li><li><code>int read(byte[] b)</code>：读取数据到字节数组中，返回的是读取到的有效个数。</li></ul><h4 id="步骤-1"><a href="#步骤-1" class="headerlink" title="步骤"></a>步骤</h4><ol><li>创建一个字节输入流用来读取，要绑定一个数据源；</li><li>调用read方法，读取数据；</li><li>释放资源。</li></ol><h4 id="注意-1"><a href="#注意-1" class="headerlink" title="注意"></a>注意</h4><p>读取中文会把一个汉字拆开，会有乱码。</p><h2 id="字符流"><a href="#字符流" class="headerlink" title="字符流"></a>字符流</h2><h3 id="字符输出流Writer"><a href="#字符输出流Writer" class="headerlink" title="字符输出流Writer"></a>字符输出流Writer</h3><ul><li>Writer是字符输出流的顶层父类，是一个抽象类，如果用，使用子类<strong>FileWriter</strong>。</li></ul><h4 id="构造方法-2"><a href="#构造方法-2" class="headerlink" title="构造方法"></a>构造方法</h4><ul><li><code>FileWriter(File file)</code>：传递一个File类型的文件。</li><li><code>FileWriter(String fileName)</code>：传递一个String类型的文件路径。</li></ul><h4 id="写入方法-1"><a href="#写入方法-1" class="headerlink" title="写入方法"></a>写入方法</h4><ul><li><p><code>void write(String str)</code>：写入一个字符串。<br><code>void write(String str, int off, int len)</code>：写入字符串的一部分。<br><code>void write(int c)</code>：写入一个字符。<br><code>void write(char[] cbuf)</code>：写入一个字符数组。<br><code>void write(char[] cbuf, int off, int len)</code>：写入字符数组的一部分。</p></li><li><p><code>void flush()</code>：将内存缓冲区中的数据刷新到文件中，字符输出流写完后一定要刷新。</p></li><li><p><code>void close()</code>：释放资源。</p></li></ul><h4 id="步骤-2"><a href="#步骤-2" class="headerlink" title="步骤"></a>步骤</h4><ol><li>创建字符输出流对象；</li><li>调用write方法写入；</li><li>刷新（仅仅是做刷新操作，流在刷新之后还能使用）；</li><li>释放资源（关流之前会自动刷新，关闭之后不能使用）。</li></ol><h3 id="字符输入流Reader"><a href="#字符输入流Reader" class="headerlink" title="字符输入流Reader"></a>字符输入流Reader</h3><ul><li>Reader是所有字符输入流的顶层父类，是一个抽象类，如果用，使用子类<strong>FileReader</strong>。字符流是以字符为单位进行读写，所以可以操作中文，因为一个中文就是一个字符。</li></ul><h4 id="构造方法-3"><a href="#构造方法-3" class="headerlink" title="构造方法"></a>构造方法</h4><ul><li><code>FileReader(File file)</code>：传递一个File类型的文件。</li><li><code>FileReader(String fileName)</code>：传递一个String类型的文件路径。</li></ul><h4 id="读取方法-1"><a href="#读取方法-1" class="headerlink" title="读取方法"></a>读取方法</h4><p><code>int read()</code>：一次读取一个字符并返回，结束返回-1。<br><code>int read(char[] cbuf)</code>：读取数据到字符数组中，并且返回读取到的有效个数，读取结束返回-1。</p><h4 id="步骤-3"><a href="#步骤-3" class="headerlink" title="步骤"></a>步骤</h4><ol><li>创建字符输入流对象；</li><li>调用read方法读取，用变量接读取到的字符，不是-1就读取到内容；</li><li>释放资源。</li></ol><h2 id="缓冲流"><a href="#缓冲流" class="headerlink" title="缓冲流"></a>缓冲流</h2><h3 id="字节缓冲流"><a href="#字节缓冲流" class="headerlink" title="字节缓冲流"></a>字节缓冲流</h3><ul><li><code>BufferedOutputStream</code>：字节输出缓冲流，用来写。</li><li><code>BufferedInputStream</code>：字节输入缓冲流，用来读。</li></ul><h4 id="构造方法-4"><a href="#构造方法-4" class="headerlink" title="构造方法"></a>构造方法</h4><ul><li><p><code>BufferedOutputStream(OutputStream out)</code>：需要传递一个字节输出流。</p></li><li><p><code>BufferedInputStream(InputStream in)</code>：需要传递一个字节输入流。</p></li></ul><h4 id="步骤-4"><a href="#步骤-4" class="headerlink" title="步骤"></a>步骤</h4><ol><li>创建缓冲流对象；</li><li>调用方法，读或者写（读写的方法和FileOutputStream和FileInputStream一模一样）；</li><li>释放资源。</li></ol><h3 id="字符缓冲流"><a href="#字符缓冲流" class="headerlink" title="字符缓冲流"></a>字符缓冲流</h3><ul><li><code>BufferedWriter</code>：字符输出缓冲流，用来写。</li><li><code>BufferedReader</code>：字符输入缓冲流，用来读。</li></ul><h4 id="构造方法-5"><a href="#构造方法-5" class="headerlink" title="构造方法"></a>构造方法</h4><ul><li><code>BufferedWriter(Writer out)</code>：参数需要传递一个字符输出流（FileWriter）。</li><li><code>BufferedReader(Reader in)</code>：参数需要传递一个字节输入流（FileReader）。</li></ul><h4 id="步骤-5"><a href="#步骤-5" class="headerlink" title="步骤"></a>步骤</h4><ol><li>创建流对象。</li><li>调用方法，读或者写（读写的方法和FileReader和FileWriter一模一样）；</li><li>释放资源。</li></ol><h4 id="特有方法"><a href="#特有方法" class="headerlink" title="特有方法"></a>特有方法</h4><ul><li>BufferedWriter有一个特有的方法，void newLine()：实现一个跨平台的换行符</li><li>BufferedReader有一个特有的方法，String readLine()：一次读取一行数据，并返回读取到的这行， 如果读取结束返回null</li></ul><h2 id="属性集"><a href="#属性集" class="headerlink" title="属性集"></a>属性集</h2><h3 id="Properties类"><a href="#Properties类" class="headerlink" title="Properties类"></a>Properties类</h3><h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><ol><li>Properties是Hashtable的子类，并且实现了Map接口，所以Properties是双列集合，拥有Map集合所有功能。</li><li>没有泛型，键和值全部都是字符串。</li><li>这个集合支持对文件的操作，可以从文件中读取键值对。</li></ol><h4 id="构造方法-6"><a href="#构造方法-6" class="headerlink" title="构造方法"></a>构造方法</h4><ul><li><code>Properties()</code>：空参构造</li></ul><h4 id="其他方法"><a href="#其他方法" class="headerlink" title="其他方法"></a>其他方法</h4><ul><li><code>Object setProperty(String key, String value)</code>：向Properties集合添加键值对。</li><li><code>String getProperty(String key)</code>：根据key获取value。</li><li><code>Set &lt;String&gt; stringPropertyNames()</code>：获取存放所有key的集合。</li><li><code>void load(InputStream inStream)</code>：传递一个字节输入流。<br><code>void load(Reader reader)</code>：传递一个字符输入流。<br>使用步骤：<ol><li>创建Properties集合对象；</li><li>创建一个输入流对象，绑定一个数据源；</li><li>调用Properties的load方法，将文件中的键值对加载到Properties集合中。</li></ol></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;字节流&quot;&gt;&lt;a href=&quot;#字节流&quot; class=&quot;headerlink&quot; title=&quot;字节流&quot;&gt;&lt;/a&gt;字节流&lt;/h2&gt;&lt;h3 id=&quot;字节输出流OutputStream&quot;&gt;&lt;a href=&quot;#字节输出流OutputStream&quot; class=&quot;header
+      
+    
+    </summary>
+    
+      <category term="基础" scheme="http://yoursite.com/categories/%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="JavaSE" scheme="http://yoursite.com/tags/JavaSE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>File类</title>
+    <link href="http://yoursite.com/2018/06/26/--File%E7%B1%BB/"/>
+    <id>http://yoursite.com/2018/06/26/--File类/</id>
+    <published>2018-06-26T14:04:58.333Z</published>
+    <updated>2018-06-26T02:51:31.455Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="File类"><a href="#File类" class="headerlink" title="File类"></a>File类</h2><p>File类可以表示计算机中的文件或者文件夹。</p><ul><li>绝对路径：是一个从盘符开始的路径，是一个非常详细的路径。</li><li>相对路径：不是从盘符开始的路径，相对路径相对的是某一个位置，在idea中，相对路径指的是当前项目下的东西。</li></ul><h3 id="File中的获取方法"><a href="#File中的获取方法" class="headerlink" title="File中的获取方法"></a>File中的获取方法</h3><h4 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h4><ul><li><code>File(String pathname)</code>：根据一个文件或者文件夹的路径构造一个File对象。</li><li><code>File(String parent, String child)</code>：根据父路径和子路径组合构造一个File对象。</li></ul><h4 id="获取方法"><a href="#获取方法" class="headerlink" title="获取方法"></a>获取方法</h4><ul><li><code>String getAbsolutePath()</code>：获取当前File对象的绝对路径</li><li><code>String getPath()</code>： 获取File对象表示的路径</li><li><code>String getName()</code>：获取File对象表示的文件或者文件夹的名字</li><li><code>long length()</code>：获取文件的字节数大小。如果通过文件夹调用这个方法，得到的是一个不确定的值。</li></ul><h4 id="判断方法"><a href="#判断方法" class="headerlink" title="判断方法"></a>判断方法</h4><ul><li><code>public boolean exists()</code>：判断File对象所表示的文件或者文件夹是否存在</li><li><code>boolean isDirectory()</code>：判断当前File对象表示的是否是一个文件夹</li><li><code>boolean isFile()</code>：判断当前File对象表示的是否是一个文件</li></ul><h4 id="创建方法"><a href="#创建方法" class="headerlink" title="创建方法"></a>创建方法</h4><ul><li><code>boolean createNewFile()</code>：创建一个文件，如果文件已经存在，则创建失败。</li><li><code>boolean mkdir()</code>：创建一个文件夹，如果文件夹已经存在则创建失败，不存在则创建。</li><li><code>boolean mkdirs()</code>：创建多级目录（文件夹）如果上级目录不存在，会一起创建上级目录。</li></ul><h4 id="删除方法"><a href="#删除方法" class="headerlink" title="删除方法"></a>删除方法</h4><ul><li><code>boolean delete()</code>： 删除File对象所表示的文件或者文件夹，如果不存在删除失败。如果要删除的是一个文件夹，只能删除空文件夹，如果这个文件夹里面有内容，是不能删除的。delete方法不走回收站，需谨慎。</li></ul><h4 id="遍历方法"><a href="#遍历方法" class="headerlink" title="遍历方法"></a>遍历方法</h4><ul><li><code>String[] list()</code>：可以获取到指定目录中的所有文件或文件夹，获取到的真正是文件或者文件夹的名字。</li><li><code>File[] listFiles​()</code>：<strong>获取到指定目录下的所有文件或者文件夹，返回值是File数组</strong>。</li></ul><h4 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h4><ul><li>File[] listFiles(FileFilter filter)：FileFilter表示过滤器，是一个接口。</li></ul><p>过滤器的使用步骤：</p><ol><li>创建一个类，实现FileFilter接口。</li><li>重写accept方法，定义过滤的规则。如果希望某个东西留下，就通过某种条件返回true，否则就返回false。</li><li>在测试类中创建File对象，并且调用listFiles方法，传递一个过滤器。</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;File类&quot;&gt;&lt;a href=&quot;#File类&quot; class=&quot;headerlink&quot; title=&quot;File类&quot;&gt;&lt;/a&gt;File类&lt;/h2&gt;&lt;p&gt;File类可以表示计算机中的文件或者文件夹。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;绝对路径：是一个从盘符开始的路径，是一个非常
+      
+    
+    </summary>
+    
+      <category term="基础" scheme="http://yoursite.com/categories/%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="JavaSE" scheme="http://yoursite.com/tags/JavaSE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Lambda表达式</title>
+    <link href="http://yoursite.com/2018/06/26/--Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    <id>http://yoursite.com/2018/06/26/--Lambda表达式/</id>
+    <published>2018-06-26T02:21:36.618Z</published>
+    <updated>2018-06-26T02:21:14.724Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Lambda"><a href="#Lambda" class="headerlink" title="Lambda"></a>Lambda</h2><h3 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(参数列表) -&gt; &#123;</span><br><span class="line">     方法体;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="Lambda省略格式"><a href="#Lambda省略格式" class="headerlink" title="Lambda省略格式"></a>Lambda省略格式</h3><ol><li>可以省略参数的数据类型。</li><li>如果参数只有一个，可以省略小括号。</li><li>大括号中一条语句，可以省略大括号，reutrn，以及分号。</li></ol><h3 id="Lambda表达式的前提"><a href="#Lambda表达式的前提" class="headerlink" title="Lambda表达式的前提"></a>Lambda表达式的前提</h3><ol><li>方法参数一定要是一个接口，不能是抽象类</li><li>这个接口中有且仅要有一个需被重写的抽象方法。(函数式接口)</li><li>支持上下文推断（参数要是接口类型）</li></ol><h3 id="匿名内部类不能和Lambda表达式完全替换"><a href="#匿名内部类不能和Lambda表达式完全替换" class="headerlink" title="匿名内部类不能和Lambda表达式完全替换"></a>匿名内部类不能和Lambda表达式完全替换</h3><ol><li>匿名内部类作为父类的不仅仅可以是接口，也可以是抽象类或者普通类，而Lambda表达式一定要是函数式接口。</li><li>匿名内部类可以重写多个方法，而Lambda表达式只能是一个。</li></ol><h3 id="匿名内部类和Lambda表达式原理机制完全不同"><a href="#匿名内部类和Lambda表达式原理机制完全不同" class="headerlink" title="匿名内部类和Lambda表达式原理机制完全不同"></a>匿名内部类和Lambda表达式原理机制完全不同</h3><ol><li>匿名内部类在执行的时候会生成外部类$1.class 这样的字节码文件，但是Lambda表达式不会。</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Lambda&quot;&gt;&lt;a href=&quot;#Lambda&quot; class=&quot;headerlink&quot; title=&quot;Lambda&quot;&gt;&lt;/a&gt;Lambda&lt;/h2&gt;&lt;h3 id=&quot;格式&quot;&gt;&lt;a href=&quot;#格式&quot; class=&quot;headerlink&quot; title=&quot;格式&quot;&gt;&lt;
+      
+    
+    </summary>
+    
+      <category term="基础" scheme="http://yoursite.com/categories/%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="JavaSE" scheme="http://yoursite.com/tags/JavaSE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>线程、同步、线程池</title>
+    <link href="http://yoursite.com/2018/06/24/--%E7%BA%BF%E7%A8%8B%E3%80%81%E5%90%8C%E6%AD%A5%E3%80%81%E7%BA%BF%E7%A8%8B%E6%B1%A0/"/>
+    <id>http://yoursite.com/2018/06/24/--线程、同步、线程池/</id>
+    <published>2018-06-24T11:02:38.620Z</published>
+    <updated>2018-06-26T02:12:02.827Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h2><p>构造方法：</p><ul><li><code>public Thread()</code> ：分配一个新的线程对象。</li><li><code>public Thread(String name)</code>：分配一个指定名字的新的线程对象。</li><li><code>public Thread(Runnable target)</code>：分配一个带有指定目标新的线程对象。</li><li><code>public Thread(Runnable target,String name)</code>：分配一个带有指定目标新的线程对象并指定名字。</li></ul><p>常用方法：</p><ul><li><code>public String getName()</code> ：获取当前线程名称。</li><li><code>public void start()</code> ：导致此线程开始执行； Java虚拟机调用此线程的run方法。</li><li><code>public void run()</code> ：此线程要执行的任务在此处定义代码。</li><li><code>public static void sleep(long millis)</code>：使当前正在执行的线程以指定的毫秒数暂停（暂时停止执行）。</li><li><code>public static Thread currentThread()</code>：返回对当前正在执行的线程对象的引用。</li></ul><h2 id="多线程的内存"><a href="#多线程的内存" class="headerlink" title="多线程的内存"></a>多线程的内存</h2><ul><li>每个线程都有自己的栈区，每个栈区调用的方法都会进入到自己的栈区，<strong>栈内存是线程私有的</strong></li><li><strong>多线程共享一个堆内存</strong></li></ul><h2 id="多线程实现方式"><a href="#多线程实现方式" class="headerlink" title="多线程实现方式"></a>多线程实现方式</h2><h3 id="继承Thread类"><a href="#继承Thread类" class="headerlink" title="继承Thread类"></a>继承Thread类</h3><ol><li>定义类，继承Thread</li><li>重写run方法。</li><li>测试类中创建Thread子类对象</li><li>调用start方法。</li></ol><h3 id="实现Runnable接口"><a href="#实现Runnable接口" class="headerlink" title="实现Runnable接口"></a>实现Runnable接口</h3><ol><li>定义类，去实现Runnable接口。</li><li>重写run方法，也是要在run方法中定义线程要执行的任务。</li><li>在测试类中创建Runnable接口的实现类对象。</li><li>创建一个线程Thread类的对象，并且把Runnable接口的实现类对象传递过去。</li><li>调用Thread的start方法。</li></ol><h3 id="实现Runnable接口的优势"><a href="#实现Runnable接口的优势" class="headerlink" title="实现Runnable接口的优势"></a>实现Runnable接口的优势</h3><ol><li>解决了java中类与类之间只能单继承的局限性。</li><li>Runnable接口里面只有一个run方法，没有getName，sleep，currentThread…里面的功能更加的纯粹，只需要关注线程要执行的任务就可以了，这样更加符合单一职责原则。</li><li>解耦。</li><li>可以更加方便的实现多个线程间的数据共享。</li><li>线程池可以传递Runnable接口的实现类对象，但是不能传递Thread的子类对象</li></ol><h2 id="线程安全"><a href="#线程安全" class="headerlink" title="线程安全"></a>线程安全</h2><h3 id="同步代码块"><a href="#同步代码块" class="headerlink" title="同步代码块"></a>同步代码块</h3><p>格式：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">synchronized</span>(锁对象) &#123;</span><br><span class="line">    <span class="comment">//要同步的内容。</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ul><li>锁对象就是一个普通的对象，可以是任意对象，没有特殊的含义，只是做一个标记。</li><li>synchronized代码块的作用： 只有持有锁的线程才能够进入到同步代码块中。</li></ul><h3 id="同步方法"><a href="#同步方法" class="headerlink" title="同步方法"></a>同步方法</h3><p>格式：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">格式：</span><br><span class="line">    修饰符 <span class="keyword">synchronized</span> 返回值类型 方法名(参数列表) &#123;</span><br><span class="line">        方法体;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure><ul><li>synchronized修饰方法，相当于把整个方法体都加了同步代码块。</li></ul><h3 id="Lock接口"><a href="#Lock接口" class="headerlink" title="Lock接口"></a>Lock接口</h3><p>在jdk1.5之后，多了一个包，叫做java.util.concurrent，提供了很多对多线程操作的类和接口，其中有一个接口，叫做Lock，可以手动的释放锁以及获取锁。<br>void lock()： 手动的获取一个锁<br>void unlock()： 手动的释放锁<br>Lock 是一个接口，如果要用，需要使用实现类ReentrantLock。</p><h3 id="安全效率比较"><a href="#安全效率比较" class="headerlink" title="安全效率比较"></a>安全效率比较</h3><p>StringBuilder：线程不安全，效率高</p><p>StringBuffer：线程安全，效率低</p><p>ArrayList，LinkedList：线程不安全的，效率高</p><p>Vector集合（淘汰了）：线程安全的，效率低</p><p>HashMap： 线程不安全，效率高</p><p>Hashtable：线程安全，效率低</p><p>ConcurrentHashMap：线程安全，效率高</p><h2 id="线程的六种状态"><a href="#线程的六种状态" class="headerlink" title="线程的六种状态"></a>线程的六种状态</h2><ol><li><p>NEW （新建）</p><p>当一个线程仅仅被创建（new Thread() 或者new Thread子类()）那么这个线程就是出于NEW（新建）状态</p></li><li><p>RUNNABLE （执行）</p><p>一个线程处于执行状态，当调用start方法后，这个线程会变成这个状态</p></li><li><p>BLOCKED（受阻塞）</p><p>当一个线程等待其他线程释放锁时，那么这个线程就属于受阻塞的状态。</p></li><li><p>WAITING（无限等待）</p><p>当一个线程一直去等着某个东西，那么这个线程所处于的状态就是无限等待。wait() 无限等待的方法，除非有另一个线程唤醒自己。</p></li><li><p>TIMED_WAITING（计时等待）</p><p>当一个线程去有一定时间的等着，那么线程就处于计时等待。比如sleep(mills) 这个方法，会等着这个时间结束然后去运行。</p></li><li><p>TERMINATED（退出）</p><p>当该线程的run方法结束或者调用stop方法强制结束，这这个线程就会变成退出</p></li></ol><h2 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h2><ul><li>线程池的顶层接口： Executor， 只负责运行线程。常用的子接口： ExecutorService</li><li>线程池的工具类： <strong>Executors 这个工具类可以获取一个线程池对象</strong>。</li></ul><p>工具类里面的方法<br><code>static ExecutorService newFixedThreadPool​(int nThreads)</code>：直接获取到一个定长的线程池</p><p>实现步骤：</p><ol><li>通过线程池工具类获取到一个线程池对象。</li><li>创建Runnable并重写run方法。</li><li>调用线程池对象的submit，并传递Runnable实现类对象，表示使用线程池中的某个线程去执行该任务。submit(Runnable task)：参数是一个Runnable接口类型</li><li><p>销毁线程池（一般不做）shutdown()：销毁线程池</p><p>扩展：</p></li></ol><p>newCachedThreadPool()：获取一个长度可变的线程池。如果线程不够用了，该线程池会自己创建新的线程，如果闲置的线程比较多，这个线程池也会自动回收线程</p><p>newFixedThreadPool(int nThreads)：定长的线程池，多余的任务会在队列中等待。</p><p>newScheduledThreadPool(int corePoolSize)：可周期性执行任务的线程池</p><p>newSingleThreadExecutor()：一个单线程的线程池，可以指定线程的执行顺序。</p>]]></content>
     
     <summary type="html">
     
@@ -58,33 +161,6 @@
       
       
         &lt;h2 id=&quot;异常&quot;&gt;&lt;a href=&quot;#异常&quot; class=&quot;headerlink&quot; title=&quot;异常&quot;&gt;&lt;/a&gt;异常&lt;/h2&gt;&lt;h3 id=&quot;运行时和编译时异常&quot;&gt;&lt;a href=&quot;#运行时和编译时异常&quot; class=&quot;headerlink&quot; title=&quot;运行时和编译时
-      
-    
-    </summary>
-    
-      <category term="基础" scheme="http://yoursite.com/categories/%E5%9F%BA%E7%A1%80/"/>
-    
-    
-      <category term="JavaSE" scheme="http://yoursite.com/tags/JavaSE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Map集合</title>
-    <link href="http://yoursite.com/2018/06/15/--Map%E9%9B%86%E5%90%88/"/>
-    <id>http://yoursite.com/2018/06/15/--Map集合/</id>
-    <published>2018-06-15T11:47:09.357Z</published>
-    <updated>2018-06-15T11:50:13.375Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Map集合"><a href="#Map集合" class="headerlink" title="Map集合"></a>Map集合</h2><ul><li>map属于双列集合，每个元素都是一个键值对</li><li>特点：<strong>键唯一，值可以重复，键和值可以为null</strong></li><li>常用实现类：HashMap（底层数组哈希表）、LinkedHasMap有序（哈希表加链表）</li></ul><h3 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h3><ul><li><code>V put(K key, V value)</code>： 向Map集合中添加键值对。</li><li><code>V get(Object key)</code>： 根据key获取value。</li><li><code>V remove(Object key)</code>： 根据key，直接删除整个的键值对。返回值为被删除掉的值。</li></ul><h3 id="遍历步骤"><a href="#遍历步骤" class="headerlink" title="遍历步骤"></a>遍历步骤</h3><p>第一种：</p><ol><li>调用Map集合keySet方法获取到所有的key，存放于Set集合中；</li><li>遍历Set集合，得到所有的key；</li><li>调用Map集合的get方法，根据key获取value。</li></ol><p>第二种：</p><ol><li>通过Map集合调用entrySet方法，获取到保存所有Entry对象的Set集合。</li><li>遍历Set集合，拿到里面的所有的Entry对象</li><li>调用Entry的getKey和getValue获取键和值。</li></ol><p>总结：如果要存储自定义对象作为key，如果要保证一致性，要重写hashCode和equals方法</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.9 之后，集合多了of方法，可以直接创建带有少量元素的集合。</span><br><span class="line">注意：</span><br><span class="line">    1. 这个of方法是List，Set，Map接口的静态方法。这些接口的子类并没有实现这个方法</span><br><span class="line">    2. 通过这种方式创建出来的集合是不能修改的，比如不能往这个集合中添加数据</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Map集合&quot;&gt;&lt;a href=&quot;#Map集合&quot; class=&quot;headerlink&quot; title=&quot;Map集合&quot;&gt;&lt;/a&gt;Map集合&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;map属于双列集合，每个元素都是一个键值对&lt;/li&gt;
-&lt;li&gt;特点：&lt;strong&gt;键唯一，值可以重复，
       
     
     </summary>
@@ -139,6 +215,33 @@
         &lt;h2 id=&quot;List集合&quot;&gt;&lt;a href=&quot;#List集合&quot; class=&quot;headerlink&quot; title=&quot;List集合&quot;&gt;&lt;/a&gt;List集合&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;list接口是Collection下面的一个子接口&lt;/li&gt;
 &lt;li&gt;特点：&lt;strong&gt;存取
+      
+    
+    </summary>
+    
+      <category term="基础" scheme="http://yoursite.com/categories/%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="JavaSE" scheme="http://yoursite.com/tags/JavaSE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Map集合</title>
+    <link href="http://yoursite.com/2018/06/15/--Map%E9%9B%86%E5%90%88/"/>
+    <id>http://yoursite.com/2018/06/15/--Map集合/</id>
+    <published>2018-06-15T11:47:09.357Z</published>
+    <updated>2018-06-15T11:50:13.375Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Map集合"><a href="#Map集合" class="headerlink" title="Map集合"></a>Map集合</h2><ul><li>map属于双列集合，每个元素都是一个键值对</li><li>特点：<strong>键唯一，值可以重复，键和值可以为null</strong></li><li>常用实现类：HashMap（底层数组哈希表）、LinkedHasMap有序（哈希表加链表）</li></ul><h3 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h3><ul><li><code>V put(K key, V value)</code>： 向Map集合中添加键值对。</li><li><code>V get(Object key)</code>： 根据key获取value。</li><li><code>V remove(Object key)</code>： 根据key，直接删除整个的键值对。返回值为被删除掉的值。</li></ul><h3 id="遍历步骤"><a href="#遍历步骤" class="headerlink" title="遍历步骤"></a>遍历步骤</h3><p>第一种：</p><ol><li>调用Map集合keySet方法获取到所有的key，存放于Set集合中；</li><li>遍历Set集合，得到所有的key；</li><li>调用Map集合的get方法，根据key获取value。</li></ol><p>第二种：</p><ol><li>通过Map集合调用entrySet方法，获取到保存所有Entry对象的Set集合。</li><li>遍历Set集合，拿到里面的所有的Entry对象</li><li>调用Entry的getKey和getValue获取键和值。</li></ol><p>总结：如果要存储自定义对象作为key，如果要保证一致性，要重写hashCode和equals方法</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.9 之后，集合多了of方法，可以直接创建带有少量元素的集合。</span><br><span class="line">注意：</span><br><span class="line">    1. 这个of方法是List，Set，Map接口的静态方法。这些接口的子类并没有实现这个方法</span><br><span class="line">    2. 通过这种方式创建出来的集合是不能修改的，比如不能往这个集合中添加数据</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Map集合&quot;&gt;&lt;a href=&quot;#Map集合&quot; class=&quot;headerlink&quot; title=&quot;Map集合&quot;&gt;&lt;/a&gt;Map集合&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;map属于双列集合，每个元素都是一个键值对&lt;/li&gt;
+&lt;li&gt;特点：&lt;strong&gt;键唯一，值可以重复，
       
     
     </summary>
@@ -439,83 +542,6 @@
     
     
       <category term="JavaWeb" scheme="http://yoursite.com/tags/JavaWeb/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Response&amp;Request</title>
-    <link href="http://yoursite.com/2018/03/25/response&amp;request/"/>
-    <id>http://yoursite.com/2018/03/25/response&amp;request/</id>
-    <published>2018-03-25T08:19:34.513Z</published>
-    <updated>2018-03-25T09:38:32.615Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="运行过程"><a href="#运行过程" class="headerlink" title="运行过程"></a>运行过程</h2><p>　　客户端发送http请求，tomcat服务器接收请求并解析，将请求信息封装成request对象，并创建一个response对象。创建servlet对象，调用service方法，tomcat去response缓冲区获取设置内容，组成http响应，客户端解析显示页面。</p><h2 id="response解决中文乱码"><a href="#response解决中文乱码" class="headerlink" title="response解决中文乱码"></a>response解决中文乱码</h2><p>　　response.setContentType(“text/html;charset=UTF-8”);</p><h2 id="request解决中文乱码"><a href="#request解决中文乱码" class="headerlink" title="request解决中文乱码"></a>request解决中文乱码</h2><p>　　解决post提交：request.setCharacterEncoding(“UTF-8”);<br>　　解决get提交：parameter=new String(parmater.getbytes(“iso-8859-1”),”UTF-8”);</p><h2 id="request的一些功能"><a href="#request的一些功能" class="headerlink" title="request的一些功能"></a>request的一些功能</h2><p>　　是域对象，访问时创建，响应结束销毁，作用范围在一次请求中；String getParameter(String name)获得请求参数。　　</p><h2 id="转发（forward）与重定向（redirect）"><a href="#转发（forward）与重定向（redirect）" class="headerlink" title="转发（forward）与重定向（redirect）"></a>转发（forward）与重定向（redirect）</h2><p>　　重定向两次请求，转发一次。重定向地址栏变化，转发不变。重定向可以访问外部网站（客户端行为）重新发出请求，无request传递；转发是在内部访问（服务器行为）中间传递的是自己容器内的request。转发性能优于重定向。<br>　　转发：request.getRequestDispatcher(转发地址).forward(req,resp);<br>　　重定向：response.sendRedirect(地址);　　</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;运行过程&quot;&gt;&lt;a href=&quot;#运行过程&quot; class=&quot;headerlink&quot; title=&quot;运行过程&quot;&gt;&lt;/a&gt;运行过程&lt;/h2&gt;&lt;p&gt;　　客户端发送http请求，tomcat服务器接收请求并解析，将请求信息封装成request对象，并创建一个response
-      
-    
-    </summary>
-    
-      <category term="JavaWeb" scheme="http://yoursite.com/categories/JavaWeb/"/>
-    
-    
-      <category term="JavaWeb" scheme="http://yoursite.com/tags/JavaWeb/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JavaWeb核心之Servlet</title>
-    <link href="http://yoursite.com/2018/03/22/--Servlet%E7%AE%80%E4%BB%8B--/"/>
-    <id>http://yoursite.com/2018/03/22/--Servlet简介--/</id>
-    <published>2018-03-22T15:16:50.628Z</published>
-    <updated>2018-05-22T09:00:30.822Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h2><p>　　Servlet运行在服务器的Java小程序，是sun公司提供的一套规范（接口），用来处理客户端请求、响应给浏览器的动态资源。实质就java代码，通过java的API动态的向客户端输出内容。<br>　　servlet规范包含三个技术点：<br>　　(1) <strong>servlet技术</strong><br>　　(2) filter技术——过滤器<br>　　(3) listener技术——监听器</p><h2 id="Servlet实现"><a href="#Servlet实现" class="headerlink" title="Servlet实现"></a>Servlet实现</h2><p> 　　实现步骤：<br>　　(1) 创建类继承HttpServlet<br>　　(2) 覆盖doGet和doPost方法<br>　　(3) 在web.xml中进行servlet配置</p><h2 id="Servlet的生命周期"><a href="#Servlet的生命周期" class="headerlink" title="Servlet的生命周期"></a>Servlet的生命周期</h2><p>　　(1) init(ServletConfig config)，servlet对象创建时执行<br>　　(2) service(ServletRequest request,ServletResponse response),<strong>每次请求都会执行</strong><br>　　(3) destory(),servlet销毁时执行</p><h2 id="ServletContext对象"><a href="#ServletContext对象" class="headerlink" title="ServletContext对象"></a>ServletContext对象</h2><p> 　　ServletContext代表是一个web应用的环境（上下文）对象，内部封装的是该web应用信息，<strong>该对象一个web应用只有一个</strong>，一个web应用有多个servlet对象。<br>　　 ServletContext对象的生命周期：该web应用被加载（服务器启动或发布web应用）时创建；web应用被卸载（服务器关闭，移除该web应用）时销毁。</p><h2 id="ServletContext是一个域对象"><a href="#ServletContext是一个域对象" class="headerlink" title="ServletContext是一个域对象"></a>ServletContext是一个域对象</h2><p>　　存储数据的区域就是域对象，域对象的通用方法：<br>　　　<em>setAttribute(String name,Object obj);　　　</em>getAttribute(String name);<br>　　　*removeAttribute(String name);<br>　　ServletContext域对象作用范围：整个web应用</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Servlet&quot;&gt;&lt;a href=&quot;#Servlet&quot; class=&quot;headerlink&quot; title=&quot;Servlet&quot;&gt;&lt;/a&gt;Servlet&lt;/h2&gt;&lt;p&gt;　　Servlet运行在服务器的Java小程序，是sun公司提供的一套规范（接口），用来处理客户端请
-      
-    
-    </summary>
-    
-      <category term="JavaWeb" scheme="http://yoursite.com/categories/JavaWeb/"/>
-    
-    
-      <category term="JavaWeb" scheme="http://yoursite.com/tags/JavaWeb/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>代码实例</title>
-    <link href="http://yoursite.com/2018/03/21/HelloWorld/"/>
-    <id>http://yoursite.com/2018/03/21/HelloWorld/</id>
-    <published>2018-03-21T09:20:00.668Z</published>
-    <updated>2018-03-25T09:38:24.444Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="HelloWorld"><a href="#HelloWorld" class="headerlink" title="HelloWorld"></a>HelloWorld</h2><p>代码示例：</p><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public class helloworld</span><br><span class="line">&#123;</span><br><span class="line">    public static void main(String []args)</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(&quot;Hello world!&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;HelloWorld&quot;&gt;&lt;a href=&quot;#HelloWorld&quot; class=&quot;headerlink&quot; title=&quot;HelloWorld&quot;&gt;&lt;/a&gt;HelloWorld&lt;/h2&gt;&lt;p&gt;代码示例：&lt;/p&gt;
-&lt;hr&gt;
-&lt;figure class=&quot;highligh
-      
-    
-    </summary>
-    
-      <category term="代码" scheme="http://yoursite.com/categories/%E4%BB%A3%E7%A0%81/"/>
-    
-    
-      <category term="代码" scheme="http://yoursite.com/tags/%E4%BB%A3%E7%A0%81/"/>
     
   </entry>
   
